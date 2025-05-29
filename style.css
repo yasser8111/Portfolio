@@ -1,7 +1,7 @@
 /* Custom CSS Variables */
 :root {
   /* Light Mode Colors (Default) */
-  --primary-color: #1f3b4d; /* deep slate blue */
+  --primary-color: #0a141a; /* deep slate blue */
   --accent-color: #ff6f61; /* warm coral */
   --light-color: #f5f7fa; /* very pale blue */
   --dark-color: #1f3b4d; /* same as primary for consistency */
@@ -21,17 +21,17 @@
 
 [data-theme="dark"] {
   /* Dark Mode Colors */
-  --primary-color: #58a6ff; /* bright sky blue */
+  --primary-color: #ffffff; /* bright sky blue */
   --accent-color: #ff8f66; /* softer coral */
   --light-color: #121722; /* very dark navy */
   --dark-color: #f5f7fa; /* pale for highlights */
   --text-color: #e1e8f0; /* off-white */
-  --bg-color: #0d1117; /* GitHub‑style dark */
+  --bg-color: #07090c; /* GitHub‑style dark */
   --card-bg: #161b22; /* slightly lighter dark */
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   --input-border: #30363d; /* dark gray */
   --nav-bg: rgba(13, 17, 23, 0.85);
-  --hero-overlay: linear-gradient(180deg, rgba(13, 17, 23, 0.5), #0d1117);
+  --hero-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.5), #000000);
 }
 
 /* Global Styles */
@@ -136,7 +136,7 @@ p {
 
 #themeIcon {
   scale: 2;
-  color: var(--primary-color);
+  color: var(--text-color);
   transition: var(--transition);
 }
 
@@ -155,7 +155,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-color);
   margin-left: 20px;
   transition: transform 0.3s ease;
 }
@@ -200,16 +199,24 @@ p {
   align-items: center;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.logo img {
+  width: 50px;
+  display: none;
 }
 
-.logo:hover {
-  color: var(--accent-color);
+.logo img.black-logo {
+  display: block;
+  width: 50px;
+}
+
+[data-theme="dark"] {
+  .logo img {
+    display: block;
+  }
+
+  .logo img.black-logo {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -257,7 +264,7 @@ p {
 .hamburger div {
   width: 25px;
   height: 3px;
-  background: var(--primary-color);
+  background: var(--text-color);
   margin: 5px;
   transition: var(--transition);
 }
@@ -284,6 +291,7 @@ p {
 }
 
 .hero-title {
+  color: var(--text-color);
   margin-bottom: 20px;
   font-size: 4rem;
 }
@@ -457,11 +465,11 @@ p {
 
 #contact h2,
 #contact p {
-  color: white;
+  color: var(--bg-color);
 }
 
 #contact h2::after {
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .contact-content {
@@ -486,6 +494,7 @@ p {
 .contact-icon {
   width: 50px;
   height: 50px;
+  color: var(--bg-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
@@ -496,7 +505,7 @@ p {
 
 .contact-text h3 {
   margin-bottom: 5px;
-  color: white;
+  color: var(--bg-color);
 }
 
 .contact-text p {
@@ -707,6 +716,10 @@ footer {
 
   .nav-links a {
     padding: 10px 10%;
+  }
+
+  .nav-links a::after {
+    height: 0px;
   }
 
   .hamburger {
