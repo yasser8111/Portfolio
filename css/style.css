@@ -2,7 +2,7 @@
 :root {
   /* Light Mode Colors (Default) */
   --primary-color: #000000; /* deep slate blue */
-  --accent-color: #ff6f61; /* warm coral */
+  --accent-color: #fc523b; /* لون وردي/مرجاني أكثر هدوءًا وأناقة */
   --light-color: #f5f7fa; /* very pale blue */
   --dark-color: #000000; /* same as primary for consistency */
   --text-color: #000000; /* charcoal */
@@ -22,7 +22,7 @@
 [data-theme="dark"] {
   /* Dark Mode Colors */
   --primary-color: #ffffff; /* bright sky blue */
-  --accent-color: #ff8f66; /* softer coral */
+  --accent-color: #fc6b36; /* softer coral */
   --light-color: #000000; /* very dark navy */
   --dark-color: #ffffff; /* pale for highlights */
   --text-color: #ffffff; /* off-white */
@@ -34,7 +34,6 @@
   --hero-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.5), #000000);
 }
 
-/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -377,11 +376,6 @@ p {
   box-shadow: var(--card-shadow);
 }
 
-/* .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-} */
-
 .project-image {
   width: 100%;
   height: 300px;
@@ -393,10 +387,6 @@ p {
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.1);
 }
 
 .project-info {
@@ -679,6 +669,11 @@ footer {
   h1 {
     font-size: 3rem;
   }
+  .navbar {
+    padding-top: 10px;
+    padding-bottom: 0;
+    border-radius: 0 0 15px 15px;
+  }
 
   .navbar-container {
     position: relative;
@@ -689,7 +684,7 @@ footer {
     right: 0;
     top: 100%;
     flex-direction: column;
-    background-color: var(--card-bg);
+    background-color: var(--light-color);
     width: 100%;
     text-align: center;
     padding: 20px 0;
@@ -754,13 +749,64 @@ footer {
   .contact-info {
     gap: 10px;
   }
+  #hero {
+    height: 80vh;
+    padding-bottom: 0;
+  }
   .hero-title {
     margin-bottom: 10px;
     font-size: clamp(1rem, 8vw, 3rem);
   }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   section {
     padding: 60px 0;
   }
+
+  .about-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about-image {
+    width: 50%;
+  }
+  .projects-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, auto); /* صفين فقط */
+    /* grid-template-columns:repeat(2, 1fr); */
+  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-image {
+  height: auto;
+}
+
+.project-tags {
+  overflow: scroll;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.project-tag {
+  padding: 3px 10px;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.project-description {
+  font-size: .9rem;
+}
+
 }
 
 @media (max-width: 576px) {
@@ -804,23 +850,7 @@ footer {
   section {
     padding: 40px 0;
   }
-}
-
-.tilt-card {
-  perspective: 1000px;
-}
-.tilt-card .inner-card {
-  transition: transform 0.2s ease;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.inner-card {
-  transform-style: preserve-3d;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.inner-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  .projects-grid{
+    grid-template-columns: 1fr;
+  }
 }
