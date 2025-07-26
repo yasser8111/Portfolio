@@ -39,21 +39,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Container */
@@ -92,17 +86,6 @@ h2 {
   font-size: 2.5rem;
   position: relative;
   padding-bottom: 10px;
-}
-
-h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  width: 60px;
-  background-color: var(--accent-color);
-  transition: background-color 0.3s ease;
 }
 
 p {
@@ -231,7 +214,7 @@ p {
 .nav-links a {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 500;
+  font-weight: 700;
   transition: var(--transition);
   position: relative;
 }
@@ -279,7 +262,7 @@ p {
   height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--hero-overlay), url("./hero.jpg") center/cover fixed;
+  background: var(--hero-overlay), url("../img/hero.jpg") center/cover fixed;
   position: relative;
   overflow: hidden;
   transition: background 0.3s ease;
@@ -387,7 +370,7 @@ p {
 
 .project-image {
   width: 100%;
-  height: 220px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -807,4 +790,23 @@ footer {
   section {
     padding: 40px 0;
   }
+}
+
+.tilt-card {
+  perspective: 1000px;
+}
+.tilt-card .inner-card {
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.inner-card {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inner-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
