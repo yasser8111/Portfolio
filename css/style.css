@@ -1,11 +1,11 @@
 /* Custom CSS Variables */
 :root {
   /* Light Mode Colors (Default) */
-  --primary-color: #0a141a; /* deep slate blue */
+  --primary-color: #000000; /* deep slate blue */
   --accent-color: #ff6f61; /* warm coral */
   --light-color: #f5f7fa; /* very pale blue */
-  --dark-color: #1f3b4d; /* same as primary for consistency */
-  --text-color: #2e3a45; /* charcoal */
+  --dark-color: #000000; /* same as primary for consistency */
+  --text-color: #000000; /* charcoal */
   --bg-color: #ffffff; /* white */
   --card-bg: #ffffff; /* white cards */
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
@@ -13,7 +13,7 @@
   --nav-bg: rgba(255, 255, 255, 0.8);
   --hero-overlay: linear-gradient(
     180deg,
-    rgba(245, 247, 250, 0.5),
+    rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 1)
   );
   --transition: all 0.3s ease;
@@ -23,9 +23,9 @@
   /* Dark Mode Colors */
   --primary-color: #ffffff; /* bright sky blue */
   --accent-color: #ff8f66; /* softer coral */
-  --light-color: #121722; /* very dark navy */
-  --dark-color: #f5f7fa; /* pale for highlights */
-  --text-color: #e1e8f0; /* off-white */
+  --light-color: #000000; /* very dark navy */
+  --dark-color: #ffffff; /* pale for highlights */
+  --text-color: #ffffff; /* off-white */
   --bg-color: #07090c; /* GitHub‑style dark */
   --card-bg: #161b22; /* slightly lighter dark */
   --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -340,8 +340,22 @@ p {
   transition: var(--transition);
 }
 
-.about-image:hover img {
-  transform: scale(1.05);
+.about-image img.whait-image {
+  display: none;
+}
+
+.about-image img.black-image {
+  display: block;
+}
+
+[data-theme="dark"] {
+  .about-image img.whait-image {
+    display: block;
+  }
+
+  .about-image img.black-image {
+    display: none;
+  }
 }
 
 .about-text p {
@@ -441,7 +455,7 @@ p {
 
 /* Contact Section */
 #contact {
-  background: linear-gradient(135deg, var(--primary-color), #34495e);
+  background: linear-gradient(135deg, var(--primary-color), var(--light-color));
   color: white;
   transition: background 0.3s ease;
 }
