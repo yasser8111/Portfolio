@@ -24,7 +24,7 @@ const translations = {
     proj_notes_title: "Smart Notes App",
     skills_title: "03 / TECH STACK",
     contact_intro: "04 / GET IN TOUCH",
-    contact_heading: "Let's discuss your next project.", // تم التعديل
+    contact_heading: "Have a project in mind?", 
     footer_copy: "&copy; 2025 Yasser Tariq Al-Nahdi",
     footer_tagline: "DESIGNED WITH PURPOSE",
   },
@@ -53,7 +53,7 @@ const translations = {
     proj_notes_title: "تطبيق تدوين الملاحظات",
     skills_title: "03 / التقنيات ولغات البرمجة",
     contact_intro: "04 / تواصل معي",
-    contact_heading: "دعنا نتحدث عن مشروعك التالي.", // تم التعديل
+    contact_heading: "هل لديك مشروع في بالك؟",
     footer_copy: "© 2025 ياسر طارق النهدي",
   },
 };
@@ -61,7 +61,6 @@ const translations = {
 let currentLang = "en";
 let typingInstance = null;
 
-// جعل الدوال متاحة عالميًا لتشغيلها من HTML/JSX
 window.toggleLanguage = toggleLanguage;
 window.toggleMode = toggleMode;
 
