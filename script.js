@@ -2,7 +2,7 @@ const translations = {
   en: {
     name: "Yasser Tariq Al-Nahdi",
     lang_text: "AR",
-    nav_work: "Work",
+    nav_work: "Works",
     nav_about: "Skills",
     nav_contact: "Contact",
     hero_intro: "01 / INTRO",
@@ -24,7 +24,7 @@ const translations = {
     proj_notes_title: "Smart Notes App",
     skills_title: "03 / TECH STACK",
     contact_intro: "04 / GET IN TOUCH",
-    contact_heading: "Have a project in mind?",
+    contact_heading: "Let's discuss your next project.", // تم التعديل
     footer_copy: "&copy; 2025 Yasser Tariq Al-Nahdi",
     footer_tagline: "DESIGNED WITH PURPOSE",
   },
@@ -49,17 +49,21 @@ const translations = {
     typing_prefix: "أنا",
     work_title: "02 / مختارات من أعمالي",
     proj_game_title: "لعبة إطلاق النار 2D",
-    proj_store_title: "متجر إلكتروني حديث",
-    proj_notes_title: "تطبيق تدوين الملاحظات ذكي",
+    proj_store_title: "متجر إلكتروني عصري",
+    proj_notes_title: "تطبيق تدوين الملاحظات",
     skills_title: "03 / التقنيات ولغات البرمجة",
     contact_intro: "04 / تواصل معي",
-    contact_heading: "هل لديك مشروع في بالك؟",
+    contact_heading: "دعنا نتحدث عن مشروعك التالي.", // تم التعديل
     footer_copy: "© 2025 ياسر طارق النهدي",
   },
 };
 
 let currentLang = "en";
 let typingInstance = null;
+
+// جعل الدوال متاحة عالميًا لتشغيلها من HTML/JSX
+window.toggleLanguage = toggleLanguage;
+window.toggleMode = toggleMode;
 
 function startLoaderCounter() {
   const loaderText = document.querySelector(".loader-prsint");
@@ -154,52 +158,56 @@ function toggleMode() {
   if (body.classList.contains("light-mode")) {
     icon.classList.remove("fa-sun");
     icon.classList.add("fa-moon");
-    darkLogo.style.display = "block";
-    lightLogo.style.display = "none";
+    if (darkLogo) darkLogo.style.display = "block";
+    if (lightLogo) lightLogo.style.display = "none";
   } else {
     icon.classList.remove("fa-moon");
     icon.classList.add("fa-sun");
-    darkLogo.style.display = "none";
-    lightLogo.style.display = "block";
+    if (darkLogo) darkLogo.style.display = "none";
+    if (lightLogo) lightLogo.style.display = "block";
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   startLoaderCounter();
 
-  currentLang = "ar";
-  toggleLanguage();
+  currentLang = "ar"; 
+  toggleLanguage(); 
 
   const body = document.body;
   body.classList.remove("light-mode");
-  document.getElementById("mode-icon").classList.add("fa-sun");
+  const modeIcon = document.getElementById("mode-icon");
+  if(modeIcon) modeIcon.classList.add("fa-sun");
 
-  document.getElementById("dark-logo").style.display = "none";
-  document.getElementById("light-logo").style.display = "block";
+  const darkLogo = document.getElementById("dark-logo");
+  const lightLogo = document.getElementById("light-logo");
+  if(darkLogo) darkLogo.style.display = "none";
+  if(lightLogo) lightLogo.style.display = "block";
+  
   window.setTimeout(() => {
     window.scrollTo(0, 0);
   }, 2900);
-});
 
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.9 
-  };
+  const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.9 
+    };
 
-  const observer = new IntersectionObserver((entries) => {
-    if (window.innerWidth > 768) return; 
+    const observer = new IntersectionObserver((entries) => {
+      if (window.innerWidth > 768) return; 
 
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      } else {
-        entry.target.classList.remove('active');
-      }
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, observerOptions);
+
+    const projectItems = document.querySelectorAll('.project-item');
+    projectItems.forEach((item) => {
+      observer.observe(item);
     });
-  }, observerOptions);
-
-  const projectItems = document.querySelectorAll('.project-item');
-  projectItems.forEach((item) => {
-    observer.observe(item);
-  });
+});
