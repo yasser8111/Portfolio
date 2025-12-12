@@ -5,7 +5,7 @@
   --text-muted: #888888;
   --accent: #ff4343;
   --border-color: #1a1a1a;
-  --header: #000000ab;
+  --header: #00000082;
   --spacing: 24px;
   --selection-bg: #ff434381;
 }
@@ -16,7 +16,7 @@ body.light-mode {
   --text-muted: #555555;
   --accent: #b91c1c;
   --border-color: #e0e0e0;
-  --header: #ffffffab;
+  --header: #ffffff82;
 }
 * {
   margin: 0;

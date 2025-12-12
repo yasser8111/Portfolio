@@ -1,62 +1,4 @@
-const translations = {
-  en: {
-    name: "Yasser Tariq Al-Nahdi",
-    lang_text: "AR",
-    nav_work: "Works",
-    nav_about: "Skills",
-    nav_contact: "Contact",
-    hero_intro: "01 / INTRO",
-    hero_main_title: "Designing logic.<br>Building worlds.",
-    hero_role_description:
-      "A multidisciplinary Developer & Designer focused on crafting clean code and immersive gameplay experiences.",
-    typing_phrases: [
-      "Web Developer",
-      "Game Developer",
-      "UI/UX Designer",
-      "Graphic Designer",
-      "Mobile App Developer",
-      "Frontend Engineer",
-    ],
-    typing_prefix: "I'm",
-    work_title: "02 / SELECTED WORKS",
-    proj_game_title: "Neon Blast: 2D Shooter",
-    proj_store_title: "Modern E-Commerce",
-    proj_notes_title: "Smart Notes App",
-    skills_title: "03 / TECH STACK",
-    contact_intro: "04 / GET IN TOUCH",
-    contact_heading: "Have a project in mind?", 
-    footer_copy: "&copy; 2025 Yasser Tariq Al-Nahdi",
-    footer_tagline: "DESIGNED WITH PURPOSE",
-  },
-  ar: {
-    name: "ياسر طارق النهدي",
-    lang_text: "EN",
-    nav_work: "الأعمال",
-    nav_about: "المهارات",
-    nav_contact: "اتصل بي",
-    hero_intro: "01 / مقدمة",
-    hero_main_title: "تصميم المنطق.<br>بناء العوالم.",
-    hero_role_description:
-      "أنا مطور ومصمم متعدد التخصصات، أركز على صياغة أكواد نظيفة وتجارب لعب غامرة.",
-    typing_phrases: [
-      "مطور ويب",
-      "مطور ألعاب",
-      "مصمم Ui/UX",
-      "مصمم جرافيك",
-      "مطور تطبيقات موبايل",
-      "مطور واجهات أمامية",
-    ],
-    typing_prefix: "أنا",
-    work_title: "02 / مختارات من أعمالي",
-    proj_game_title: "لعبة إطلاق النار 2D",
-    proj_store_title: "متجر إلكتروني عصري",
-    proj_notes_title: "تطبيق تدوين الملاحظات",
-    skills_title: "03 / التقنيات ولغات البرمجة",
-    contact_intro: "04 / تواصل معي",
-    contact_heading: "هل لديك مشروع في بالك؟",
-    footer_copy: "© 2025 ياسر طارق النهدي",
-  },
-};
+import { translations } from "./translations.js";
 
 let currentLang = "en";
 let typingInstance = null;
@@ -170,43 +112,43 @@ function toggleMode() {
 document.addEventListener("DOMContentLoaded", () => {
   startLoaderCounter();
 
-  currentLang = "ar"; 
-  toggleLanguage(); 
+  currentLang = "ar";
+  toggleLanguage();
 
   const body = document.body;
   body.classList.remove("light-mode");
   const modeIcon = document.getElementById("mode-icon");
-  if(modeIcon) modeIcon.classList.add("fa-sun");
+  if (modeIcon) modeIcon.classList.add("fa-sun");
 
   const darkLogo = document.getElementById("dark-logo");
   const lightLogo = document.getElementById("light-logo");
-  if(darkLogo) darkLogo.style.display = "none";
-  if(lightLogo) lightLogo.style.display = "block";
-  
+  if (darkLogo) darkLogo.style.display = "none";
+  if (lightLogo) lightLogo.style.display = "block";
+
   window.setTimeout(() => {
     window.scrollTo(0, 0);
   }, 2900);
 
   const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.9 
-    };
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.9,
+  };
 
-    const observer = new IntersectionObserver((entries) => {
-      if (window.innerWidth > 768) return; 
+  const observer = new IntersectionObserver((entries) => {
+    if (window.innerWidth > 768) return;
 
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        } else {
-          entry.target.classList.remove('active');
-        }
-      });
-    }, observerOptions);
-
-    const projectItems = document.querySelectorAll('.project-item');
-    projectItems.forEach((item) => {
-      observer.observe(item);
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      } else {
+        entry.target.classList.remove("active");
+      }
     });
+  }, observerOptions);
+
+  const projectItems = document.querySelectorAll(".project-item");
+  projectItems.forEach((item) => {
+    observer.observe(item);
+  });
 });
