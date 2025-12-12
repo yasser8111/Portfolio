@@ -186,3 +186,26 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   }, 2900);
 });
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.9 
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    if (window.innerWidth > 768) return; 
+
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, observerOptions);
+
+  const projectItems = document.querySelectorAll('.project-item');
+  projectItems.forEach((item) => {
+    observer.observe(item);
+  });

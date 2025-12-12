@@ -366,6 +366,11 @@ body[dir="rtl"] .project-info {
   .project-item {
     margin-bottom: 0px;
   }
+  .project-item.active .project-image-wrapper img {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: grayscale(0%);
+  }
   .email-link {
     font-size: clamp(1.4rem, 6vw, 3rem);
   }
