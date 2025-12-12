@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yasser Tariq Al-Nahdi | Portfolio</title>
+    <link rel="icon" type="image/png" href="./light_logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="dark-mode">
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <img src="./dark_logo.png" alt="Logo Dark" id="dark-logo" />
+
+          <img src="./light_logo.png" alt="Logo Light" id="light-logo" />
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#work" data-key="nav_work">Work</a></li>
+            <li><a href="#skills" data-key="nav_about">Skills</a></li>
+            <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="controls">
+          <button
+            class="lang-toggle mono"
+            onclick="toggleLanguage()"
+            data-key="lang_text"
+          >
+            AR
+          </button>
+          <button class="mode-toggle" onclick="toggleMode()">
+            <i class="fas fa-sun" id="mode-icon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" id="home">
+        <div class="code-box " id="code-box-1">
+          <div class="code-box-line">
+            <span class="code-box-var">const</span> Yasser = {
+          </div>
+          <div class="code-box-line" style="padding-left: 10px">
+            role: 'Full-Stack Dev',
+          </div>
+          <div class="code-box-line" style="padding-left: 10px">
+            focus: 'Game & UI/UX'
+          </div>
+          <div class="code-box-line">};</div>
+        </div>
+
+        <span class="mono hero-intro " data-key="hero_intro">01 / INTRO</span>
+
+        <h2 class="hero-heading-name " data-key="name">Yasser Tariq Al-Nahdi</h2>
+
+        <h1 class="hero-main-title " data-key="hero_main_title">
+          Designing logic.<br />
+          Building worlds.
+        </h1>
+
+        <div class="hero-typing-area">
+          <span data-key="typing_prefix">I'm</span>
+          <span id="typing-text"></span><span class="cursor"></span>
+        </div>
+
+        <p class="hero-role " data-key="hero_role_description">
+          A multidisciplinary Developer & Designer focused on crafting clean
+          code and immersive gameplay experiences.
+        </p>
+      </section>
+
+      <section id="work" class="works-section">
+        <div class="mono" style="margin-bottom: 40px" data-key="work_title">
+          02 / SELECTED WORKS
+        </div>
+
+        <div class="project-item">
+          <div class="project-image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop"
+              alt="Project 2: FinTech Dashboard"
+            />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title" data-key="proj2_title">
+              FinTech Dashboard
+            </h3>
+            <span class="project-meta">REACT / TAILWIND / D3.JS</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop"
+              alt="Project 3: Travel App UI"
+            />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title" data-key="proj3_title">
+              Travel App Redesign
+            </h3>
+            <span class="project-meta">FIGMA / PROTOTYPING / UX RESEARCH</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2000&auto=format&fit=crop"
+              alt="Project 6: Dev Tool"
+            />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title" data-key="proj6_title">
+              Code Snippet Library
+            </h3>
+            <span class="project-meta">SVELTE / GITHUB API</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section">
+        <div class="mono" style="margin-bottom: 40px" data-key="skills_title">
+          03 / TECH STACK
+        </div>
+        <div class="skill-grid">
+          <div class="skill-tag">JavaScript (ES6+)</div>
+          <div class="skill-tag">React.js / Next.js</div>
+          <div class="skill-tag">Unity 3D</div>
+          <div class="skill-tag">C# Scripting</div>
+          <div class="skill-tag">Figma / UI Design</div>
+          <div class="skill-tag">Tailwind CSS</div>
+          <div class="skill-tag">Node.js / Express</div>
+          <div class="skill-tag">Git / Workflow</div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="mono" data-key="contact_intro">04 / GET IN TOUCH</div>
+        <h2 class="h-large" style="margin-top: 20px" data-key="contact_heading">
+          Have a project in mind?
+        </h2>
+        <a href="mailto:yasserxd654@gmail.com" class="email-link"
+          >yasserxd654@gmail.com</a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <div data-key="footer_copy">&copy; 2025 Yasser Tariq Al-Nahdi</div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <div class="loader">
+      <div class="loader-prsint">100%</div>
+    </div>
+  </body>
+</html>
