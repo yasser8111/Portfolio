@@ -35,7 +35,7 @@ export const translations = {
     nav_about: "المهارات",
     nav_contact: "التواصل",
     hero_intro: "01 / مقدمة",
-    hero_main_title: "صميم الأفكار. وتحويلها إلى واقع.",
+    hero_main_title: "تصميم الأفكار. وتحويلها إلى واقع.",
     hero_role_description:
       "أنا مطور ومصمم متعدد التخصصات، أركز على صياغة أكواد نظيفة وتجارب لعب غامرة.",
     typing_phrases: [
