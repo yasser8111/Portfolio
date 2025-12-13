@@ -190,14 +190,12 @@ header {
 .code-box {
   position: absolute;
   padding: 18px 25px;
-  /* border: 2px solid var(--border-color); */
   border-radius: 12px;
   font-size: 0.8rem;
   max-width: 280px;
   z-index: 5;
   transition: background 0.4s;
   will-change: transform;
-  /* background: rgba(15, 15, 15, 0.4); */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(15px) brightness(1.1);
   top: 190px;
@@ -209,12 +207,12 @@ header {
 
   box-shadow: 0 18px 40px rgba(65, 65, 65, 0.4);
   background: rgba(0, 0, 0, 0.35);
-  border: 1px outset rgba(255, 255, 255, 0.1);
+  border: 2px outset rgba(255, 255, 255, 0.1);
 }
 body.light-mode .code-box {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
   background: rgba(255, 255, 255, 0.35);
-  border: 1px outset rgba(0, 0, 0, 0.1)
+  border: 2px outset rgba(0, 0, 0, 0.1)
 }
 
 .code-box-line {
