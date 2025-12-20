@@ -23,6 +23,7 @@ export const translations = {
     proj_store_title: "Modern E-Commerce",
     proj_notes_title: "Smart Notes App (Idea)",
     proj_chat_title: "HUAI: AI chat to help students",
+    proj_Portfolio_title: "Customizing the portfolio's website (idea)",
     about_title: "03 / ABOUT ME",
     about_text: `
       Hello, I'm Yasser Tariq Al-Nahdi, a multidisciplinary Developer & Designer. 
@@ -59,6 +60,7 @@ export const translations = {
     proj_store_title: "متجر إلكتروني عصري",
     proj_notes_title: "تطبيق الملاحظات الذكية (فكرة)",
     proj_chat_title: "HUAI: دردشة الذكاء الاصطناعي لمساعدة الطلاب",
+    proj_Portfolio_title: "تخصيص موقع البورتفوليو (الفكرة)",
     about_title: "03 / عني",
     about_text: `
       مرحبًا، أنا ياسر طارق النهدي، مطور ومصمم متعدد التخصصات. 
