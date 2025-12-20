@@ -22,9 +22,15 @@ export const translations = {
     proj_game_title: "Carrot Clash: 2D Shooter(conming soon)",
     proj_store_title: "Modern E-Commerce",
     proj_notes_title: "Smart Notes App (Idea)",
-    proj_chat_title: "AI Chat Bot (Idea)",
-    skills_title: "03 / TECH STACK",
-    contact_intro: "04 / GET IN TOUCH",
+    proj_chat_title: "HUAI: AI chat to help students",
+    about_title: "03 / ABOUT ME",
+    about_text: `
+      Hello, I'm Yasser Tariq Al-Nahdi, a multidisciplinary Developer & Designer. 
+      I love creating projects that combine clean code with an enjoyable user experience.
+      I work on game development, UI/UX design, and continuously improve my skills in modern technologies to deliver professional work.
+    `,
+    skills_title: "04 / TECH STACK",
+    contact_intro: "05 / GET IN TOUCH",
     contact_heading: "Have a project in mind?",
     footer_copy: "&copy; 2025 Yasser Tariq Al-Nahdi",
     footer_tagline: "DESIGNED WITH PURPOSE",
@@ -52,9 +58,15 @@ export const translations = {
     proj_game_title: "   كاروت كلاش: لعبة إطلاق نار ثنائية الأبعاد (قريبًا)",
     proj_store_title: "متجر إلكتروني عصري",
     proj_notes_title: "تطبيق الملاحظات الذكية (فكرة)",
-    proj_chat_title: "روبوت دردشة يعمل بالذكاء الاصطناعي (فكرة)",
-    skills_title: "03 / التقنيات ولغات البرمجة",
-    contact_intro: "04 / تواصل معي",
+    proj_chat_title: "HUAI: دردشة الذكاء الاصطناعي لمساعدة الطلاب",
+    about_title: "03 / عني",
+    about_text: `
+      مرحبًا، أنا ياسر طارق النهدي، مطور ومصمم متعدد التخصصات. 
+      أحب ابتكار مشاريع تجمع بين البرمجة النظيفة وتجربة مستخدم ممتعة.
+      أعمل على تطوير الألعاب، تصميم واجهات المستخدم وتجربة المستخدم (UI/UX)، وأسعى دائمًا لتحسين مهاراتي في التقنيات الحديثة لتقديم أعمال احترافية.
+    `,
+    skills_title: "04 / التقنيات ولغات البرمجة",
+    contact_intro: "05 / تواصل معي",
     contact_heading: "هل لديك مشروع في بالك؟",
     footer_copy: "© 2025 ياسر طارق النهدي",
   },

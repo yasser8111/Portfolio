@@ -29,6 +29,8 @@ function startTypingAnimation(phrases) {
     clearTimeout(typingInstance);
   }
   const textElement = document.getElementById("typing-text");
+  if (!textElement) return;
+
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -63,6 +65,7 @@ function toggleLanguage() {
   currentLang = currentLang === "en" ? "ar" : "en";
   const html = document.documentElement;
   const body = document.body;
+  
   if (currentLang === "ar") {
     html.setAttribute("lang", "ar");
     body.setAttribute("dir", "rtl");
@@ -85,7 +88,9 @@ function toggleLanguage() {
     }
   });
 
-  startTypingAnimation(translations[currentLang].typing_phrases);
+  if (translations[currentLang].typing_phrases) {
+    startTypingAnimation(translations[currentLang].typing_phrases);
+  }
 }
 
 function toggleMode() {
@@ -109,11 +114,33 @@ function toggleMode() {
   }
 }
 
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll(".reveal-section");
+  
+  const revealOptions = {
+    threshold: 0.15, 
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, revealOptions);
+
+  revealElements.forEach((el) => {
+    revealObserver.observe(el);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   startLoaderCounter();
 
-  currentLang = "ar";
-  toggleLanguage();
+  currentLang = "ar"; 
+  toggleLanguage(); 
 
   const body = document.body;
   body.classList.remove("light-mode");
@@ -127,28 +154,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.setTimeout(() => {
     window.scrollTo(0, 0);
-  }, 2900);
+  }, 100); 
 
-  const observerOptions = {
+  initScrollReveal();
+
+  const mobileObserverOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.9,
+    threshold: 0.6,
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    if (window.innerWidth > 768) return;
+  const mobileObserver = new IntersectionObserver((entries) => {
+    if (window.innerWidth > 768) return; 
 
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("active");
+        entry.target.classList.add("visible");
       } else {
-        entry.target.classList.remove("active");
+        entry.target.classList.remove("visible");
       }
     });
-  }, observerOptions);
+  }, mobileObserverOptions);
 
   const projectItems = document.querySelectorAll(".project-item");
   projectItems.forEach((item) => {
-    observer.observe(item);
+    mobileObserver.observe(item);
   });
 });

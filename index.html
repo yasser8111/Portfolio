@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#333333" />
     <title>Yasser Tariq Al-Nahdi | Portfolio</title>
     <link rel="icon" type="image/png" href="./light_logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,9 +22,9 @@
     <header>
       <div class="container header-container">
         <a href="#" class="logo">
-          <img src="./dark_logo.png" alt="Logo Dark" id="dark-logo" />
+          <img src="./imges/dark_logo.png" alt="Logo Dark" id="dark-logo" />
 
-          <img src="./light_logo.png" alt="Logo Light" id="light-logo" />
+          <img src="./imges/light_logo.png" alt="Logo Light" id="light-logo" />
         </a>
         <nav>
           <ul class="nav-links">
@@ -48,7 +49,7 @@
     </header>
 
     <main class="container">
-      <section class="hero" id="home">
+      <section id="home" class="hero reveal-section">
         <div class="code-box" id="code-box-1">
           <div class="code-box-line">
             <span class="code-box-var">const</span> Yasser = {
@@ -82,77 +83,100 @@
         </p>
       </section>
 
-      <section id="work" class="works-section">
+      <section id="work" class="works-section reveal-section">
         <div class="mono" style="margin-bottom: 40px" data-key="work_title">
           02 / SELECTED WORKS
         </div>
-
-        <div class="project-item">
-          <div class="project-image-wrapper">
-            <img
-              src="./2d_game.png"
-              alt="Project 1: 2D Shooter Game Screenshot"
-            />
-          </div>
-          <div class="project-info">
-            <h3 class="project-title" data-key="proj_game_title">
-              Carrot Clash: 2D Shooter(conming soon)
-            </h3>
-            <span class="project-meta">GODOT / GDSCRIPT / PIXEL ART / ...</span>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-image-wrapper">
-            <a href="./e-commerce/index.html">
+        <div class="projects-grid">
+          <div class="project-item">
+            <div class="project-image-wrapper">
               <img
-                src="./e-commerce.png"
-                alt="Project 2: E-Commerce Website UI"
+                src="./imges/2d_game.png"
+                alt="Project 1: 2D Shooter Game Screenshot"
               />
-            </a>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-key="proj_game_title">
+                Carrot Clash: 2D Shooter(conming soon)
+              </h3>
+              <span class="project-meta"
+                >GODOT / GDSCRIPT / PIXEL ART / ...</span
+              >
+            </div>
           </div>
-          <div class="project-info">
-            <h3 class="project-title" data-key="proj_store_title">
-              Modern E-Commerce V1.0
-            </h3>
-            <span class="project-meta">CSS / HTML / JS / UI & UX / V1.0</span>
-          </div>
-        </div>
 
-        <div class="project-item">
-          <div class="project-image-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1000&auto=format&fit=crop"
-              alt="Project 3: Notes App UI"
-            />
+          <div class="project-item">
+            <div class="project-image-wrapper">
+              <a href="./e-commerce/index.html">
+                <img
+                  src="./imges/e-commerce.png"
+                  alt="Project 2: E-Commerce Website UI"
+                />
+              </a>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-key="proj_store_title">
+                Modern E-Commerce V1.0
+              </h3>
+              <span class="project-meta">CSS / HTML / JS / UI & UX / V1.0</span>
+            </div>
           </div>
-          <div class="project-info">
-            <h3 class="project-title" data-key="proj_notes_title">
-              Smart Notes App(Idea)
-            </h3>
-            <span class="project-meta">...</span>
-          </div>
-        </div>
 
-        <div class="project-item">
-          <div class="project-image-wrapper">
-            <a href="#">
+          <div class="project-item">
+            <div class="project-image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
-                alt="Project 4: AI CHAT BOT"
+                src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1000&auto=format&fit=crop"
+                alt="Project 3: Notes App UI"
               />
-            </a>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-key="proj_notes_title">
+                Smart Notes App(Idea)
+              </h3>
+              <span class="project-meta">...</span>
+            </div>
           </div>
-          <div class="project-info">
-            <h3 class="project-title" data-key="proj_chat_title">
-              AI CHAT BOT(Idea)
-            </h3>
-            <span class="project-meta">...</span>
+
+          <div class="project-item">
+            <div class="project-image-wrapper">
+              <a href="https://huai-1.vercel.app/">
+                <img src="./imges/chat_bot.png" alt="Project 4: AI CHAT BOT" />
+              </a>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-key="proj_chat_title">
+                AI CHAT BOT
+              </h3>
+              <span class="project-meta">api / groq / AI / JavaScript / V2.1</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="skills" class="skills-section">
+      <section id="about" class="about-section reveal-section">
+        <div class="mono" style="margin-bottom: 40px" data-key="about_title">
+          02.5 / ABOUT ME
+        </div>
+
+        <div class="about-content">
+          <div class="about-text" data-key="about_text">
+            <p>
+              مرحبًا، أنا ياسر طارق النهدي، مطور ومصمم متعدد التخصصات. أحب
+              ابتكار مشاريع تجمع بين البرمجة النظيفة وتجربة مستخدم ممتعة.
+            </p>
+            <p>
+              أعمل على تطوير الألعاب، تصميم واجهات المستخدم وتجربة المستخدم
+              (UI/UX)، وأسعى دائمًا لتحسين مهاراتي في التقنيات الحديثة لتقديم
+              أعمال احترافية.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="./2d_game.png" alt="Yasser Tariq Al-Nahdi" />
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-section reveal-section">
         <div class="mono" style="margin-bottom: 40px" data-key="skills_title">
           03 / TECH STACK
         </div>
@@ -191,7 +215,7 @@
         </div>
       </section>
 
-      <section id="contact" class="contact-section">
+      <section id="contact" class="contact-section reveal-section">
         <div class="mono" data-key="contact_intro">04 / GET IN TOUCH</div>
 
         <h2 class="h-large" style="margin-top: 20px" data-key="contact_heading">
