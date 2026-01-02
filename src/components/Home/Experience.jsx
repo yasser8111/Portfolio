@@ -1,35 +1,9 @@
 import React from "react";
 import Title from "../Title";
 import Box from "../Box";
+import { EXPERINCES } from "../../constants";
 
 const Experience = () => {
-  const experiences = [
-    {
-      id: 1,
-      year: "2024 - Present",
-      role: "Lead Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      description:
-        "Leading the development of high-performance web applications and mentoring junior developers.",
-    },
-    {
-      id: 2,
-      year: "2022 - 2024",
-      role: "Game Developer",
-      company: "Indie Studio X",
-      description:
-        "Developed immersive 3D environments and implemented core gameplay mechanics using Unity & C#.",
-    },
-    {
-      id: 3,
-      year: "2020 - 2022",
-      role: "UI/UX Designer",
-      company: "Creative Agency",
-      description:
-        "Designed user-centric interfaces for mobile and web platforms, focusing on seamless user journeys.",
-    },
-  ];
-
   return (
     <section
       id="experience"
@@ -51,11 +25,8 @@ const Experience = () => {
       </Title>
 
       <Box className="flex flex-col bg-white px-4 md:px-10">
-        {experiences.map((exp) => (
-          <div
-            key={exp.id}
-            className="group relative flex flex-col py-5"
-          >
+        {EXPERINCES.map((exp) => (
+          <div key={exp.id} className="group relative flex flex-col py-5">
             <span className="absolute top-3 right-0 text-7xl md:text-9xl font-black italic text-neutral-100/80 select-none">
               0{exp.id}
             </span>

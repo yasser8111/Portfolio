@@ -1,74 +1,55 @@
 import React from "react";
 import Title from "../Title";
 import Box from "../Box";
+import { PROJECT as projectData } from "../../constants";
 
 const Projects = () => {
-  const projectData = [
-    {
-      id: 1,
-      title: "Kendrick Lamar - GNX",
-      img: "/img/2d_game.png",
-      category: "Game Dev",
-    },
-    {
-      id: 2,
-      title: "Modern Portfolio",
-      img: "/img/chat_bot.png",
-      category: "Web Design",
-    },
-  ];
-
   return (
-    <section
-      id="projects"
-      className="py-10 bg-black text-white overflow-hidden"
-    >
+    <section id="projects" className="py-10 bg-black text-white overflow-hidden">
       <Title
-        subtitle="Table Of"
-        subtitleClassName="font-black tracking-wider font-prie text-red-500 text-3xl md:text-5xl"
+        subtitle="My"
+        subtitleClassName="font-black tracking-wider font-prie text-red-500 text-2xl md:text-5xl"
         animationDuration={0.8}
         ease="expo.out"
-        scrollStart="top bottom-=10%"
+        scrollStart="top bottom+=20%"
         scrollEnd="bottom center"
         stagger={0.03}
         title="Works"
         containerClassName="m-5 md:m-10 lg:m-20"
-        textClassName="py-1 relative text-white text-[12vw] md:text-[6rem] font-black leading-[0.8] md:leading-[0.75] tracking-tighter"
+        textClassName="py-1 relative text-white text-[14vw] md:text-[6rem] font-black leading-[0.8] md:leading-[0.75] tracking-tighter"
       >
         Works
       </Title>
 
-      <Box
-        color="white"
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24"
-      >
-        {projectData.map((project) => (
-          <div key={project.id} className="group relative flex flex-col">
-            {/* Background ID */}
-            <span className="absolute top-0 right-0 text-[12rem] font-black italic text-white/[0.03] leading-none select-none">
-              {project.id < 10 ? `0${project.id}` : project.id}
-            </span>
-
-            {/* Image */}
-            <div className="relative z-10 aspect-video overflow-hidden">
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+      <Box color="white" className="flex flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-24 mb-16">
+          {projectData.map((project) => (
+            <div key={project.id} className="group relative flex flex-col">
+              <div className="relative z-10 aspect-video overflow-hidden border border-zinc-900">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="relative z-20 mt-4 md:mt-6">
+                <p className="text-red-600 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-1 md:mb-2">
+                  {project.category}
+                </p>
+                <h3 className="text-2xl md:text-5xl font-black text-white tracking-tighter transition-colors group-hover:text-red-600 leading-tight">
+                  {project.title}
+                </h3>
+              </div>
             </div>
+          ))}
+        </div>
 
-            {/* Simple Content */}
-            <div className="relative z-20 mt-6">
-              <p className="text-red-600 text-[10px] font-bold uppercase tracking-[0.3em] mb-2">
-                {project.category}
-              </p>
-              <h3 className="text-5xl font-black text-white tracking-tighter transition-colors group-hover:text-red-600">
-                {project.title}
-              </h3>
-            </div>
-          </div>
-        ))}
+        <button className="group relative self-end px-8 py-4 overflow-hidden transition-all duration-500 cursor-pointer">
+          <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+          <span className="relative z-10 text-white group-hover:text-black text-xs md:text-sm font-black tracking-[0.2em] uppercase transition-colors duration-500">
+            More Projects +
+          </span>
+        </button>
       </Box>
     </section>
   );

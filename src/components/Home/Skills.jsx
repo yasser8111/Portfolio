@@ -1,20 +1,9 @@
 import React from "react";
 import Title from "../Title";
 import Box from "../Box";
+import { SKILLS } from "../../constants";
 
 const Skills = () => {
-  const skillCategories = [
-    { id: 1, category: "Frontend", items: "React.js / Next.js / TypeScript / Tailwind CSS" },
-    { id: 2, category: "Backend", items: "Node.js / Express / MongoDB / PostgreSQL" },
-    { id: 3, category: "Game Dev", items: "Unity / C# / Shaders / Game Physics" },
-    { id: 4, category: "UI/UX", items: "Figma / Adobe XD / Prototyping / Research" },
-    { id: 5, category: "Mobile", items: "React Native / Flutter / Expo / Mobile UI" },
-    { id: 6, category: "Graphics", items: "Photoshop / Illustrator / After Effects" },
-    { id: 7, category: "DevOps", items: "Git / Docker / CI/CD / Vercel / AWS" },
-    { id: 8, category: "AI & Data", items: "Python / Prompt / OpenAI / Data Viz" },
-    { id: 9, category: "Soft Skills", items: "Agile / Management / Leadership / English" },
-  ];
-
   return (
     <section id="skills" className="py-10 bg-black text-white overflow-hidden">
       <Title
@@ -36,7 +25,7 @@ const Skills = () => {
         color="white"
         className="grid grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-20 gap-x-4 md:gap-x-12 overflow-hidden py-10"
       >
-        {skillCategories.map((skill) => (
+        {SKILLS.map((skill) => (
           <div
             key={skill.id}
             className="relative flex flex-col space-y-3 md:space-y-6 group cursor-default border-l border-zinc-800 pl-4 md:pl-8 py-2 hover:border-red-600 transition-all duration-500"

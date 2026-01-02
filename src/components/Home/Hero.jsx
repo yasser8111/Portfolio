@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PERSONAL_INFO } from "../../constants";
 
 const Hero = () => {
   return (
@@ -79,7 +80,7 @@ const Hero = () => {
           transition={{ duration: 1, ease: "circInOut", delay: 4 }}
           className="font-prie text-3xl text-red-500 font-black absolute bottom-10 right-10"
         >
-          Yasser Al-Nahdi
+          {PERSONAL_INFO.name}
         </motion.h2>
       </motion.div>
     </section>

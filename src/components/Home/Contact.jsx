@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../Title";
 import Box from "../Box";
+import { PERSONAL_INFO } from "../../constants";
 
 const Contact = () => {
   return (
@@ -34,7 +35,7 @@ const Contact = () => {
                 href="mailto:yasser.alnahdi@mail.com"
                 className="text-lg sm:text-2xl md:text-4xl font-black hover:text-red-600 transition-colors break-words block"
               >
-                yasser.alnahdi@mail.com
+                {PERSONAL_INFO.email}
               </a>
             </div>
           </div>
@@ -45,15 +46,17 @@ const Contact = () => {
                 Socials
               </h3>
               <div className="flex flex-wrap gap-4 md:gap-6 text-sm sm:text-xl font-bold">
-                <a href="#" className="hover:text-red-600 transition-colors">
-                  LinkedIn
-                </a>
-                <a href="#" className="hover:text-red-600 transition-colors">
-                  GitHub
-                </a>
-                <a href="#" className="hover:text-red-600 transition-colors">
-                  Twitter
-                </a>
+                {PERSONAL_INFO.socials.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-600 transition-colors"
+                  >
+                    {social.name}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -70,9 +73,14 @@ const Contact = () => {
             I am always open to discussing new projects, creative ideas or
             opportunities to be part of your visions.
           </p>
-          <button className="bg-black text-white px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-sm font-bold uppercase tracking-widest self-start hover:bg-red-600 transition-all duration-300 cursor-pointer">
+          <a
+            href={PERSONAL_INFO.socials[0].link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-black text-white px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-sm font-bold uppercase tracking-widest self-start hover:bg-red-600 transition-all duration-300 cursor-pointer"
+          >
             Send Message
-          </button>
+          </a>
         </div>
       </Box>
     </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../Title";
+import { ABUOT , PERSONAL_INFO } from "../../constants"
 
 const About = () => {
   return (
@@ -32,21 +33,17 @@ const About = () => {
                 Hello
               </Title>
               <p className="text-black text-xl md:text-3xl font-bold tracking-tight mt-6">
-                I am Yasser Tariq Al-Nahdi.
+                {"I'm " + PERSONAL_INFO.fullName}
               </p>
             </div>
 
             <div className="pt-5">
               <p className="text-black text-xl font-bold">
-                Greetings ladies & gentlemen.
+                {ABUOT.Greetings}
               </p>
 
               <p className="max-w-2xl text-[18px] md:text-[20px] leading-[1.8] text-neutral-800 font-medium text-justify [text-justify:inter-word] tracking-tight opacity-90">
-                I am a multidisciplinary developer and designer focused on
-                digital experiences. My work bridges the gap between clean,
-                efficient code and intuitive visual design. Specializing in
-                UI/UX and game development, I aim to create projects that are
-                not just functional, but memorable and impactful.
+                {ABUOT.Description}
               </p>
             </div>
           </div>
