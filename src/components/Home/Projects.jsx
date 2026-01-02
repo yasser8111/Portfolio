@@ -7,13 +7,13 @@ const Projects = () => {
     {
       id: 1,
       title: "Kendrick Lamar - GNX",
-      img: "/src/assets/img/2d_game.png",
+      img: "/img/2d_game.png",
       category: "Game Dev",
     },
     {
       id: 2,
       title: "Modern Portfolio",
-      img: "/src/assets/img/chat_bot.png",
+      img: "/img/chat_bot.png",
       category: "Web Design",
     },
   ];
