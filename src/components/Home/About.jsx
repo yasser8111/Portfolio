@@ -10,7 +10,7 @@ const About = () => {
       <div className="container m-auto">
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 pointer-events-none">
           <img
-            src="img/me.png"
+            src="/img/me.png"
             alt="Yasser Al-Nahdi"
             className="w-full h-full object-contain object-right grayscale contrast-125 mix-blend-multiply opacity-50 sm:opacity-80"
           />

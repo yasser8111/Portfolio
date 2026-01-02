@@ -1,13 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import handImage from "../../assets/img/hand.png";
-import logo from "../../assets/img/light_logo.png"
 
 const Hero = () => {
   return (
-    <section 
-    id="home"
-    className="relative min-h-screen overflow-hidden flex items-center justify-center bg-black isolate">
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden flex items-center justify-center bg-black isolate"
+    >
       <motion.img
         initial={{ width: "0", height: "0" }}
         animate={{
@@ -15,7 +14,7 @@ const Hero = () => {
           height: ["0", "100px", "0"],
         }}
         transition={{ duration: 2, ease: "circInOut" }}
-        src={logo}
+        src="/img/light_logo.png"
         alt="logo"
         className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
       />
@@ -53,7 +52,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 150 }}
             animate={{ opacity: 1, y: 90 }}
             transition={{ duration: 1, ease: "circInOut", delay: 2 }}
-            src={handImage}
+            src="/img/hand.png"
             alt="Hands"
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-auto z-10 pointer-events-none grayscale brightness-150 [mask-image:linear-gradient(to_top,transparent,black_20%)]"
           />

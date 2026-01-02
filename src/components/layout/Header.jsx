@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../../assets/img/light_logo.png"
 
 const Header = () => {
   return (
@@ -13,7 +12,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div>
           <img
-            src={logo}
+            src="/img/light_logo.png"
             alt="Logo"
             className="h-9 object-contain "
           />
