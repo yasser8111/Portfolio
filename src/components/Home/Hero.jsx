@@ -57,12 +57,16 @@ const Hero = () => {
           ></motion.div>
 
           <motion.img
-            initial={{ opacity: 0, y: 150 }}
-            animate={{ opacity: 1, y: "70%" }}
-            transition={{ duration: 1, ease: "circInOut", delay: 2 }}
+            initial={{ opacity: 0, y: 200 }}
+            animate={{ opacity: 1, y: 140 }}
+            transition={{ duration: 1, ease: "circInOut", delay: 2}}
             src="/img/hand.png"
             alt="Hands"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] max-w-none h-auto z-10 pointer-events-none grayscale brightness-150 [mask-image:linear-gradient(to_top,transparent,black_20%)]"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] max-w-none h-auto z-10 pointer-events-none grayscale brightness-150"
+            style={{ 
+                WebkitMaskImage: "linear-gradient(to top, transparent, black 20%)",
+                maskImage: "linear-gradient(to top, transparent, black 20%)" 
+            }}
           />
         </div>
 

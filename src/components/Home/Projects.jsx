@@ -11,7 +11,7 @@ const Projects = () => {
         subtitleClassName="font-black tracking-wider font-prie text-red-500 text-2xl md:text-5xl"
         animationDuration={0.8}
         ease="expo.out"
-        scrollStart="top bottom+=20%"
+        scrollStart="top bottom-=10%"
         scrollEnd="bottom center"
         stagger={0.03}
         title="Works"
