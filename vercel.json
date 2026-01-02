@@ -1,14 +1,7 @@
 {
-  "functions": {
-    "api/*.js": {
-      "memory": 1024
-    }
+  "github": {
+    "silent": true
   },
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
