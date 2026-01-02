@@ -52,50 +52,45 @@ const Skills = () => {
   ];
 
   return (
-    <section
-      id="skills"
-      className="py-32 bg-black text-white px-6 overflow-hidden"
-    >
-      <div className=" container m-auto">
-        <Title
-          subtitle="My"
-                subtitleClassName="font-black tracking-wider font-prie text-red-500 text-5xl"
-          animationDuration={0.8}
-          ease="expo.out"
-          scrollStart="top bottom-=10%"
-          scrollEnd="bottom center"
-          stagger={0.03}
-          containerClassName="m-20"
-          textClassName="py-1 trelative text-white text-[4rem] md:text-[6rem] font-black leading-[0.75] tracking-tighter"
-        >
-          Skills
-        </Title>
+    <section id="skills" className="py-10 bg-black text-white overflow-hidden">
+      <Title
+        subtitle="My"
+        subtitleClassName="font-black tracking-wider font-prie text-red-500 text-5xl"
+        animationDuration={0.8}
+        ease="expo.out"
+        scrollStart="top bottom-=10%"
+        scrollEnd="bottom center"
+        stagger={0.03}
+        containerClassName="m-20"
+        textClassName="py-1 trelative text-white text-[4rem] md:text-[6rem] font-black leading-[0.75] tracking-tighter"
+      >
+        Skills
+      </Title>
 
-        <Box
-          color="white"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12 px-4 md:px-10"
-        >
-          {skillCategories.map((skill) => (
-            <div
-              key={skill.id}
-              className="relative flex flex-col space-y-6 group cursor-default border-l-2 border-zinc-800 pl-8 py-2 hover:border-red-600 transition-all duration-500"
-            >
-              <span className="absolute -right-2 -top-12 text-[9rem] font-black text-transparent opacity-10 select-none pointer-events-none text-white">
-                0{skill.id}
-              </span>
+      <Box
+        color="white"
+        className="grid grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12 px-4 md:px-10  overflow-hidden py-10"
+      >
+        {skillCategories.map((skill) => (
+          <div
+            key={skill.id}
+            className="relative flex flex-col space-y-6 group cursor-default border-l-2 border-zinc-800 pl-8 py-2 hover:border-red-600 transition-all duration-500"
+          >
+            <span className="absolute -right-2 -top-12 text-[9rem] font-black text-transparent opacity-10 select-none pointer-events-none text-white">
+              0{skill.id}
+            </span>
 
-              <div className="flex flex-col space-y-4 z-10">
-                <h3 className="text-3xl font-black transition-colors group-hover:text-red-500 uppercase">
-                  {skill.category}
-                </h3>
-                <p className="text-zinc-400 text-lg leading-relaxed font-medium max-w-[280px]">
-                  {skill.items}
-                </p>
-              </div>
+            <div className="flex flex-col space-y-4 z-10">
+              <h3 className="text-3xl font-black transition-colors group-hover:text-red-500 uppercase">
+                {skill.category}
+              </h3>
+              <p className="text-zinc-400 text-lg leading-relaxed font-medium max-w-[280px]">
+                {skill.items}
+              </p>
             </div>
-          ))}
-        </Box>
-      </div>
+          </div>
+        ))}
+      </Box>
     </section>
   );
 };

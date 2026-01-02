@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-32 bg-white text-black px-6 overflow-hidden"
+      className="py-10 bg-white text-black overflow-hidden"
     >
       <Title
         subtitle="Get In"
@@ -24,7 +24,7 @@ const Contact = () => {
 
       <Box
         color="black"
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 px-4"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-15"
       >
         <div className="space-y-12">
           <div className="relative group">

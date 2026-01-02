@@ -19,7 +19,8 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-black text-white py-32 container m-auto text-conter">
+    <section id="projects" 
+      className="py-10 bg-black text-white overflow-hidden">
       <Title
         subtitle="Table Of"
           subtitleClassName="font-black tracking-wider font-prie text-red-500 text-5xl"

@@ -16,7 +16,7 @@ const About = () => {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 z-10">
+        <div className="px-10 md:px-20 grid grid-cols-1 md:grid-cols-12 z-10">
           <div className="md:col-span-8">
             <div className="space-y-0">
               <Title

@@ -33,7 +33,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-32 bg-white text-black px-6 overflow-hidden border-t border-zinc-900"
+      className="py-10 bg-white text-black overflow-hidden"
     >
       <Title
         subtitle="Professional"
@@ -49,11 +49,11 @@ const Experience = () => {
         Experience
       </Title>
 
-      <Box className="max-w-4xl mx-auto flex flex-col bg-white px-6">
+      <Box className="flex flex-col bg-white">
         {experiences.map((exp) => (
           <div
             key={exp.id}
-            className="group relative flex flex-col py-16 border-b border-neutral-100 last:border-0"
+            className="group relative flex flex-col py-5 border-b border-neutral-100 last:border-0"
           >
             {/* Background ID */}
             <span className="absolute top-8 right-0 text-9xl font-black italic text-neutral-50/50 select-none">
@@ -69,11 +69,11 @@ const Experience = () => {
                 {exp.role}
               </h3>
 
-              <p className="text-neutral-400 font-bold text-xs uppercase tracking-widest mt-1 mb-6">
+              <p className="text-neutral-400 font-bold text-xs uppercase tracking-widest mt-1">
                 {exp.company}
               </p>
 
-              <p className="text-neutral-500 text-lg leading-relaxed max-w-2xl">
+              <p className="text-neutral-500 text-lg leading-relaxed max-w-2xl mt-4">
                 {exp.description}
               </p>
             </div>
