@@ -55,14 +55,15 @@ const Skills = () => {
     <section id="skills" className="py-10 bg-black text-white overflow-hidden">
       <Title
         subtitle="My"
-        subtitleClassName="font-black tracking-wider font-prie text-red-500 text-5xl"
+        subtitleClassName="font-black tracking-wider font-prie text-red-500 text-3xl md:text-5xl"
         animationDuration={0.8}
         ease="expo.out"
         scrollStart="top bottom-=10%"
         scrollEnd="bottom center"
         stagger={0.03}
-        containerClassName="m-20"
-        textClassName="py-1 trelative text-white text-[4rem] md:text-[6rem] font-black leading-[0.75] tracking-tighter"
+        title="Skills"
+        containerClassName="m-5 md:m-10 lg:m-20"
+        textClassName="py-1 relative text-white text-[12vw] md:text-[6rem] font-black leading-[0.8] md:leading-[0.75] tracking-tighter"
       >
         Skills
       </Title>

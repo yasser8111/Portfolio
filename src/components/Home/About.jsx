@@ -21,7 +21,7 @@ const About = () => {
             <div className="space-y-0">
               <Title
                 subtitle="About Me"
-                subtitleClassName="font-black tracking-wider font-prie text-red-500 text-5xl"
+                subtitleClassName="font-black tracking-wider font-prie text-red-500 text-3xl md:text-5xl"
                 animationDuration={0.8}
                 ease="expo.out"
                 scrollStart="top bottom-=10%"
