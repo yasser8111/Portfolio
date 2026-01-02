@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Priestacy';
+  src: url('./assets/fonts/Priestacy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-prie {
+  font-family: 'Priestacy', sans-serif;
+}
