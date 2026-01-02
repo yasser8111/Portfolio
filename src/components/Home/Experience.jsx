@@ -50,31 +50,30 @@ const Experience = () => {
         Experience
       </Title>
 
-      <Box className="flex flex-col bg-white">
+      <Box className="flex flex-col bg-white px-4 md:px-10">
         {experiences.map((exp) => (
           <div
             key={exp.id}
-            className="group relative flex flex-col py-5 border-b border-neutral-100 last:border-0"
+            className="group relative flex flex-col py-5"
           >
-            {/* Background ID */}
-            <span className="absolute top-8 right-0 text-9xl font-black italic text-neutral-50/50 select-none">
+            <span className="absolute top-3 right-0 text-7xl md:text-9xl font-black italic text-neutral-100/80 select-none">
               0{exp.id}
             </span>
 
             <div className="relative z-10">
-              <span className="text-red-600 font-bold text-sm tracking-widest uppercase">
+              <span className="text-red-600 font-bold text-xs md:text-sm tracking-widest uppercase">
                 {exp.year}
               </span>
 
-              <h3 className="text-4xl md:text-5xl font-black text-black tracking-tighter uppercase mt-2 group-hover:text-red-600 transition-colors duration-300">
+              <h3 className="text-2xl md:text-5xl font-black text-black tracking-tighter uppercase mt-2 group-hover:text-red-600 transition-colors duration-300 leading-tight">
                 {exp.role}
               </h3>
 
-              <p className="text-neutral-400 font-bold text-xs uppercase tracking-widest mt-1">
+              <p className="text-neutral-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mt-1">
                 {exp.company}
               </p>
 
-              <p className="text-neutral-500 text-lg leading-relaxed max-w-2xl mt-4">
+              <p className="text-neutral-500 text-sm md:text-lg leading-relaxed max-w-2xl mt-4">
                 {exp.description}
               </p>
             </div>

@@ -16,7 +16,7 @@ const About = () => {
           />
         </div>
 
-        <div className="px-10 md:px-20 grid grid-cols-1 md:grid-cols-12 z-10">
+        <div className="px-5 sm:px-10 md:px-20 grid grid-cols-1 md:grid-cols-12 z-10">
           <div className="md:col-span-8">
             <div className="space-y-0">
               <Title
@@ -27,7 +27,7 @@ const About = () => {
                 scrollStart="top bottom-=10%"
                 scrollEnd="bottom center"
                 stagger={0.03}
-                textClassName="trelative text-black text-[4rem] md:text-[6rem] font-black leading-[0.75] tracking-tighter"
+                textClassName="trelative text-black text-[12vw] md:text-[6rem] font-black leading-[0.8] md:leading-[0.75] tracking-tighter"
               >
                 Hello
               </Title>
