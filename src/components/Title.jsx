@@ -101,7 +101,7 @@ const Title = ({
   return (
     <div ref={containerRef} className={`relative ${containerClassName}`}>
       <span
-        className={`pointer-events-none select-none z-10 absolute -top-7 left-7 ${subtitleClassName}`}
+        className={`pointer-events-none select-none z-10 absolute -top-7 left-0 ${subtitleClassName}`}
         style={{ fontFamily: "Priestacy, cursive" }}
       >
         {splitSubtitle}

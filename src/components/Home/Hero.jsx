@@ -77,7 +77,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "circInOut", delay: 4 }}
-          className="font-prie text-red-500 font-black text-3xl absolute bottom-10 right-10"
+          className="font-prie text-3xl text-red-500 font-black absolute bottom-10 right-10"
         >
           Yasser Al-Nahdi
         </motion.h2>

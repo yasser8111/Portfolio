@@ -30,6 +30,7 @@ const Projects = () => {
           scrollEnd="bottom center"
           stagger={0.03}
           containerClassName="m-20"
+          title="Works"
           textClassName="py-1 trelative text-white text-[4rem] md:text-[6rem] font-black leading-[0.75] tracking-tighter"
       >
           Works
