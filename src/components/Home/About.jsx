@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Title";
-import { ABUOT , PERSONAL_INFO } from "../../constants"
+import { ABOUT , PERSONAL_INFO } from "../../constants"
 
 const About = () => {
   return (
@@ -38,12 +38,8 @@ const About = () => {
             </div>
 
             <div className="pt-5">
-              <p className="text-black text-xl font-bold">
-                {ABUOT.Greetings}
-              </p>
-
               <p className="max-w-2xl text-[18px] md:text-[20px] leading-[1.8] text-neutral-800 font-medium text-justify [text-justify:inter-word] tracking-tight opacity-90">
-                {ABUOT.Description}
+                {ABOUT.Description}
               </p>
             </div>
           </div>

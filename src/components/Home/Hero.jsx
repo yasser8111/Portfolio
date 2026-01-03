@@ -25,10 +25,14 @@ const Hero = () => {
         animate={{
           width: ["0px", "clamp(40px, 14vw, 128px)", "auto"],
           height: ["0px", "clamp(40px, 10vw, 128px)", "auto"],
-          padding: ["0px", "48px"],
+          padding: ["0px", "48px", "clamp(10px, 5vw, 48px)"],
           opacity: [0, 1],
         }}
-        transition={{ duration: 1, ease: "circInOut" }}
+        transition={{
+          delay: .5,
+          duration: 1,
+          ease: "circInOut",
+        }}
         className="relative border-2 border-dashed border-white flex flex-row items-center justify-center"
       >
         <div className="absolute -top-1.5 -left-1.5 md:-top-2.5 md:-left-2.5 w-3 h-3 md:w-5 md:h-5 bg-white"></div>
@@ -53,19 +57,20 @@ const Hero = () => {
               height: ["0px", "clamp(40px, 12vw, 128px)"],
             }}
             transition={{ duration: 1, ease: "circInOut", delay: 1 }}
-            className="bg-white rounded-full z-20"
+            className="bg-white rounded-full z-20 relative"
           ></motion.div>
 
           <motion.img
-            initial={{ opacity: 0, y: 200 }}
-            animate={{ opacity: 1, y: 140 }}
-            transition={{ duration: 1, ease: "circInOut", delay: 2}}
+            initial={{ opacity: 0, y: "100%" }}
+            animate={{ opacity: 1, y: "50%" }}
+            transition={{ duration: 1, ease: "circInOut", delay: 2 }}
             src="/img/hand.png"
             alt="Hands"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] max-w-none h-auto z-10 pointer-events-none grayscale brightness-150"
-            style={{ 
-                WebkitMaskImage: "linear-gradient(to top, transparent, black 20%)",
-                maskImage: "linear-gradient(to top, transparent, black 20%)" 
+            className="absolute left-1/2 -translate-x-1/2 w-[150%] max-w-none h-auto z-10 pointer-events-none grayscale brightness-150"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to top, transparent, black 20%)",
+              maskImage: "linear-gradient(to top, transparent, black 20%)",
             }}
           />
         </div>
@@ -82,7 +87,12 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "circInOut", delay: 4 }}
-          className="font-prie text-3xl text-red-500 font-black absolute bottom-10 right-10"
+          className="font-prie text-red-500 font-black absolute"
+          style={{
+            fontSize: "clamp(1rem, 4vw, 2rem)",
+            bottom: "clamp(1rem, 5%, 2.5rem)",
+            right: "clamp(1rem, 5%, 2.5rem)",
+          }}
         >
           {PERSONAL_INFO.name}
         </motion.h2>

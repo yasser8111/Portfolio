@@ -11,11 +11,9 @@ export const PERSONAL_INFO = {
   footerNote: "Designed with Passion",
 };
 
-export const ABUOT = {
-  Greetings: "Greetings ladies & gentlemen.",
+export const ABOUT = {
   Description:
-    "I am a multidisciplinary developer and designer focused on digital experiences. My work bridges the gap between clean, efficient code and intuitive visual design. Specializing in UI/UX and game development, I aim to create projects that are not just functional, but memorable and impactful.",
-  Note: "Designed with Passion",
+    "I am a dedicated software developer and digital designer with a strong focus on building modern, high-quality digital experiences. I approach every project with a balance of clean, maintainable code and well-crafted visual design, ensuring both performance and usability. My expertise lies in UI/UX development and game development, where I translate ideas into interactive, user-centered solutions. I am passionate about problem-solving, continuous learning, and creating products that deliver real value, clarity, and long-term impact.",
 };
 
 export const PROJECT = [

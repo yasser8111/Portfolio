@@ -73,14 +73,15 @@ const Contact = () => {
             I am always open to discussing new projects, creative ideas or
             opportunities to be part of your visions.
           </p>
-          <a
-            href={PERSONAL_INFO.socials[0].link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-black text-white px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-sm font-bold uppercase tracking-widest self-start hover:bg-red-600 transition-all duration-300 cursor-pointer"
-          >
-            Send Message
-          </a>
+
+          <div className="flex-shrink-0">
+            <button className="group relative px-10 py-5 overflow-hidden bg-black transition-all duration-500 cursor-pointer">
+              <div className="absolute inset-0 bg-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
+              <span className="relative z-10 text-white text-xs md:text-sm font-black tracking-[0.3em] uppercase transition-colors duration-500">
+                Send Message
+              </span>
+            </button>
+          </div>
         </div>
       </Box>
     </section>

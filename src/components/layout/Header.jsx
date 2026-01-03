@@ -23,15 +23,18 @@ const Header = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="relative text-xs uppercase tracking-widest font-semibold text-white hover:text-red-500 transition-all"
+              className="relative font-black text-xs uppercase tracking-widest font-semibold text-white hover:text-red-500 transition-all"
             >
               {item}
             </a>
           ))}
         </nav>
 
-        <button className="cursor-pointer px-6 py-2 hover:bg-white hover:text-black text-xs font-bold uppercase tracking-tighter rounded-sm bg-transparent text-white border border-white transition-all active:scale-95">
-          Hire Me
+        <button className="group relative self-end px-4 py-2 overflow-hidden transition-all duration-500 cursor-pointer">
+          <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+          <span className="relative z-10 text-white group-hover:text-black text-xs md:text-sm font-black tracking-[0.2em] uppercase transition-colors duration-500">
+            Hire Me
+          </span>
         </button>
       </div>
     </motion.header>
