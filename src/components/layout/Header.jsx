@@ -1,32 +1,38 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: "circOut", delay: 4 ,duration: 0.5}}
+      transition={{ ease: "circOut", delay: 4, duration: 0.5 }}
       className="fixed top-0 left-0 w-full z-[1000] transition-all duration-500 py-3 bg-gradient-to-b from-black/50 via-black/30 to-transparent"
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div>
+        <Link to="/">
           <img
             src="/img/light_logo.png"
             alt="Logo"
-            className="h-9 object-contain "
+            className="h-9 object-contain cursor-pointer"
           />
-        </div>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-10">
-          {["Home", "Projects", "About", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="relative font-black text-xs uppercase tracking-widest font-semibold text-white hover:text-red-500 transition-all"
+          {[
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+            { name: "About", path: "/" },
+            { name: "Contact", path: "/" },
+          ].map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="relative font-black text-xs uppercase tracking-widest text-white hover:text-red-500 transition-all"
             >
-              {item}
-            </a>
+              {item.name}
+            </Link>
           ))}
         </nav>
 

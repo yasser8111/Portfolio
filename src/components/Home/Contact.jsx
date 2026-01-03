@@ -75,12 +75,17 @@ const Contact = () => {
           </p>
 
           <div className="flex-shrink-0">
-            <button className="group relative px-10 py-5 overflow-hidden bg-black transition-all duration-500 cursor-pointer">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={PERSONAL_INFO.socials[0].link}
+              className="group relative inline-flex items-center justify-center px-10 py-5 overflow-hidden bg-black transition-all duration-500 cursor-pointer"
+            >
               <div className="absolute inset-0 bg-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
               <span className="relative z-10 text-white text-xs md:text-sm font-black tracking-[0.3em] uppercase transition-colors duration-500">
-                Send Message
+                LET'S TALK
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </Box>

@@ -23,22 +23,30 @@ const Skills = () => {
 
       <Box
         color="white"
-        className="grid grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-20 gap-x-4 md:gap-x-12 overflow-hidden py-10"
+        className="grid grid-cols-2 lg:grid-cols-3 overflow-hidden py-10"
       >
         {SKILLS.map((skill) => (
           <div
             key={skill.id}
-            className="relative flex flex-col space-y-3 md:space-y-6 group cursor-default border-l border-zinc-800 pl-4 md:pl-8 py-2 hover:border-red-600 transition-all duration-500"
+            className="group relative flex flex-col py-3 md:py-6 px-4 md:px-8 overflow-hidden transition-all duration-500 cursor-default"
           >
-            <span className="absolute -right-1 -top-6 md:-top-12 text-[4rem] md:text-[9rem] font-black text-transparent opacity-10 select-none pointer-events-none text-white outline-text">
+            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+
+            <span
+              style={{
+                top: skill.topOffset || "-24px",
+                right: skill.rightOffset || "-10px",
+              }}
+              className="absolute -right-5 -top-4 md:-top-8 text-[4rem] md:text-[9rem] font-black text-white/20  select-none pointer-events-none transition-all duration-500 italic z-0"
+            >
               {skill.id < 10 ? `0${skill.id}` : skill.id}
             </span>
 
-            <div className="flex flex-col space-y-2 md:space-y-4 z-10">
-              <h3 className="text-lg md:text-3xl font-black transition-colors group-hover:text-red-500 uppercase leading-tight">
+            <div className="relative flex flex-col space-y-2 md:space-y-4 z-10">
+              <h3 className="text-lg md:text-3xl font-black uppercase leading-tight text-white group-hover:text-black transition-colors duration-500">
                 {skill.category}
               </h3>
-              <p className="text-zinc-500 text-[10px] md:text-lg leading-relaxed font-medium max-w-full md:max-w-[280px]">
+              <p className="text-zinc-500 text-[10px] md:text-lg leading-relaxed font-medium max-w-full md:max-w-[280px] group-hover:text-zinc-800 transition-colors duration-500">
                 {skill.items}
               </p>
             </div>

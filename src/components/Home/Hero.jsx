@@ -6,30 +6,17 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden flex items-center justify-center bg-black isolate px-4"
+      className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center bg-black isolate px-4"
     >
-      <motion.img
-        initial={{ width: "0", height: "0" }}
-        animate={{
-          width: ["0px", "100px", "0"],
-          height: ["0", "100px", "0"],
-        }}
-        transition={{ duration: 2, ease: "circInOut" }}
-        src="/img/light_logo.png"
-        alt="logo"
-        className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
-      />
-
       <motion.div
         initial={{ width: 0, height: 0, padding: 0, opacity: 0 }}
         animate={{
-          width: ["0px", "clamp(40px, 14vw, 128px)", "auto"],
-          height: ["0px", "clamp(40px, 10vw, 128px)", "auto"],
-          padding: ["0px", "48px", "clamp(10px, 5vw, 48px)"],
+          width: ["0px", "clamp(0px, 14vw, 128px)", "auto"],
+          height: ["0px", "clamp(0px, 10vw, 128px)", "auto"],
+          padding: ["0px", "clamp(28px, 5vw, 48px)"],
           opacity: [0, 1],
         }}
         transition={{
-          delay: .5,
           duration: 1,
           ease: "circInOut",
         }}
@@ -39,6 +26,18 @@ const Hero = () => {
         <div className="absolute -top-1.5 -right-1.5 md:-top-2.5 md:-right-2.5 w-3 h-3 md:w-5 md:h-5 bg-white"></div>
         <div className="absolute -bottom-1.5 -left-1.5 md:-bottom-2.5 md:-left-2.5 w-3 h-3 md:w-5 md:h-5 bg-white"></div>
         <div className="absolute -bottom-1.5 -right-1.5 md:-bottom-2.5 md:-right-2.5 w-3 h-3 md:w-5 md:h-5 bg-white"></div>
+
+        <motion.img
+          initial={{ width: "0", height: "0" }}
+          animate={{
+            width: ["0px", "100px", "0"],
+            height: ["0", "100px", "0"],
+          }}
+          transition={{ duration: 1.8, ease: "circInOut" }}
+          src="/img/light_logo.png"
+          alt="logo"
+          className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
+        />
 
         <motion.h1
           initial={{ fontSize: 0, opacity: 0 }}
@@ -51,10 +50,11 @@ const Hero = () => {
 
         <div className="relative flex items-center justify-center mx-2 md:mx-4">
           <motion.div
-            initial={{ width: 0, height: 0 }}
+            initial={{ width: 0, height: 0, opacity: 0 }}
             animate={{
               width: ["0px", "clamp(40px, 12vw, 128px)"],
               height: ["0px", "clamp(40px, 12vw, 128px)"],
+              opacity: 1,
             }}
             transition={{ duration: 1, ease: "circInOut", delay: 1 }}
             className="bg-white rounded-full z-20 relative"
@@ -96,6 +96,26 @@ const Hero = () => {
         >
           {PERSONAL_INFO.name}
         </motion.h2>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4, duration: 1 }}
+        className="md:hidden flex flex-row gap-4 mt-10"
+      >
+        <div className="bg-white relative px-6 py-3 transition-all cursor-pointer hover:bg-white/90 active:bg-white/90">
+          <span className="relative z-10 text-black text-xs font-black tracking-[0.2em] uppercase">
+            Viwe My Works
+          </span>
+        </div>
+
+        <div className="group relative px-6 py-3 border border-white/20 overflow-hidden transition-all duration-500 cursor-pointer">
+          <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500 ease-out"></div>
+          <span className="relative z-10 text-white group-hover:text-black text-xs font-black tracking-[0.2em] uppercase transition-colors duration-500">
+            Contact Me
+          </span>
+        </div>
       </motion.div>
     </section>
   );

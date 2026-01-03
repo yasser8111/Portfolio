@@ -34,16 +34,13 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className="mt-5 md:mt-10 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-5 md:mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] text-zinc-600 uppercase tracking-widest">
             © {new Date().getFullYear()} All Rights Reserved
           </p>
-          <div className="flex gap-6">
-            <span className="h-[1px] w-8 bg-zinc-800 self-center hidden md:block"></span>
-            <p className="text-[10px] text-zinc-600 uppercase tracking-widest italic">
-              Designed with Passion
-            </p>
-          </div>
+          <p className="text-[10px] text-zinc-600 uppercase tracking-widest italic">
+            Designed with Passion
+          </p>
         </div>
       </Box>
     </footer>

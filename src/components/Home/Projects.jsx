@@ -1,11 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Title from "../Title";
 import Box from "../Box";
 import { PROJECT as projectData } from "../../constants";
 
-const Projects = () => {
+const Projects = ({ showMoreBtn = false }) => {
+  const displayedProjects = showMoreBtn ? projectData.slice(0, 2) : projectData;
+
   return (
-    <section id="projects" className="py-10 bg-black text-white overflow-hidden">
+    <section
+      id="projects"
+      className="py-10 bg-black text-white overflow-hidden"
+    >
       <Title
         subtitle="My"
         subtitleClassName="font-black tracking-wider font-prie text-red-500 text-2xl md:text-5xl"
@@ -22,8 +28,8 @@ const Projects = () => {
       </Title>
 
       <Box color="white" className="flex flex-col">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-24 mb-16">
-          {projectData.map((project) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10">
+          {displayedProjects.map((project) => (
             <div key={project.id} className="group relative flex flex-col">
               <div className="relative z-10 aspect-video overflow-hidden border border-zinc-900">
                 <img
@@ -44,12 +50,17 @@ const Projects = () => {
           ))}
         </div>
 
-        <button className="group relative self-end px-8 py-4 overflow-hidden transition-all duration-500 cursor-pointer">
-          <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-          <span className="relative z-10 text-white group-hover:text-black text-xs md:text-sm font-black tracking-[0.2em] uppercase transition-colors duration-500">
-            More Projects +
-          </span>
-        </button>
+        {showMoreBtn && (
+          <Link
+            to="/projects"
+            className="group relative self-end px-6 py-3 mt-10 overflow-hidden transition-all duration-500 cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            <span className="relative z-10 text-white group-hover:text-black text-xs md:text-sm font-black tracking-[0.2em] uppercase transition-colors duration-500">
+              More Projects +
+            </span>
+          </Link>
+        )}
       </Box>
     </section>
   );

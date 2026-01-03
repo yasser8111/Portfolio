@@ -71,29 +71,21 @@ export const SKILLS = [
   },
 ];
 
-export const EXPERINCES = [
+export const EXPERIENCES = [
   {
     id: 1,
-    year: "2024 - Present",
-    role: "Lead Full Stack Developer",
-    company: "Tech Solutions Inc.",
+    period: "Recent Projects",
+    title: "Mid-Level Web Developer",
+    type: "Personal Projects",
     description:
-      "Leading the development of high-performance web applications and mentoring junior developers.",
+      "Developed and maintained modern web applications with a strong emphasis on clean architecture, performance optimization, and responsive design. Implemented scalable frontend structures, reusable components, and efficient state management to deliver smooth and reliable user experiences.",
   },
   {
     id: 2,
-    year: "2022 - 2024",
-    role: "Game Developer",
-    company: "Indie Studio X",
+    period: "E-commerce Development",
+    title: "Mid-Level Web Developer",
+    type: "Personal Projects",
     description:
-      "Developed immersive 3D environments and implemented core gameplay mechanics using Unity & C#.",
-  },
-  {
-    id: 3,
-    year: "2020 - 2022",
-    role: "UI/UX Designer",
-    company: "Creative Agency",
-    description:
-      "Designed user-centric interfaces for mobile and web platforms, focusing on seamless user journeys.",
+      "Designed and built complete e-commerce websites from the ground up, including product listings, filtering systems, and user-friendly shopping flows. Focused on code maintainability, performance, and clear UI/UX principles to create practical and reliable digital products.",
   },
 ];

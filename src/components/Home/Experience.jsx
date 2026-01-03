@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../Title";
 import Box from "../Box";
-import { EXPERINCES } from "../../constants";
+import { EXPERIENCES } from "../../constants";
 
 const Experience = () => {
   return (
@@ -25,7 +25,7 @@ const Experience = () => {
       </Title>
 
       <Box className="flex flex-col bg-white px-4 md:px-10">
-        {EXPERINCES.map((exp) => (
+        {EXPERIENCES.map((exp) => (
           <div key={exp.id} className="group relative flex flex-col py-5">
             <span className="absolute top-3 right-0 text-7xl md:text-9xl font-black italic text-neutral-100/80 select-none">
               0{exp.id}
@@ -33,15 +33,15 @@ const Experience = () => {
 
             <div className="relative z-10">
               <span className="text-red-600 font-bold text-xs md:text-sm tracking-widest uppercase">
-                {exp.year}
+                {exp.period}
               </span>
 
               <h3 className="text-2xl md:text-5xl font-black text-black tracking-tighter uppercase mt-2 group-hover:text-red-600 transition-colors duration-300 leading-tight">
-                {exp.role}
+                {exp.title}
               </h3>
 
               <p className="text-neutral-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mt-1">
-                {exp.company}
+                {exp.type}
               </p>
 
               <p className="text-neutral-500 text-sm md:text-lg leading-relaxed max-w-2xl mt-4">

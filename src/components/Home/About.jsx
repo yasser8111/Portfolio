@@ -38,7 +38,7 @@ const About = () => {
             </div>
 
             <div className="pt-5">
-              <p className="max-w-2xl text-[18px] md:text-[20px] leading-[1.8] text-neutral-800 font-medium text-justify [text-justify:inter-word] tracking-tight opacity-90">
+              <p className="max-w-2xl text-[18px] md:text-[20px] leading-[1.4] lg:leading-[1.8] text-neutral-800 font-medium text-justify [text-justify:inter-word] tracking-tight opacity-90">
                 {ABOUT.Description}
               </p>
             </div>
