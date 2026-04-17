@@ -140,6 +140,9 @@ export default function App() {
                 loop
                 autoplay
                 className="w-full max-w-[700px] xl:max-w-[850px]"
+                renderConfig={{
+                  devicePixelRatio: window.devicePixelRatio,
+                }}
               />
             </div>
           </div>
