@@ -110,9 +110,9 @@ export default function App() {
         </nav>
 
         {/* Hero */}
-        <section className="py-16 md:py-24 lg:py-32 border-b border-slate-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+        <section className="border-b border-slate-200 overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[600px] lg:min-h-[750px]">
+            <div className="order-2 lg:order-1 py-16 md:py-24 lg:py-32 flex flex-col justify-center">
               <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8 text-slate-900 whitespace-pre-line">
                 {hero.title.split('\n').map((line, i) => (
                   <React.Fragment key={i}>
@@ -134,12 +134,12 @@ export default function App() {
                 {hero.subtitle}
               </p>
             </div>
-            <div className="order-1 lg:order-2 flex justify-center items-center w-full">
+            <div className="order-1 lg:order-2 flex justify-center items-center w-full bg-slate-50/50">
               <DotLottieReact
                 src="https://lottie.host/1ded89c3-1b8c-4c49-ad73-ab8a1b542e6e/Yreu2zYzef.lottie"
                 loop
                 autoplay
-                className="w-full h-full min-h-[500px] lg:min-h-[700px] xl:min-h-[800px]"
+                className="w-full h-full max-h-[800px] object-contain"
                 renderConfig={{
                   devicePixelRatio: window.devicePixelRatio,
                 }}
