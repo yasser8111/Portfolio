@@ -1,4 +1,5 @@
 import React from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import portfolioData from "./data.json";
 
 const GithubIcon = ({ className }) => (
@@ -62,12 +63,12 @@ export default function App() {
       {/* Under Construction Banner */}
       {personal.isUnderConstruction && (
         <div className="bg-blue-600 text-white py-2 px-4 text-center text-xs font-bold tracking-widest uppercase">
-          Site under development • Currently updating projects and content
+          Site under development 
         </div>
       )}
 
       {/* Container */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
+      <div className="max-w-[1536px] w-full mx-auto px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
         <nav className="py-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-slate-200">
           <div>
@@ -109,9 +110,9 @@ export default function App() {
         </nav>
 
         {/* Hero */}
-        <section className="py-24 md:py-32 border-b border-slate-200">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-12 lg:col-span-10">
+        <section className="py-16 md:py-24 lg:py-32 border-b border-slate-200">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
               <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8 text-slate-900 whitespace-pre-line">
                 {hero.title.split('\n').map((line, i) => (
                   <React.Fragment key={i}>
@@ -132,6 +133,14 @@ export default function App() {
               <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-normal max-w-3xl">
                 {hero.subtitle}
               </p>
+            </div>
+            <div className="order-1 lg:order-2 flex justify-center items-center">
+              <DotLottieReact
+                src="https://lottie.host/1ded89c3-1b8c-4c49-ad73-ab8a1b542e6e/Yreu2zYzef.lottie"
+                loop
+                autoplay
+                className="w-full max-w-[500px]"
+              />
             </div>
           </div>
         </section>
@@ -263,12 +272,19 @@ export default function App() {
                   <InstagramIcon className="w-6 h-6" />
                 </a>
               </div>
-              <p className="text-slate-500 font-medium text-sm tracking-wide">
-                &copy; {new Date().getFullYear()} {footer.text}
-              </p>
             </div>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="py-8 mt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 font-medium text-sm tracking-wide">
+            &copy; {new Date().getFullYear()} {footer.text}
+          </p>
+          <div className="text-xs font-bold tracking-widest uppercase text-slate-400">
+            {personal.name}
+          </div>
+        </footer>
       </div>
     </div>
   );
