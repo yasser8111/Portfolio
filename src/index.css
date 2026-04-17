@@ -19,7 +19,7 @@
 
   /* Custom scrollbar for an engineered feel */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-track {

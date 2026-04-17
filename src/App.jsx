@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import portfolioData from "./data.json";
 
@@ -47,9 +47,11 @@ const InstagramIcon = ({ className }) => (
 
 export default function App() {
   const { personal, hero, about, projects, expertise, footer } = portfolioData;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
+    setIsMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
@@ -70,51 +72,59 @@ export default function App() {
       {/* Container */}
       <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
-        <nav className="py-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-slate-200">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight">{personal.name}</h1>
-            {/* <p className="text-sm text-slate-500 font-medium mt-1">
-              {personal.role}
-            </p> */}
+        <nav className="py-6 md:py-8 border-b border-slate-200">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight">{personal.name}</h1>
+            </div>
+            
+            {/* Desktop Links */}
+            <div className="hidden sm:flex gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
+              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">About</a>
+              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">Projects</a>
+              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">Skills</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="sm:hidden text-slate-900 p-2 -mr-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {isMenuOpen ? (
+                  <>
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </>
+                ) : (
+                  <>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                  </>
+                )}
+              </svg>
+            </button>
           </div>
-          <div className="flex gap-4 sm:gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
-            <a
-              href="#about"
-              onClick={(e) => scrollToSection(e, "about")}
-              className="hover:text-blue-600 transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#projects"
-              onClick={(e) => scrollToSection(e, "projects")}
-              className="hover:text-blue-600 transition-colors"
-            >
-              Projects
-            </a>
-            <a
-              href="#skills"
-              onClick={(e) => scrollToSection(e, "skills")}
-              className="hover:text-blue-600 transition-colors"
-            >
-              Skills
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, "contact")}
-              className="hover:text-blue-600 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+
+          {/* Mobile Links */}
+          {isMenuOpen && (
+            <div className="sm:hidden flex flex-col gap-6 mt-6 pt-6 border-t border-slate-100 text-sm font-semibold tracking-wide uppercase text-slate-600">
+              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">About</a>
+              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">Projects</a>
+              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">Skills</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+          )}
         </nav>
 
         {/* Hero */}
         <section className="py-12 md:py-16 lg:py-20 border-b border-slate-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
             {/* Text Column */}
-            <div className="order-2 lg:order-1">
-              <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8 text-slate-900 whitespace-pre-line">
+            <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-6 lg:mb-8 text-slate-900 whitespace-pre-line">
                 {hero.title.split('\n').map((line, i) => (
                   <React.Fragment key={i}>
                     {line.includes("Code") ? (
@@ -131,13 +141,13 @@ export default function App() {
                 ))}
               </h2>
 
-              <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-normal max-w-3xl">
+              <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
                 {hero.subtitle}
               </p>
             </div>
             
             {/* Image Column */}
-            <div className="order-1 lg:order-2 flex justify-center items-center">
+            <div className="order-2 lg:order-2 flex justify-center items-center">
               <DotLottieReact
                 src="https://lottie.host/1ded89c3-1b8c-4c49-ad73-ab8a1b542e6e/Yreu2zYzef.lottie"
                 loop
