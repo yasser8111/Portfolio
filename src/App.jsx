@@ -61,7 +61,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-12">
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ">
       
       {personal.isUnderConstruction && (
         <div className="bg-blue-600 text-white py-2 px-4 text-center text-xs font-bold tracking-widest uppercase">
@@ -75,7 +75,7 @@ export default function App() {
         <nav className="py-6 md:py-8 border-b border-slate-200">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">{personal.name}</h1>
+              <h1 className="text-2xl font-bold tracking-tight">{personal.nickname}</h1>
             </div>
             
             {/* Desktop Links */}
@@ -141,9 +141,26 @@ export default function App() {
                 ))}
               </h2>
 
-              <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10">
                 {hero.subtitle}
               </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
+                <a 
+                  href="#projects" 
+                  onClick={(e) => scrollToSection(e, "projects")}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold tracking-wide py-3 px-8 rounded-full transition-colors text-center"
+                >
+                  View Projects
+                </a>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, "contact")}
+                  className="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold tracking-wide py-3 px-8 rounded-full transition-colors text-center"
+                >
+                  Contact Me
+                </a>
+              </div>
             </div>
             
             {/* Image Column */}
@@ -293,13 +310,10 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-8 mt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+        <footer className="py-8 mt-12 border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4">
           <p className="text-slate-500 font-medium text-sm tracking-wide">
             &copy; {new Date().getFullYear()} {footer.text}
           </p>
-          <div className="text-xs font-bold tracking-widest uppercase text-slate-400">
-            {personal.name}
-          </div>
         </footer>
       </div>
     </div>
