@@ -288,19 +288,19 @@ export default function App() {
               <div className="flex gap-4">
                 <a
                   href={personal.socials.github}
-                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors"
+                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors rounded-full"
                 >
                   <GithubIcon className="w-6 h-6" />
                 </a>
                 <a
                   href={personal.socials.linkedin}
-                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors"
+                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-color rounded-full"
                 >
                   <LinkedinIcon className="w-6 h-6" />
                 </a>
                 <a
                   href={personal.socials.instagram}
-                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors"
+                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors rounded-full"
                 >
                   <InstagramIcon className="w-6 h-6" />
                 </a>
