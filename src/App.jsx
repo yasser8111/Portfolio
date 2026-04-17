@@ -134,12 +134,12 @@ export default function App() {
                 {hero.subtitle}
               </p>
             </div>
-            <div className="order-1 lg:order-2 flex justify-center items-center w-full bg-slate-50/50">
+            <div className="order-1 lg:order-2 flex justify-center items-center w-full bg-slate-50/50 p-8">
               <DotLottieReact
                 src="https://lottie.host/1ded89c3-1b8c-4c49-ad73-ab8a1b542e6e/Yreu2zYzef.lottie"
                 loop
                 autoplay
-                className="w-full h-full max-h-[800px] object-contain"
+                className="w-full max-w-[600px] lg:max-w-[750px] aspect-square"
                 renderConfig={{
                   devicePixelRatio: window.devicePixelRatio,
                 }}
