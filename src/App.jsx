@@ -44,8 +44,6 @@ const InstagramIcon = ({ className }) => (
   </svg>
 );
 
-alert("the ");
-
 export default function App() {
   const { personal, hero, about, projects, expertise, footer } = portfolioData;
 
@@ -61,6 +59,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-12">
+      {/* Under Construction Banner */}
+      {personal.isUnderConstruction && (
+        <div className="bg-blue-600 text-white py-2 px-4 text-center text-xs font-bold tracking-widest uppercase">
+          Site under development • Currently updating projects and content
+        </div>
+      )}
+
       {/* Container */}
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
