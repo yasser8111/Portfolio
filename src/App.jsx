@@ -139,7 +139,7 @@ export default function App() {
                 src="https://lottie.host/1ded89c3-1b8c-4c49-ad73-ab8a1b542e6e/Yreu2zYzef.lottie"
                 loop
                 autoplay
-                className="w-full max-w-[700px] xl:max-w-[850px]"
+                className="w-full h-full min-h-[500px] lg:min-h-[700px] xl:min-h-[800px]"
                 renderConfig={{
                   devicePixelRatio: window.devicePixelRatio,
                 }}
