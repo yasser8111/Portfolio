@@ -3,7 +3,7 @@
     "name": "YASER",
     "role": "UI & UX Designer | Frontend Developer",
     "email": "yasserxd653@gmail.com",
-    "isUnderConstruction": true,
+    "isUnderConstruction": false,
     "socials": {
       "github": "#",
       "linkedin": "#",
@@ -60,6 +60,6 @@
     }
   ],
   "footer": {
-    "text": "YASER TAREQ BESHR. Designed and built with attention to detail."
+    "text": "Designed and developed by YASER."
   }
 }

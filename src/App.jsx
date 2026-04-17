@@ -60,22 +60,22 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-12">
-      {/* Under Construction Banner */}
+      
       {personal.isUnderConstruction && (
         <div className="bg-blue-600 text-white py-2 px-4 text-center text-xs font-bold tracking-widest uppercase">
-          Site under development 
+          Site under development
         </div>
       )}
 
       {/* Container */}
-      <div className="max-w-[1536px] w-full mx-auto px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
+      <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
         <nav className="py-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-slate-200">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">{personal.name}</h1>
-            <p className="text-sm text-slate-500 font-medium mt-1">
+            {/* <p className="text-sm text-slate-500 font-medium mt-1">
               {personal.role}
-            </p>
+            </p> */}
           </div>
           <div className="flex gap-4 sm:gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
             <a
@@ -134,12 +134,12 @@ export default function App() {
                 {hero.subtitle}
               </p>
             </div>
-            <div className="order-1 lg:order-2 flex justify-center items-center">
+            <div className="order-1 lg:order-2 flex justify-center items-center w-full">
               <DotLottieReact
                 src="https://lottie.host/1ded89c3-1b8c-4c49-ad73-ab8a1b542e6e/Yreu2zYzef.lottie"
                 loop
                 autoplay
-                className="w-full max-w-[500px]"
+                className="w-full max-w-[700px] xl:max-w-[850px]"
               />
             </div>
           </div>
