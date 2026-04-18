@@ -1,66 +1,169 @@
 {
-  "personal": {
-    "nickname":"YSR",
-    "name": "YASER",
-    "role": "UI & UX Designer | Frontend Developer",
-    "email": "yasserxd653@gmail.com",
-    "isUnderConstruction": true,
-    "socials": {
-      "github": "#",
-      "linkedin": "#",
-      "instagram": "#"
+  "isUnderConstruction": true,
+  "lang": "en",
+  "en": {
+    "nav": {
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "viewProjects": "View Projects",
+      "contactMe": "Contact Me"
+    },
+    "sections": {
+      "selectedWorks": "Selected Works",
+      "about": "About",
+      "expertise": "Expertise",
+      "letsBuild": "Let's build\nsomething useful."
+    },
+    "personal": {
+      "nickname": "YSR",
+      "name": "YASER",
+      "email": "yasserxd653@gmail.com",
+      "underConstructionText": "Site under development",
+      "socials": {
+        "github": "#",
+        "linkedin": "#",
+        "instagram": "#"
+      }
+    },
+    "hero": {
+      "title": "Simplicity in Code,\nClarity in design.",
+      "subtitle": "I build digital products that are easy to use, fast to load, and built to scale."
+    },
+    "about": [
+      "I am a first-year Computer Science student with a focus on frontend development and UI/UX design. I enjoy building clean and practical web interfaces that solve real problems.",
+      "I have worked on several personal projects, including e-commerce websites and experimental tools, focusing on performance, simplicity, and user experience. Currently, I’m improving my skills in JavaScript, React, and system design."
+    ],
+
+    "projects": [
+      {
+        "title": "YasserGPT",
+        "tech": "React / OpenAI API",
+        "desc": "A smart AI chatbot interface designed to provide fast and clean interactions, focused on productivity and minimal user experience.",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "title": "GridX",
+        "tech": "HTML / CSS / JavaScript",
+        "desc": "A modern grid-based layout system for building responsive and visually balanced web interfaces with a minimalist design approach.",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "title": "ControlTap",
+        "tech": "JavaScript / Chrome Extension",
+        "desc": "A browser extension that enhances user control and productivity by simplifying tab management and providing quick-access actions.",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop"
+      }
+    ],
+
+    "expertise": [
+      {
+        "category": "Frontend",
+        "skills": ["HTML, CSS, JS (ES6+)", "React (Basics)", "Tailwind CSS"]
+      },
+      {
+        "category": "Backend",
+        "skills": ["Firebase (Auth, Firestore)", "Basic Node.js"]
+      },
+      {
+        "category": "Tools",
+        "skills": ["Git & GitHub", "Vercel", "Figma"]
+      },
+      {
+        "category": "Design",
+        "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
+      }
+    ],
+    "footer": {
+      "text": "Designed and developed by YASER."
     }
   },
-  "hero": {
-    "title": "Simplicity in Code,\nClarity in design.",
-    "subtitle": "I build digital products that are easy to use, fast to load, and built to scale."
-  },
-  "about": [
-    "I am a first-year Computer Science student with a focus on frontend development and UI/UX design. I enjoy building clean and practical web interfaces that solve real problems.",
-    "I have worked on several personal projects, including e-commerce websites and experimental tools, focusing on performance, simplicity, and user experience. Currently, I’m improving my skills in JavaScript, React, and system design."
-  ],
-  "projects": [
-    {
-      "title": "Next Store",
-      "tech": "HTML / CSS / JS / Firebase",
-      "desc": "A simple e-commerce website focused on clean UI and smooth user experience. Includes product listing, filtering, and WhatsApp-based ordering system.",
-      "year": "2025",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+  "ar": {
+    "nav": {
+      "about": "نبذة عني",
+      "projects": "المشاريع",
+      "skills": "المهارات",
+      "contact": "تواصل معي"
     },
-    {
-      "title": "Portify",
-      "tech": "React / AI Integration",
-      "desc": "An experimental tool that generates portfolio websites automatically using predefined layouts and AI-generated content.",
-      "year": "2026",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+    "buttons": {
+      "viewProjects": "عرض المشاريع",
+      "contactMe": "تواصل معي"
     },
-    {
-      "title": "FPS Game Prototype",
-      "tech": "Godot / GDScript",
-      "desc": "A first-person shooter prototype focused on movement, shooting mechanics, and smooth player experience.",
-      "year": "2025",
-      "image": "https://images.unsplash.com/photo-1618477247222-ac60c9020460?q=80&w=2070&auto=format&fit=crop"
+    "sections": {
+      "selectedWorks": "أعمال مختارة",
+      "about": "نبذة عني",
+      "expertise": "الخبرات",
+      "letsBuild": "لنقم ببناء\nشيء مفيد."
+    },
+    "personal": {
+      "nickname": "YSR",
+      "name": "ياسر",
+      "role": "مصمم واجهات المستخدم | مطور واجهات أمامية",
+      "email": "yasserxd653@gmail.com",
+      "underConstructionText": "الموقع قيد التطوير",
+      "socials": {
+        "github": "#",
+        "linkedin": "#",
+        "instagram": "#"
+      }
+    },
+    "hero": {
+      "title": "بساطة في الكود،\nوضوح في التصميم.",
+      "subtitle": "أقوم ببناء منتجات رقمية سهلة الاستخدام، سريعة التحميل، وقابلة للتوسع."
+    },
+    "about": [
+      "أنا طالب في السنة الأولى في علوم الحاسوب، أركز على تطوير الواجهات الأمامية وتصميم واجهة/تجربة المستخدم (UI/UX). أستمتع ببناء واجهات ويب نظيفة وعملية تحل مشاكل حقيقية.",
+      "عملت على العديد من المشاريع الشخصية، بما في ذلك مواقع التجارة الإلكترونية وأدوات تجريبية، مع التركيز على الأداء، البساطة، وتجربة المستخدم. حاليًا، أقوم بتطوير مهاراتي في JavaScript و React وتصميم الأنظمة."
+    ],
+    "projects": [
+      {
+        "title": "Next Store",
+        "tech": "HTML / CSS / JS / Firebase",
+        "desc": "موقع تجارة إلكترونية بسيط يركز على واجهة نظيفة وتجربة مستخدم سلسة. يتضمن عرض المنتجات، تصفيتها، ونظام طلب عبر WhatsApp.",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "title": "Portify",
+        "tech": "React / AI Integration",
+        "desc": "أداة تجريبية تنشئ مواقع محافظ شخصية تلقائيًا باستخدام تخطيطات مسبقة ومحتوى مُولد بالذكاء الاصطناعي.",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        "title": "FPS Game Prototype",
+        "tech": "Godot / GDScript",
+        "desc": "نموذج أولي للعبة تصويب من منظور الشخص الأول يركز على الحركة، آليات إطلاق النار، وتجربة لعب سلسة.",
+        "year": "2025",
+        "image": "https://images.unsplash.com/photo-1618477247222-ac60c9020460?q=80&w=2070&auto=format&fit=crop"
+      }
+    ],
+    "expertise": [
+      {
+        "category": "الواجهات الأمامية",
+        "skills": ["HTML, CSS, JS (ES6+)", "React (Basics)", "Tailwind CSS"]
+      },
+      {
+        "category": "الواجهات الخلفية",
+        "skills": ["Firebase (Auth, Firestore)", "Basic Node.js"]
+      },
+      {
+        "category": "الأدوات",
+        "skills": ["Git & GitHub", "Vercel", "Figma"]
+      },
+      {
+        "category": "التصميم",
+        "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
+      }
+    ],
+    "footer": {
+      "text": "تم التصميم والتطوير بواسطة YASER."
     }
-  ],
-  "expertise": [
-    {
-      "category": "Frontend",
-      "skills": ["HTML, CSS, JS (ES6+)", "React (Basics)", "Tailwind CSS"]
-    },
-    {
-      "category": "Backend",
-      "skills": ["Firebase (Auth, Firestore)", "Basic Node.js"]
-    },
-    {
-      "category": "Tools",
-      "skills": ["Git & GitHub", "Vercel", "Figma"]
-    },
-    {
-      "category": "Design",
-      "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
-    }
-  ],
-  "footer": {
-    "text": "Designed and developed by YASER."
   }
 }

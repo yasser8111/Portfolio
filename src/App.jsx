@@ -45,9 +45,67 @@ const InstagramIcon = ({ className }) => (
   </svg>
 );
 
+const ProjectDetails = ({ project, onBack, lang, footerText }) => {
+  return (
+    <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
+      <nav className="py-6 md:py-8 border-b border-slate-200">
+        <button 
+          onClick={onBack}
+          className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-slate-600 hover:text-blue-600 transition-colors"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rtl:rotate-180">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          {lang === "ar" ? "العودة للمشاريع" : "Back to Projects"}
+        </button>
+      </nav>
+
+      <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 flex-1">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="flex flex-col">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-slate-900 leading-[1.1] mb-6">
+              {project.title}
+            </h1>
+            
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <span className="text-sm font-mono font-medium px-3 py-1 bg-slate-100 text-slate-600">
+                {project.year}
+              </span>
+              <span className="text-sm font-semibold text-blue-600 tracking-wide">
+                {project.tech}
+              </span>
+            </div>
+
+            <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
+              {project.desc.split('\n').map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+
+          {project.image && (
+            <div className="w-full bg-slate-100 rounded-lg overflow-hidden border border-slate-200 aspect-[4/3]">
+              <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+            </div>
+          )}
+        </div>
+      </section>
+
+      <footer className="py-8 mt-auto border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4">
+        <p className="text-slate-500 font-medium text-sm tracking-wide">
+          &copy; {new Date().getFullYear()} {footerText}
+        </p>
+      </footer>
+    </div>
+  );
+};
+
 export default function App() {
-  const { personal, hero, about, projects, expertise, footer } = portfolioData;
+  const [lang, setLang] = useState(portfolioData.lang || "en");
+  const { personal, hero, about, projects, expertise, footer, nav, buttons, sections } = portfolioData[lang];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
@@ -60,12 +118,30 @@ export default function App() {
     }
   };
 
+  if (selectedProject) {
+    return (
+      <div dir={lang === "ar" ? "rtl" : "ltr"} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white">
+        <ProjectDetails 
+          project={selectedProject} 
+          onBack={() => {
+            setSelectedProject(null);
+            setTimeout(() => {
+              document.getElementById("projects")?.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }, 0);
+          }} 
+          lang={lang} 
+          footerText={footer.text}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ">
+    <div dir={lang === "ar" ? "rtl" : "ltr"} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ">
       
-      {personal.isUnderConstruction && (
+      {portfolioData.isUnderConstruction && (
         <div className="bg-blue-600 text-white py-2 px-4 text-center text-xs font-bold tracking-widest uppercase">
-          Site under development
+          {personal.underConstructionText}
         </div>
       )}
 
@@ -79,66 +155,72 @@ export default function App() {
             </div>
             
             {/* Desktop Links */}
-            <div className="hidden sm:flex gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
-              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">About</a>
-              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">Projects</a>
-              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">Skills</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">Contact</a>
+            <div className="hidden sm:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
+              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">{nav.about}</a>
+              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">{nav.projects}</a>
+              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">{nav.skills}</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">{nav.contact}</a>
+              <button 
+                onClick={() => setLang(lang === "en" ? "ar" : "en")}
+                className="font-bold text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                {lang === "en" ? "AR" : "EN"}
+              </button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button 
-              className="sm:hidden text-slate-900 p-2 -mr-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                {isMenuOpen ? (
-                  <>
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </>
-                ) : (
-                  <>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                  </>
-                )}
-              </svg>
-            </button>
+            {/* Mobile Controls */}
+            <div className="flex items-center gap-4 sm:hidden">
+              <button 
+                onClick={() => setLang(lang === "en" ? "ar" : "en")}
+                className="font-bold text-sm text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                {lang === "en" ? "AR" : "EN"}
+              </button>
+              {/* Mobile Menu Button */}
+              <button 
+                className="text-slate-900 p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {isMenuOpen ? (
+                    <>
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </>
+                  ) : (
+                    <>
+                      <line x1="3" y1="12" x2="21" y2="12"></line>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </>
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Mobile Links */}
           {isMenuOpen && (
             <div className="sm:hidden flex flex-col gap-6 mt-6 pt-6 border-t border-slate-100 text-sm font-semibold tracking-wide uppercase text-slate-600">
-              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">About</a>
-              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">Projects</a>
-              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">Skills</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">{nav.about}</a>
+              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">{nav.projects}</a>
+              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">{nav.skills}</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">{nav.contact}</a>
             </div>
           )}
         </nav>
 
         {/* Hero */}
         <section className="py-12 md:py-16 lg:py-20 border-b border-slate-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-start">
             {/* Text Column */}
             <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start">
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-6 lg:mb-8 text-slate-900 whitespace-pre-line">
-                {hero.title.split('\n').map((line, i) => (
-                  <React.Fragment key={i}>
-                    {line.includes("Code") ? (
-                      <>
-                        {line.split("Code")[0]}
-                        <span className="text-blue-600">Code</span>
-                        {line.split("Code")[1]}
-                      </>
-                    ) : (
-                      line
-                    )}
-                    {i === 0 && <br />}
-                  </React.Fragment>
-                ))}
+                {hero.title.split(/(Code|الكود)/g).map((part, i) => 
+                  (part === "Code" || part === "الكود") 
+                    ? <span key={i} className="text-blue-600">{part}</span> 
+                    : part
+                )}
               </h2>
 
               <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10">
@@ -151,14 +233,14 @@ export default function App() {
                   onClick={(e) => scrollToSection(e, "projects")}
                   className="bg-blue-600 hover:bg-blue-700 text-white font-semibold tracking-wide py-3 px-8 rounded-full transition-colors text-center"
                 >
-                  View Projects
+                  {buttons.viewProjects}
                 </a>
                 <a 
                   href="#contact" 
                   onClick={(e) => scrollToSection(e, "contact")}
                   className="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold tracking-wide py-3 px-8 rounded-full transition-colors text-center"
                 >
-                  Contact Me
+                  {buttons.contactMe}
                 </a>
               </div>
             </div>
@@ -181,15 +263,19 @@ export default function App() {
         {/* Projects */}
         <section id="projects" className="border-b border-slate-200">
           <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="md:col-span-3 py-12 md:py-16 md:border-r border-slate-200 md:pr-8">
+            <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 md:pe-8">
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400">
-                Selected Works
+                {sections.selectedWorks}
               </h3>
             </div>
             <div className="md:col-span-9">
               {projects.map((project, i) => (
                 <div
                   key={i}
+                  onClick={() => {
+                    setSelectedProject(project);
+                    window.scrollTo({ top: 0, behavior: 'auto' });
+                  }}
                   className="group flex flex-col md:flex-row md:items-start justify-between py-12 px-0 md:px-8 border-t border-slate-200 first:border-t-0 hover:bg-slate-50 transition-colors cursor-pointer"
                 >
                   <div className="max-w-2xl">
@@ -201,7 +287,7 @@ export default function App() {
                         {project.year}
                       </span>
                     </div>
-                    <p className="text-slate-600 mb-4 text-lg leading-relaxed">
+                    <p className="text-slate-500 font-semibold mb-4 text-lg leading-relaxed">
                       {project.desc}
                     </p>
                     <p className="text-sm font-semibold text-blue-600 tracking-wide">
@@ -225,10 +311,10 @@ export default function App() {
             {/* About */}
             <div
               id="about"
-              className="md:col-span-5 py-16 md:border-r border-slate-200 md:pr-12"
+              className="md:col-span-5 py-16 md:border-e border-slate-200 md:pe-12"
             >
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">
-                About
+                {sections.about}
               </h3>
               {about.map((paragraph, i) => (
                 <p key={i} className="text-lg leading-relaxed text-slate-700 mb-6 last:mb-0">
@@ -240,10 +326,10 @@ export default function App() {
             {/* Skills */}
             <div
               id="skills"
-              className="md:col-span-7 py-16 md:pl-12 border-t md:border-t-0 border-slate-200"
+              className="md:col-span-7 py-16 md:ps-12 border-t md:border-t-0 border-slate-200"
             >
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">
-                Expertise
+                {sections.expertise}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
                 {expertise.map((item, i) => (
@@ -267,10 +353,13 @@ export default function App() {
         <section id="contact" className="py-24 mt-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
             <div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900">
-                Let's build
-                <br />
-                something useful.
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 whitespace-pre-line">
+                {sections.letsBuild.split('\n').map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i === 0 && <br />}
+                  </React.Fragment>
+                ))}
               </h2>
               <a
                 href={`mailto:${personal.email}`}
