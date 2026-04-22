@@ -237,7 +237,7 @@ const HomePage = ({
               </h2>
               <a
                 href={`mailto:${personal.email}`}
-                className="inline-flex items-center gap-3 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors group"
+                className="inline-flex items-center gap-3 text-lg sm:text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors group"
               >
                 <i className="ri-mail-line"></i>
                 {personal.email}
