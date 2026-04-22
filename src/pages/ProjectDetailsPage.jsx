@@ -1,18 +1,23 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import Button from "../components/Button";
 import ProjectButtons from "../components/ProjectButtons";
 
 const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
       <nav className="py-6 md:py-8 border-b border-slate-200 edge-to-edge">
-        <button
+        <Button
           onClick={onBack}
-          className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-slate-600 hover:text-blue-600 transition-colors"
+          variant="secondary"
+          icon={({ className }) => (
+            <ArrowLeft size={18} className={`rtl:rotate-180 ${className}`} />
+          )}
+          iconPosition="end"
+          className="uppercase"
         >
-          <ArrowLeft size={18} className="rtl:rotate-180" />
-          {lang === "ar" ? "العودة للمشاريع" : "Back to Projects"}
-        </button>
+          {lang === "ar" ? "رجوع" : "Back"}
+        </Button>
       </nav>
 
       <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 flex-1 edge-to-edge">
@@ -37,7 +42,7 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
             <ProjectButtons project={project} buttons={buttons} />
           </div>
           {project.image && (
-            <div className="w-full bg-slate-100 rounded-lg overflow-hidden border border-slate-200 aspect-[4/3]">
+            <div className="w-full bg-slate-100 overflow-hidden aspect-[4/3]">
               <img
                 src={project.image}
                 alt={project.title}

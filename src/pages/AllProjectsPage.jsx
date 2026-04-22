@@ -38,7 +38,7 @@ const AllProjectsPage = ({
           {projects.map((project, i) => (
             <div
               key={i}
-              className="group border border-slate-200 rounded-xl overflow-hidden hover:border-blue-300 hover:shadow-xl hover:shadow-blue-600/5 transition-all duration-300"
+              className="group overflow-hidden hover:border-blue-300 hover:shadow-xl hover:shadow-blue-600/5 transition-all duration-300"
             >
               {project.image && (
                 <div

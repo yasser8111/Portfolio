@@ -111,7 +111,7 @@ const HomePage = ({
         <section id="projects" className="border-b border-slate-200">
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
                 {sections.selectedWorks}
               </h3>
             </div>
@@ -131,7 +131,7 @@ const HomePage = ({
                         {project.year}
                       </span>
                     </div>
-                    <p className="text-slate-400 font-semibold mb-4 text-lg leading-relaxed">
+                    <p className="text-slate-400 font-semibold mb-4 text-lg leading-relaxed line-clamp-2">
                       {project.desc}
                     </p>
                     <p className="text-sm font-semibold text-blue-600 tracking-wide">
