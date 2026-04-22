@@ -1,21 +1,18 @@
+import React from "react";
 import { ArrowLeft } from "lucide-react";
-import Footer from "../components/Footer";
-import Button from "../components/Button";
 import ProjectButtons from "../components/ProjectButtons";
 
-export default function ProjectDetailsPage({
-  project,
-  onBack,
-  lang,
-  footerText,
-  buttons,
-}) {
+const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
       <nav className="py-6 md:py-8 border-b border-slate-200">
-        <Button variant="ghost" onClick={onBack} icon={ArrowLeft} className="uppercase rtl:flex-row-reverse">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-slate-600 hover:text-blue-600 transition-colors"
+        >
+          <ArrowLeft size={18} className="rtl:rotate-180" />
           {lang === "ar" ? "العودة للمشاريع" : "Back to Projects"}
-        </Button>
+        </button>
       </nav>
 
       <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 flex-1">
@@ -39,16 +36,25 @@ export default function ProjectDetailsPage({
             </div>
             <ProjectButtons project={project} buttons={buttons} />
           </div>
-
           {project.image && (
             <div className="w-full bg-slate-100 rounded-lg overflow-hidden border border-slate-200 aspect-[4/3]">
-              <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           )}
         </div>
       </section>
 
-      <Footer text={footerText} />
+      <footer className="py-8 mt-auto border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4">
+        <p className="text-slate-500 font-medium text-sm tracking-wide">
+          &copy; {new Date().getFullYear()} {footerText}
+        </p>
+      </footer>
     </div>
   );
-}
+};
+
+export default ProjectDetailsPage;

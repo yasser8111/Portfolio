@@ -1,38 +1,54 @@
-import { useState } from "react";
+import React from "react";
 import { Menu, X } from "lucide-react";
 
-export default function Navbar({ personal, nav, lang, setLang, scrollToSection }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleScroll = (e, id) => {
-    setIsMenuOpen(false);
-    scrollToSection(e, id);
-  };
-
-  const navLinks = [
-    { id: "about", label: nav.about },
-    { id: "projects", label: nav.projects },
-    { id: "skills", label: nav.skills },
-    { id: "contact", label: nav.contact },
-  ];
-
+const Navbar = ({
+  personal,
+  nav,
+  lang,
+  setLang,
+  isMenuOpen,
+  setIsMenuOpen,
+  scrollToSection,
+}) => {
   return (
     <nav className="py-6 md:py-8 border-b border-slate-200">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold tracking-tight">{personal.nickname}</h1>
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">
+            {personal.nickname}
+          </h1>
+        </div>
 
-        {/* Desktop */}
+        {/* Desktop Links */}
         <div className="hidden sm:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
-          {navLinks.map(({ id, label }) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={(e) => handleScroll(e, id)}
-              className="hover:text-blue-600 transition-colors"
-            >
-              {label}
-            </a>
-          ))}
+          <a
+            href="#about"
+            onClick={(e) => scrollToSection(e, "about")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.about}
+          </a>
+          <a
+            href="#projects"
+            onClick={(e) => scrollToSection(e, "projects")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.projects}
+          </a>
+          <a
+            href="#skills"
+            onClick={(e) => scrollToSection(e, "skills")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.skills}
+          </a>
+          <a
+            href="#contact"
+            onClick={(e) => scrollToSection(e, "contact")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.contact}
+          </a>
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
             className="font-bold text-blue-600 hover:text-blue-800 transition-colors"
@@ -41,7 +57,7 @@ export default function Navbar({ personal, nav, lang, setLang, scrollToSection }
           </button>
         </div>
 
-        {/* Mobile */}
+        {/* Mobile Controls */}
         <div className="flex items-center gap-4 sm:hidden">
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
@@ -49,27 +65,50 @@ export default function Navbar({ personal, nav, lang, setLang, scrollToSection }
           >
             {lang === "en" ? "AR" : "EN"}
           </button>
-          <button className="text-slate-900 p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            className="text-slate-900 p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Links */}
       {isMenuOpen && (
         <div className="sm:hidden flex flex-col gap-6 mt-6 pt-6 border-t border-slate-100 text-sm font-semibold tracking-wide uppercase text-slate-600">
-          {navLinks.map(({ id, label }) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={(e) => handleScroll(e, id)}
-              className="hover:text-blue-600 transition-colors"
-            >
-              {label}
-            </a>
-          ))}
+          <a
+            href="#about"
+            onClick={(e) => scrollToSection(e, "about")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.about}
+          </a>
+          <a
+            href="#projects"
+            onClick={(e) => scrollToSection(e, "projects")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.projects}
+          </a>
+          <a
+            href="#skills"
+            onClick={(e) => scrollToSection(e, "skills")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.skills}
+          </a>
+          <a
+            href="#contact"
+            onClick={(e) => scrollToSection(e, "contact")}
+            className="hover:text-blue-600 transition-colors"
+          >
+            {nav.contact}
+          </a>
         </div>
       )}
     </nav>
   );
-}
+};
+
+export default Navbar;
