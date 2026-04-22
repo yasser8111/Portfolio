@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import portfolioData from "./data.json";
+import Button from "./components/Button";
 
 const GithubIcon = ({ className }) => (
   <svg
@@ -45,18 +46,88 @@ const InstagramIcon = ({ className }) => (
   </svg>
 );
 
-const ProjectDetails = ({ project, onBack, lang, footerText }) => {
+const BackArrow = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="rtl:rotate-180"
+  >
+    <line x1="19" y1="12" x2="5" y2="12" />
+    <polyline points="12 19 5 12 12 5" />
+  </svg>
+);
+
+const ExternalLinkIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
+const CodeIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="16 18 22 12 16 6" />
+    <polyline points="8 6 2 12 8 18" />
+  </svg>
+);
+
+const ProjectButtons = ({ project, buttons }) => (
+  <div className="flex flex-wrap gap-3 mt-6">
+    <Button
+      href={project.demoUrl || "#"}
+      external
+      variant="primary"
+      className="hover-dark"
+      icon={ExternalLinkIcon}
+    >
+      {buttons.liveDemo}
+    </Button>
+    <Button
+      href={project.repoUrl || "#"}
+      external
+      variant="dark"
+      className="hover-blue"
+      icon={CodeIcon}
+    >
+      {buttons.sourceCode}
+    </Button>
+  </div>
+);
+
+const ProjectDetails = ({ project, onBack, lang, footerText, buttons }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
       <nav className="py-6 md:py-8 border-b border-slate-200">
-        <button 
+        <button
           onClick={onBack}
           className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-slate-600 hover:text-blue-600 transition-colors"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rtl:rotate-180">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
+          <BackArrow />
           {lang === "ar" ? "العودة للمشاريع" : "Back to Projects"}
         </button>
       </nav>
@@ -67,7 +138,6 @@ const ProjectDetails = ({ project, onBack, lang, footerText }) => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-slate-900 leading-[1.1] mb-6">
               {project.title}
             </h1>
-            
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <span className="text-sm font-mono font-medium px-3 py-1 bg-slate-100 text-slate-600">
                 {project.year}
@@ -76,17 +146,20 @@ const ProjectDetails = ({ project, onBack, lang, footerText }) => {
                 {project.tech}
               </span>
             </div>
-
             <div className="text-lg md:text-xl text-slate-600 leading-relaxed space-y-6">
-              {project.desc.split('\n').map((p, i) => (
+              {project.desc.split("\n").map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
+            <ProjectButtons project={project} buttons={buttons} />
           </div>
-
           {project.image && (
             <div className="w-full bg-slate-100 rounded-lg overflow-hidden border border-slate-200 aspect-[4/3]">
-              <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           )}
         </div>
@@ -101,11 +174,106 @@ const ProjectDetails = ({ project, onBack, lang, footerText }) => {
   );
 };
 
+const AllProjectsPage = ({
+  projects,
+  onBack,
+  onSelectProject,
+  lang,
+  footerText,
+  buttons,
+  nickname,
+}) => {
+  return (
+    <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
+      <nav className="py-6 md:py-8 border-b border-slate-200 flex justify-between items-center">
+        <h1 className="text-2xl font-bold tracking-tight">{nickname}</h1>
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-slate-600 hover:text-blue-600 transition-colors"
+        >
+          <BackArrow />
+          {buttons.backToHome}
+        </button>
+      </nav>
+
+      <section className="py-12 md:py-16 flex-1">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-4">
+          {lang === "ar" ? "جميع المشاريع" : "All Projects"}
+        </h2>
+        <p className="text-lg text-slate-500 mb-12 max-w-2xl">
+          {lang === "ar"
+            ? "استعرض جميع الأعمال والمشاريع التي قمت بتطويرها."
+            : "Browse all the projects and works I've built."}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, i) => (
+            <div
+              key={i}
+              className="group border border-slate-200 rounded-xl overflow-hidden hover:border-blue-300 hover:shadow-xl hover:shadow-blue-600/5 transition-all duration-300"
+            >
+              {project.image && (
+                <div
+                  className="aspect-[16/10] bg-slate-100 overflow-hidden cursor-pointer"
+                  onClick={() => onSelectProject(project)}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <h3
+                    className="text-xl font-bold tracking-tight text-slate-900 cursor-pointer hover:text-blue-600 transition-colors"
+                    onClick={() => onSelectProject(project)}
+                  >
+                    {project.title}
+                  </h3>
+                  <span className="text-xs font-mono font-medium px-2 py-0.5 bg-slate-100 text-slate-500">
+                    {project.year}
+                  </span>
+                </div>
+                <p className="text-sm font-semibold text-blue-600 tracking-wide mb-3">
+                  {project.tech}
+                </p>
+                <p className="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                  {project.desc}
+                </p>
+                <ProjectButtons project={project} buttons={buttons} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="py-8 mt-12 border-t border-slate-200 flex justify-center items-center">
+        <p className="text-slate-500 font-medium text-sm tracking-wide">
+          &copy; {new Date().getFullYear()} {footerText}
+        </p>
+      </footer>
+    </div>
+  );
+};
+
 export default function App() {
   const [lang, setLang] = useState(portfolioData.lang || "en");
-  const { personal, hero, about, projects, expertise, footer, nav, buttons, sections } = portfolioData[lang];
+  const {
+    personal,
+    hero,
+    about,
+    projects,
+    expertise,
+    footer,
+    nav,
+    buttons,
+    sections,
+  } = portfolioData[lang];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
@@ -120,25 +288,64 @@ export default function App() {
 
   if (selectedProject) {
     return (
-      <div dir={lang === "ar" ? "rtl" : "ltr"} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white">
-        <ProjectDetails 
-          project={selectedProject} 
+      <div
+        dir={lang === "ar" ? "rtl" : "ltr"}
+        className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
+      >
+        <ProjectDetails
+          project={selectedProject}
           onBack={() => {
             setSelectedProject(null);
-            setTimeout(() => {
-              document.getElementById("projects")?.scrollIntoView({ behavior: 'auto', block: 'start' });
-            }, 0);
-          }} 
-          lang={lang} 
+            if (!showAllProjects) {
+              setTimeout(() => {
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "auto", block: "start" });
+              }, 0);
+            }
+          }}
+          lang={lang}
           footerText={footer.text}
+          buttons={buttons}
+        />
+      </div>
+    );
+  }
+
+  if (showAllProjects) {
+    return (
+      <div
+        dir={lang === "ar" ? "rtl" : "ltr"}
+        className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
+      >
+        <AllProjectsPage
+          projects={projects}
+          onBack={() => {
+            setShowAllProjects(false);
+            setTimeout(() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "auto", block: "start" });
+            }, 0);
+          }}
+          onSelectProject={(p) => {
+            setSelectedProject(p);
+            window.scrollTo({ top: 0, behavior: "auto" });
+          }}
+          lang={lang}
+          footerText={footer.text}
+          buttons={buttons}
+          nickname={personal.nickname}
         />
       </div>
     );
   }
 
   return (
-    <div dir={lang === "ar" ? "rtl" : "ltr"} className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white ">
-      
+    <div
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white "
+    >
       {portfolioData.isUnderConstruction && (
         <div className="bg-blue-600 text-white py-2 px-4 text-center text-xs font-bold tracking-widest uppercase">
           {personal.underConstructionText}
@@ -151,16 +358,42 @@ export default function App() {
         <nav className="py-6 md:py-8 border-b border-slate-200">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">{personal.nickname}</h1>
+              <h1 className="text-2xl font-bold tracking-tight">
+                {personal.nickname}
+              </h1>
             </div>
-            
+
             {/* Desktop Links */}
             <div className="hidden sm:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
-              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">{nav.about}</a>
-              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">{nav.projects}</a>
-              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">{nav.skills}</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">{nav.contact}</a>
-              <button 
+              <a
+                href="#about"
+                onClick={(e) => scrollToSection(e, "about")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.about}
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => scrollToSection(e, "projects")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.projects}
+              </a>
+              <a
+                href="#skills"
+                onClick={(e) => scrollToSection(e, "skills")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.skills}
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => scrollToSection(e, "contact")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.contact}
+              </a>
+              <button
                 onClick={() => setLang(lang === "en" ? "ar" : "en")}
                 className="font-bold text-blue-600 hover:text-blue-800 transition-colors"
               >
@@ -170,18 +403,27 @@ export default function App() {
 
             {/* Mobile Controls */}
             <div className="flex items-center gap-4 sm:hidden">
-              <button 
+              <button
                 onClick={() => setLang(lang === "en" ? "ar" : "en")}
                 className="font-bold text-sm text-blue-600 hover:text-blue-800 transition-colors"
               >
                 {lang === "en" ? "AR" : "EN"}
               </button>
               {/* Mobile Menu Button */}
-              <button 
+              <button
                 className="text-slate-900 p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   {isMenuOpen ? (
                     <>
                       <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -202,10 +444,34 @@ export default function App() {
           {/* Mobile Links */}
           {isMenuOpen && (
             <div className="sm:hidden flex flex-col gap-6 mt-6 pt-6 border-t border-slate-100 text-sm font-semibold tracking-wide uppercase text-slate-600">
-              <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="hover:text-blue-600 transition-colors">{nav.about}</a>
-              <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="hover:text-blue-600 transition-colors">{nav.projects}</a>
-              <a href="#skills" onClick={(e) => scrollToSection(e, "skills")} className="hover:text-blue-600 transition-colors">{nav.skills}</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="hover:text-blue-600 transition-colors">{nav.contact}</a>
+              <a
+                href="#about"
+                onClick={(e) => scrollToSection(e, "about")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.about}
+              </a>
+              <a
+                href="#projects"
+                onClick={(e) => scrollToSection(e, "projects")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.projects}
+              </a>
+              <a
+                href="#skills"
+                onClick={(e) => scrollToSection(e, "skills")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.skills}
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => scrollToSection(e, "contact")}
+                className="hover:text-blue-600 transition-colors"
+              >
+                {nav.contact}
+              </a>
             </div>
           )}
         </nav>
@@ -216,10 +482,14 @@ export default function App() {
             {/* Text Column */}
             <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start">
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-6 lg:mb-8 text-slate-900 whitespace-pre-line">
-                {hero.title.split(/(Code|الكود)/g).map((part, i) => 
-                  (part === "Code" || part === "الكود") 
-                    ? <span key={i} className="text-blue-600">{part}</span> 
-                    : part
+                {hero.title.split(/(Code|الكود)/g).map((part, i) =>
+                  part === "Code" || part === "الكود" ? (
+                    <span key={i} className="text-blue-600">
+                      {part}
+                    </span>
+                  ) : (
+                    part
+                  ),
                 )}
               </h2>
 
@@ -228,23 +498,27 @@ export default function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
-                <a 
-                  href="#projects" 
+                <Button
+                  href="#projects"
                   onClick={(e) => scrollToSection(e, "projects")}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold tracking-wide py-3 px-8 rounded-full transition-colors text-center"
+                  variant="primary"
+                  size="lg"
+                  className="hover-dark"
                 >
                   {buttons.viewProjects}
-                </a>
-                <a 
-                  href="#contact" 
+                </Button>
+                <Button
+                  href="#contact"
                   onClick={(e) => scrollToSection(e, "contact")}
-                  className="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold tracking-wide py-3 px-8 rounded-full transition-colors text-center"
+                  variant="outline"
+                  size="lg"
+                  className="hover-blue"
                 >
                   {buttons.contactMe}
-                </a>
+                </Button>
               </div>
             </div>
-            
+
             {/* Image Column */}
             <div className="order-2 lg:order-2 flex justify-center items-center">
               <DotLottieReact
@@ -274,7 +548,7 @@ export default function App() {
                   key={i}
                   onClick={() => {
                     setSelectedProject(project);
-                    window.scrollTo({ top: 0, behavior: 'auto' });
+                    window.scrollTo({ top: 0, behavior: "auto" });
                   }}
                   className="group flex flex-col md:flex-row md:items-start justify-between py-12 px-0 md:px-8 border-t border-slate-200 first:border-t-0 hover:bg-slate-50 transition-colors cursor-pointer"
                 >
@@ -293,6 +567,7 @@ export default function App() {
                     <p className="text-sm font-semibold text-blue-600 tracking-wide">
                       {project.tech}
                     </p>
+                    {/* <ProjectButtons project={project} buttons={buttons} /> */}
                   </div>
                   <div className="mt-6 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="material-symbols-sharp text-[80px] text-blue-600">
@@ -301,6 +576,35 @@ export default function App() {
                   </div>
                 </div>
               ))}
+              <div className="py-12 px-0 md:px-8 border-t border-slate-200 flex justify-center md:justify-start">
+                <Button
+                  onClick={() => {
+                    setShowAllProjects(true);
+                    window.scrollTo({ top: 0, behavior: "auto" });
+                  }}
+                  variant="outline"
+                  icon={({ className }) => (
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`rtl:rotate-180 ${className}`}
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  )}
+                  iconPosition="end"
+                  className="uppercase"
+                >
+                  {buttons.viewAll}
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -317,7 +621,10 @@ export default function App() {
                 {sections.about}
               </h3>
               {about.map((paragraph, i) => (
-                <p key={i} className="text-lg leading-relaxed text-slate-700 mb-6 last:mb-0">
+                <p
+                  key={i}
+                  className="text-lg leading-relaxed text-slate-700 mb-6 last:mb-0"
+                >
                   {paragraph}
                 </p>
               ))}
@@ -354,7 +661,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
             <div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 whitespace-pre-line">
-                {sections.letsBuild.split('\n').map((line, i) => (
+                {sections.letsBuild.split("\n").map((line, i) => (
                   <React.Fragment key={i}>
                     {line}
                     {i === 0 && <br />}
@@ -374,25 +681,34 @@ export default function App() {
             </div>
 
             <div className="flex flex-col items-start md:items-end gap-8">
-              <div className="flex gap-4">
-                <a
+              <div className="flex gap-0 border border-slate-200 overflow-hidden">
+                <Button
                   href={personal.socials.github}
-                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors rounded-full"
+                  external
+                  variant="social"
+                  shape="squareIcon"
+                  className="border-e border-slate-200 hover-github"
                 >
-                  <GithubIcon className="w-6 h-6" />
-                </a>
-                <a
+                  <GithubIcon className="w-5 h-5" />
+                </Button>
+                <Button
                   href={personal.socials.linkedin}
-                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-color rounded-full"
+                  external
+                  variant="social"
+                  shape="squareIcon"
+                  className="border-e border-slate-200 hover-linkedin"
                 >
-                  <LinkedinIcon className="w-6 h-6" />
-                </a>
-                <a
+                  <LinkedinIcon className="w-5 h-5" />
+                </Button>
+                <Button
                   href={personal.socials.instagram}
-                  className="p-4 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors rounded-full"
+                  external
+                  variant="social"
+                  shape="squareIcon"
+                  className="hover-instagram"
                 >
-                  <InstagramIcon className="w-6 h-6" />
-                </a>
+                  <InstagramIcon className="w-5 h-5" />
+                </Button>
               </div>
             </div>
           </div>

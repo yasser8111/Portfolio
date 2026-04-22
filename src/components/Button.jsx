@@ -1,0 +1,92 @@
+/**
+ * Reusable Button component with multiple variants and sizes.
+ * Supports both <button> and <a> rendering via the `as` or `href` prop.
+ */
+
+const variants = {
+  primary:
+    "bg-blue-600 text-white shadow-sm",
+  dark:
+    "bg-slate-900 text-white shadow-sm",
+  secondary:
+    "bg-slate-100 text-slate-800",
+  ghost:
+    "bg-transparent text-slate-600 hover:text-blue-600",
+  outline:
+    "border border-slate-200 bg-transparent text-slate-700",
+  tech:
+    "border border-slate-900 bg-transparent text-slate-900",
+  social:
+    "text-slate-700",
+};
+
+const sizes = {
+  sm: "py-2 px-4 text-xs gap-1.5",
+  md: "py-2.5 px-5 text-sm gap-2",
+  lg: "py-3 px-8 text-sm gap-2",
+};
+
+const shapes = {
+  pill: "rounded-full",
+  rounded: "rounded-xl",
+  square: "rounded-none",
+  icon: "rounded-full p-4",
+  squareIcon: "rounded-none p-4 aspect-square",
+};
+
+export default function Button({
+  children,
+  variant = "primary",
+  size = "md",
+  shape = "square",
+  href,
+  tech = true,
+  external = false,
+  className = "",
+  icon: Icon,
+  iconPosition = "start",
+  onClick,
+  ...rest
+}) {
+  const base =
+    "inline-flex items-center justify-center font-semibold tracking-wide transition-all duration-200 cursor-pointer select-none";
+
+  const classes = [
+    base,
+    variants[variant] || variants.primary,
+    tech ? "btn-tech-hover" : "",
+    shape === "icon" ? shapes.icon : sizes[size],
+    shapes[shape] || shapes.square,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const content = (
+    <>
+      {Icon && iconPosition === "start" && <Icon size={16} />}
+      {children}
+      {Icon && iconPosition === "end" && <Icon size={16} />}
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        onClick={onClick}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...rest}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button className={classes} onClick={onClick} {...rest}>
+      {content}
+    </button>
+  );
+}

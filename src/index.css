@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 
 
 @theme {
   --font-sans:
-    "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Inter", "Cairo", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -26,8 +25,14 @@
 
   /* Optimize Arabic line height and spacing */
   [dir="rtl"] {
-    line-height: 1.6;
-    letter-spacing: 0;
+    font-family: "Cairo", "IBM Plex Sans Arabic", var(--font-sans);
+    line-height: 1.7;
+    letter-spacing: 0 !important;
+    word-spacing: 0.05em;
+  }
+
+  [dir="rtl"] * {
+    letter-spacing: 0 !important;
   }
 
   /* Custom scrollbar for an engineered feel */
@@ -48,3 +53,46 @@
     background: #94a3b8;
   }
 }
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tech Hover Effect */
+.btn-tech-hover {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-tech-hover::before {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--tech-bg, #0f172a);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.btn-tech-hover:hover::before {
+  bottom: 0;
+}
+
+.btn-tech-hover:hover {
+  color: white !important;
+  border-color: var(--tech-bg, #0f172a) !important;
+}
+
+/* Specific Brand Colors using Utility Classes */
+.hover-github { --tech-bg: #24292f; }
+.hover-linkedin { --tech-bg: #0077b5; }
+.hover-instagram { --tech-bg: #e4405f; }
+.hover-blue { --tech-bg: #2563eb; }
+.hover-dark { --tech-bg: #0f172a; }

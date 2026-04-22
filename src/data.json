@@ -6,11 +6,16 @@
       "about": "About",
       "projects": "Projects",
       "skills": "Skills",
-      "contact": "Contact"
+      "contact": "Contact",
+      "allProjects": "All Projects"
     },
     "buttons": {
       "viewProjects": "View Projects",
-      "contactMe": "Contact Me"
+      "contactMe": "Contact Me",
+      "liveDemo": "Live Demo",
+      "sourceCode": "Source Code",
+      "viewAll": "View All Projects",
+      "backToHome": "Back to Home"
     },
     "sections": {
       "selectedWorks": "Selected Works",
@@ -19,9 +24,9 @@
       "letsBuild": "Let's build\nsomething useful."
     },
     "personal": {
-      "nickname": "YSR",
+      "nickname": "YR",
       "name": "YASER",
-      "email": "yasserxd653@gmail.com",
+      "email": "yasser.dev.811@gmail.com",
       "underConstructionText": "Site under development",
       "socials": {
         "github": "#",
@@ -44,21 +49,27 @@
         "tech": "React / OpenAI API",
         "desc": "A smart AI chatbot interface designed to provide fast and clean interactions, focused on productivity and minimal user experience.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2070&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
       },
       {
         "title": "GridX",
         "tech": "HTML / CSS / JavaScript",
         "desc": "A modern grid-based layout system for building responsive and visually balanced web interfaces with a minimalist design approach.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
       },
       {
         "title": "ControlTap",
         "tech": "JavaScript / Chrome Extension",
         "desc": "A browser extension that enhances user control and productivity by simplifying tab management and providing quick-access actions.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
       }
     ],
 
@@ -81,7 +92,7 @@
       }
     ],
     "footer": {
-      "text": "Designed and developed by YASER."
+      "text": "Designed and developed by YASER :D."
     }
   },
   "ar": {
@@ -89,11 +100,16 @@
       "about": "نبذة عني",
       "projects": "المشاريع",
       "skills": "المهارات",
-      "contact": "تواصل معي"
+      "contact": "تواصل معي",
+      "allProjects": "جميع المشاريع"
     },
     "buttons": {
       "viewProjects": "عرض المشاريع",
-      "contactMe": "تواصل معي"
+      "contactMe": "تواصل معي",
+      "liveDemo": "معاينة مباشرة",
+      "sourceCode": "الكود المصدري",
+      "viewAll": "عرض جميع المشاريع",
+      "backToHome": "العودة للرئيسية"
     },
     "sections": {
       "selectedWorks": "أعمال مختارة",
@@ -127,21 +143,27 @@
         "tech": "HTML / CSS / JS / Firebase",
         "desc": "موقع تجارة إلكترونية بسيط يركز على واجهة نظيفة وتجربة مستخدم سلسة. يتضمن عرض المنتجات، تصفيتها، ونظام طلب عبر WhatsApp.",
         "year": "2025",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
       },
       {
         "title": "Portify",
         "tech": "React / AI Integration",
         "desc": "أداة تجريبية تنشئ مواقع محافظ شخصية تلقائيًا باستخدام تخطيطات مسبقة ومحتوى مُولد بالذكاء الاصطناعي.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
       },
       {
         "title": "FPS Game Prototype",
         "tech": "Godot / GDScript",
         "desc": "نموذج أولي للعبة تصويب من منظور الشخص الأول يركز على الحركة، آليات إطلاق النار، وتجربة لعب سلسة.",
         "year": "2025",
-        "image": "https://images.unsplash.com/photo-1618477247222-ac60c9020460?q=80&w=2070&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1618477247222-ac60c9020460?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
       }
     ],
     "expertise": [
@@ -163,7 +185,7 @@
       }
     ],
     "footer": {
-      "text": "تم التصميم والتطوير بواسطة YASER."
+      "text": "تم التصميم والتطوير بواسطة ياسر :D. "
     }
   }
 }
