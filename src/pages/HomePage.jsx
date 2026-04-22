@@ -227,7 +227,7 @@ const HomePage = ({
         <section id="contact" className="py-24 px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
             <div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 whitespace-pre-line">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 whitespace-pre-line">
                 {sections.letsBuild.split("\n").map((line, i) => (
                   <React.Fragment key={i}>
                     {line}
