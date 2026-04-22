@@ -1,5 +1,6 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { useState, Suspense, lazy, useEffect } from "react";
 import portfolioData from "./data.json";
+import Preloader from "./components/Preloader";
 
 // Lazy Load Pages for Performance
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -24,6 +25,15 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Initial page load simulation
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
@@ -118,6 +128,7 @@ export default function App() {
       dir={lang === "ar" ? "rtl" : "ltr"}
       className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
     >
+      <Preloader isLoading={isLoading} />
       <Suspense fallback={<div className="min-h-screen bg-white" />}>
         {renderPage()}
       </Suspense>

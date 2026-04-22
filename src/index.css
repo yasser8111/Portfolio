@@ -146,64 +146,64 @@
     padding-right: 3rem;
   }
 }
-/* Custom Square Download Button Animation */
-.downloader-btn {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
+
+/* --- Preloader Styles --- */
+.preloader-container {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
-  background-color: #0f172a; /* Slate 900 (Initial Black) */
-  color: white;
-  z-index: 1;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: border-color 0.3s ease;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Layer 1: The Blue Fill */
-.downloader-btn::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: #2563eb; /* Blue 600 */
-  transition: height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: -2;
-}
-
-/* Layer 2: The Final Black Fill */
-.downloader-btn::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: #0f172a; /* Back to Black */
-  transition: height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  transition-delay: 0.15s;
-  z-index: -1;
-}
-
-.downloader-btn:hover::before,
-.downloader-btn:hover::after {
-  height: 100%;
-}
-
-.downloader-btn:hover {
-  border-color: #2563eb;
-}
-
-.downloader-btn svg {
+.square-loader {
+  width: 60px;
+  height: 60px;
+  background-color: #0f172a; /* Initial Black */
   position: relative;
-  z-index: 2;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.downloader-btn:hover svg {
-  transform: translateY(2px);
+/* Layer 1: Blue Fill */
+.square-loader::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #2563eb;
+  animation: loaderFillBlue 2.5s infinite cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Layer 2: Black Fill */
+.square-loader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #0f172a;
+  animation: loaderFillBlack 2.5s infinite cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes loaderFillBlue {
+  0%, 10% { height: 0; }
+  40%, 60% { height: 100%; }
+  90%, 100% { height: 100%; }
+}
+
+@keyframes loaderFillBlack {
+  0%, 50% { height: 0; }
+  80%, 100% { height: 100%; }
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
 }
