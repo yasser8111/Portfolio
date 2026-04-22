@@ -174,12 +174,20 @@
 }
 
 .square-loader {
-  width: 70px;
-  height: 70px;
+  width: 50px; /* Smaller for mobile */
+  height: 50px;
   background-color: #0f172a; /* Solid Black */
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .square-loader {
+    width: 70px; /* Larger for desktop */
+    height: 70px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
 }
 
 /* Layer 1: Blue Fill */
