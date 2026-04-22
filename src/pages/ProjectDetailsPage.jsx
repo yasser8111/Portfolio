@@ -13,7 +13,7 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
           icon={({ className }) => (
             <ArrowLeft size={18} className={`rtl:rotate-180 ${className}`} />
           )}
-          iconPosition="end"
+          iconPosition="start"
           className="uppercase"
         >
           {buttons.backToHome}

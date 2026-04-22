@@ -1,16 +1,23 @@
-# React + Vite
+# Modern Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, premium, and highly responsive developer portfolio template built with **React**, **Vite**, and **Tailwind CSS**. This project is designed with a minimalist "Swiss-inspired" aesthetic, focusing on clean typography and smooth interactive animations.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This portfolio is designed to be easily customizable. You don't need to dive deep into the code to change your information.
 
-## React Compiler
+### Customization
+1. **Download** the repository to your local machine.
+2. Open the file `src/data.json`.
+3. Modify the text, project details, skills, and social media links to match your professional profile.
+4. The site will automatically update with your new information.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
+- **Data-Driven**: Managed entirely through `data.json`.
+- **Multilingual**: Full support for English and Arabic (RTL).
+- **Premium UI**: Custom animations, glassmorphism effects, and professional page loaders.
+- **Responsive**: Perfectly optimized for mobile, tablet, and desktop.
+- **SEO Ready**: Includes sitemap, robots.txt, and optimized meta tags.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+Built with ❤️ for developers who value design and performance.

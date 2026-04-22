@@ -46,6 +46,15 @@
 
     "projects": [
       {
+        "title": "Customizable Portfolio",
+        "tech": "React / OpenAI API",
+        "desc": "A smart AI chatbot interface designed to provide fast and clean interactions, focused on productivity and minimal user experience.",
+        "year": "2026",
+        "image": "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2070&auto=format&fit=crop",
+        "demoUrl": "#",
+        "repoUrl": "#"
+      },
+      {
         "title": "YasserGPT",
         "tech": "React / OpenAI API",
         "desc": "A smart AI chatbot interface designed to provide fast and clean interactions, focused on productivity and minimal user experience.",
