@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { GithubIcon, LinkedinIcon, InstagramIcon } from "../components/BrandIcons";
+import { GithubIcon, WhatsappIcon, InstagramIcon } from "../components/BrandIcons";
 
 const HomePage = ({
   lang,
@@ -228,14 +228,14 @@ const HomePage = ({
                   <GithubIcon className="w-5 h-5" />
                 </Button>
                 <Button
-                  href={personal.socials.linkedin}
+                  href={personal.socials.whatsapp}
                   external
                   variant="social"
                   shape="squareIcon"
-                  className="border-e border-slate-200 hover-linkedin"
-                  aria-label="LinkedIn Profile"
+                  className="border-e border-slate-200 hover-whatsapp"
+                  aria-label="WhatsApp"
                 >
-                  <LinkedinIcon className="w-5 h-5" />
+                  <WhatsappIcon className="w-5 h-5" />
                 </Button>
                 <Button
                   href={personal.socials.instagram}
