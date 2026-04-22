@@ -36,11 +36,11 @@ const Navbar = ({
             {nav.projects}
           </a>
           <a
-            href="#services"
-            onClick={(e) => scrollToSection(e, "services")}
+            href="#skills"
+            onClick={(e) => scrollToSection(e, "skills")}
             className="hover:text-blue-600 transition-colors"
           >
-            {nav.services}
+            {nav.skills}
           </a>
           <a
             href="#contact"
@@ -92,11 +92,11 @@ const Navbar = ({
             {nav.projects}
           </a>
           <a
-            href="#services"
-            onClick={(e) => scrollToSection(e, "services")}
+            href="#skills"
+            onClick={(e) => scrollToSection(e, "skills")}
             className="hover:text-blue-600 transition-colors"
           >
-            {nav.services}
+            {nav.skills}
           </a>
           <a
             href="#contact"
