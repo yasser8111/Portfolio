@@ -1,5 +1,5 @@
 {
-  "isUnderConstruction": false,
+  "isUnderConstruction": true,
   "lang": "en",
   "en": {
     "nav": {
@@ -60,8 +60,8 @@
         "desc": "A smart AI chatbot interface designed to provide fast and clean interactions, focused on productivity and minimal user experience.",
         "year": "2026",
         "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/yasserGPT.png",
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "demoUrl": "https://ysrgpt.vercel.app",
+        "repoUrl": "https://github.com/yasser8111/yasserGPT"
       },
       {
         "title": "GridX",
@@ -69,7 +69,7 @@
         "desc": "A modern grid-based layout system for building responsive and visually balanced web interfaces with a minimalist design approach.",
         "year": "2026",
         "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/gridX.png",
-        "demoUrl": "gridx811.vercel.app",
+        "demoUrl": "https://gridx811.vercel.app",
         "repoUrl": "https://github.com/yasser8111/GridX"
       },
       {
