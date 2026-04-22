@@ -16,7 +16,7 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
           iconPosition="end"
           className="uppercase"
         >
-          {lang === "ar" ? "رجوع" : "Back"}
+          {buttons.backToHome}
         </Button>
       </nav>
 

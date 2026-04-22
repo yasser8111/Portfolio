@@ -15,7 +15,7 @@
       "liveDemo": "Live Demo",
       "sourceCode": "Source Code",
       "viewAll": "View All Projects",
-      "backToHome": "Back to Home"
+      "backToHome": "Back"
     },
     "sections": {
       "selectedWorks": "Selected Works",
@@ -109,7 +109,7 @@
       "liveDemo": "معاينة مباشرة",
       "sourceCode": "الكود المصدري",
       "viewAll": "عرض جميع المشاريع",
-      "backToHome": "العودة للرئيسية"
+      "backToHome": "رجوع"
     },
     "sections": {
       "selectedWorks": "أعمال مختارة",
