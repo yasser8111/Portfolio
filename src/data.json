@@ -36,8 +36,9 @@
       }
     },
     "hero": {
-      "title": "Simplicity in Code,\nClarity in design.",
-      "subtitle": "I build digital products that are easy to use, fast to load, and built to scale."
+      "title": "Building pixel-perfect\ndigital experiences.",
+      "role": "Frontend Developer & UI Designer",
+      "desc": "Hi, I'm Yaser. A professional Web Developer based in Yemen specializing in building high-performance web applications with React, Tailwind CSS, and Firebase."
     },
     "about": [
       "I am a first-year Computer Science student with a focus on frontend development and UI/UX design. I enjoy building clean and practical web interfaces that solve real problems.",
@@ -146,8 +147,9 @@
       }
     },
     "hero": {
-      "title": "بساطة في الكود،\nوضوح في التصميم.",
-      "subtitle": "أقوم ببناء منتجات رقمية سهلة الاستخدام، سريعة التحميل، وقابلة للتوسع."
+      "title": "بناء تجارب رقمية\nمثالية وواضحة.",
+      "role": "مطور واجهات ومصمم واجهة مستخدم",
+      "desc": "أهلاً، أنا ياسر. مطور ويب محترف في اليمن متخصص في بناء تطبيقات ويب عالية الأداء باستخدام React و Tailwind CSS و Firebase."
     },
     "about": [
       "أنا طالب في السنة الأولى في علوم الحاسوب، أركز على تطوير الواجهات الأمامية وتصميم واجهة/تجربة المستخدم (UI/UX). أستمتع ببناء واجهات ويب نظيفة وعملية تحل مشاكل حقيقية.",
