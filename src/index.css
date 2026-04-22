@@ -37,7 +37,7 @@
 
   /* Custom scrollbar for an engineered feel */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
