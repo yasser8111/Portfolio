@@ -1,6 +1,6 @@
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
 import Navbar from "../components/Navbar";
@@ -93,6 +93,14 @@ const HomePage = ({
                 >
                   {buttons.contactMe}
                 </Button>
+                <a
+                  href="#"
+                  download
+                  className="btn-square-fill"
+                  aria-label="Download"
+                >
+                  <Download className="w-6 h-6" />
+                </a>
               </div>
             </div>
 
