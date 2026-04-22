@@ -28,10 +28,9 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initial "Fake" Loading to show the premium animation
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
