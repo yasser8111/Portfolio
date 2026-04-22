@@ -64,17 +64,17 @@
 .project-card-fill::before {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 0;
-  height: 100%;
+  width: 100%;
+  height: 0;
   background-color: rgba(248, 250, 252, 0.8); /* slate-50/80 */
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
 }
 
 .project-card-fill:hover::before {
-  width: 100%;
+  height: 100%;
 }
 
 /* Tech Hover Effect */
