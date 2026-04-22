@@ -4,24 +4,28 @@ import Button from "./Button";
 
 const ProjectButtons = ({ project, buttons }) => (
   <div className="flex flex-wrap gap-3 mt-6">
-    <Button
-      href={project.demoUrl || "#"}
-      external
-      variant="primary"
-      className="hover-dark"
-      icon={ExternalLink}
-    >
-      {buttons.liveDemo}
-    </Button>
-    <Button
-      href={project.repoUrl || "#"}
-      external
-      variant="dark"
-      className="hover-blue"
-      icon={Code2}
-    >
-      {buttons.sourceCode}
-    </Button>
+    {project.demoUrl && project.demoUrl !== "#" && (
+      <Button
+        href={project.demoUrl}
+        external
+        variant="primary"
+        className="hover-dark"
+        icon={ExternalLink}
+      >
+        {buttons.liveDemo}
+      </Button>
+    )}
+    {project.repoUrl && project.repoUrl !== "#" && (
+      <Button
+        href={project.repoUrl}
+        external
+        variant="outline"
+        className="hover-dark"
+        icon={Code2}
+      >
+        {buttons.sourceCode}
+      </Button>
+    )}
   </div>
 );
 

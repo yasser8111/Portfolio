@@ -50,7 +50,7 @@
         "tech": "React / Vite / Tailwind CSS / JSON Architecture",
         "desc": "A premium, data-driven portfolio template featuring dynamic content management via JSON, multilingual support (AR/EN), and a sleek minimalist design with high-performance animations.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2070&auto=format&fit=crop",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/protfolio.png",
         "demoUrl": "https://ysr811.vercel.app/",
         "repoUrl": "https://github.com/yasser8111/Customizable-Portfolio"
       },
@@ -59,7 +59,7 @@
         "tech": "React / OpenAI API",
         "desc": "A smart AI chatbot interface designed to provide fast and clean interactions, focused on productivity and minimal user experience.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=2070&auto=format&fit=crop",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/yasserGPT.png",
         "demoUrl": "#",
         "repoUrl": "#"
       },
@@ -68,18 +68,17 @@
         "tech": "HTML / CSS / JavaScript",
         "desc": "A modern grid-based layout system for building responsive and visually balanced web interfaces with a minimalist design approach.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=2070&auto=format&fit=crop",
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/gridX.png",
+        "demoUrl": "gridx811.vercel.app",
+        "repoUrl": "https://github.com/yasser8111/GridX"
       },
       {
         "title": "ControlTap",
         "tech": "JavaScript / Chrome Extension",
         "desc": "A browser extension that enhances user control and productivity by simplifying tab management and providing quick-access actions.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop",
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/controlTap.png",
+        "repoUrl": "https://github.com/yasser8111/ControlTap-Beta"
       }
     ],
 
@@ -168,7 +167,7 @@
         "tech": "React / Vite / Tailwind CSS / JSON Architecture",
         "desc": "قالب معرض أعمال احترافي يدار بالكامل عبر البيانات، يتميز بسهولة تخصيص المحتوى عبر ملف JSON، دعم كامل للغتين (عربي/إنجليزي)، وتصميم عصري مع حركات تفاعلية سلسة.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/image.png",
         "demoUrl": "https://ysr811.vercel.app/",
         "repoUrl": "https://github.com/yasser8111/Customizable-Portfolio"
       },
@@ -177,7 +176,7 @@
         "tech": "React / AI Integration",
         "desc": "أداة تجريبية تنشئ مواقع محافظ شخصية تلقائيًا باستخدام تخطيطات مسبقة ومحتوى مُولد بالذكاء الاصطناعي.",
         "year": "2026",
-        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/image.png",
         "demoUrl": "#",
         "repoUrl": "#"
       },

@@ -43,12 +43,12 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
             <ProjectButtons project={project} buttons={buttons} />
           </div>
           {project.image && (
-            <div className="w-full bg-slate-100 overflow-hidden aspect-4/3">
+            <div className="w-full bg-slate-50 border border-slate-200">
               <img
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain block mx-auto"
               />
             </div>
           )}
