@@ -147,7 +147,7 @@
   }
 }
 /* Custom Square Download Button Animation */
-.btn-square-fill {
+.downloader-btn {
   position: relative;
   overflow: hidden;
   display: inline-flex;
@@ -163,7 +163,7 @@
 }
 
 /* Layer 1: The Blue Fill */
-.btn-square-fill::before {
+.downloader-btn::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -176,7 +176,7 @@
 }
 
 /* Layer 2: The Final Black Fill */
-.btn-square-fill::after {
+.downloader-btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -189,21 +189,21 @@
   z-index: -1;
 }
 
-.btn-square-fill:hover::before,
-.btn-square-fill:hover::after {
+.downloader-btn:hover::before,
+.downloader-btn:hover::after {
   height: 100%;
 }
 
-.btn-square-fill:hover {
+.downloader-btn:hover {
   border-color: #2563eb;
 }
 
-.btn-square-fill svg {
+.downloader-btn svg {
   position: relative;
   z-index: 2;
   transition: transform 0.3s ease;
 }
 
-.btn-square-fill:hover svg {
+.downloader-btn:hover svg {
   transform: translateY(2px);
 }

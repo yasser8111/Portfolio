@@ -96,7 +96,7 @@ const HomePage = ({
                 <a
                   href="#"
                   download
-                  className="btn-square-fill"
+                  className="downloader-btn"
                   aria-label="Download"
                 >
                   <Download className="w-6 h-6" />
