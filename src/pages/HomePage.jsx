@@ -15,6 +15,7 @@ const HomePage = ({
   about,
   projects,
   expertise,
+  services,
   footer,
   nav,
   buttons,
@@ -187,6 +188,37 @@ const HomePage = ({
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services */}
+        <section id="services" className="border-b border-slate-200 bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
+                {sections.services}
+              </h3>
+            </div>
+            <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-3">
+              {services.map((service, i) => (
+                <div
+                  key={i}
+                  className="group project-card-fill p-8 md:p-12 border-b md:border-b-0 md:border-e border-slate-200 last:border-e-0 last:border-b-0 cursor-pointer"
+                >
+                  <div className="mb-8">
+                    <span className="text-5xl font-mono font-bold tracking-tighter text-slate-500 opacity-20 group-hover:opacity-100 group-hover:text-blue-600 transition-all duration-500">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4">
+                    {service.title}
+                  </h4>
+                  <p className="text-slate-500 font-medium leading-relaxed">
+                    {service.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

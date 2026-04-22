@@ -21,7 +21,8 @@
       "selectedWorks": "Selected Works",
       "about": "About",
       "expertise": "Skills",
-      "letsBuild": "Let's build\nsomething useful :D"
+      "letsBuild": "Let's build\nsomething useful :D",
+      "services": "Services"
     },
     "personal": {
       "nickname": "YSR",
@@ -91,6 +92,20 @@
         "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
       }
     ],
+    "services": [
+      {
+        "title": "Frontend Development",
+        "desc": "Building fast, responsive, and accessible web interfaces with React and Tailwind CSS."
+      },
+      {
+        "title": "UI/UX to Code",
+        "desc": "Converting Figma designs into pixel-perfect, high-performance web components."
+      },
+      {
+        "title": "Chrome Extensions",
+        "desc": "Developing custom browser tools to automate tasks and improve user productivity."
+      }
+    ],
     "footer": {
       "text": ",Designed and developed by YASER :D."
     }
@@ -115,7 +130,8 @@
       "selectedWorks": "أعمال مختارة",
       "about": "نبذة عني",
       "expertise": "الخبرات",
-      "letsBuild": "لنقم ببناء\nشيء مفيد."
+      "letsBuild": "لنقم ببناء\nشيء مفيد :D",
+      "services": "الخدمات"
     },
     "personal": {
       "nickname": "YSR",
@@ -182,6 +198,20 @@
       {
         "category": "التصميم",
         "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
+      }
+    ],
+    "services": [
+      {
+        "title": "تطوير واجهات المستخدم",
+        "desc": "بناء واجهات ويب سريعة ومتجاوبة باستخدام React و Tailwind CSS."
+      },
+      {
+        "title": "تحويل التصميم إلى كود",
+        "desc": "تحويل تصاميم Figma بدقة بيكسل بيكسل إلى مكونات ويب عالية الأداء."
+      },
+      {
+        "title": "إضافات المتصفح",
+        "desc": "تطوير أدوات مخصصة للمتصفح لأتمتة المهام وزيادة الإنتاجية."
       }
     ],
     "footer": {

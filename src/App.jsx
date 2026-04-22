@@ -14,6 +14,7 @@ export default function App() {
     about,
     projects,
     expertise,
+    services,
     footer,
     nav,
     buttons,
@@ -91,6 +92,7 @@ export default function App() {
         about={about}
         projects={projects}
         expertise={expertise}
+        services={services}
         footer={footer}
         nav={nav}
         buttons={buttons}
