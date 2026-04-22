@@ -153,8 +153,9 @@
   inset: 0;
   background-color: #f8fafc; /* Slate 50 - subtle contrast */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 3rem; /* Distance from edges */
   z-index: 9999;
   transition: opacity 0.3s cubic-bezier(0.2, 0, 0.2, 1), visibility 0.4s;
 }
