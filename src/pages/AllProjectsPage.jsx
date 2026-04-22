@@ -43,7 +43,7 @@ const AllProjectsPage = ({
               >
                 {project.image && (
                   <div
-                    className="aspect-[16/10] bg-slate-100 overflow-hidden cursor-pointer"
+                    className="aspect-16/10 bg-slate-100 overflow-hidden cursor-pointer"
                     onClick={() => onSelectProject(project)}
                   >
                     <img

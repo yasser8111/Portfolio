@@ -43,7 +43,7 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
             <ProjectButtons project={project} buttons={buttons} />
           </div>
           {project.image && (
-            <div className="w-full bg-slate-100 overflow-hidden aspect-[4/3]">
+            <div className="w-full bg-slate-100 overflow-hidden aspect-4/3">
               <img
                 src={project.image}
                 alt={project.title}
