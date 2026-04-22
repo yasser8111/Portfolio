@@ -28,10 +28,9 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initial page load simulation
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -111,12 +110,16 @@ export default function App() {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         onSelectProject={(p) => {
+          setIsLoading(true);
           setSelectedProject(p);
           window.scrollTo({ top: 0, behavior: "instant" });
+          setTimeout(() => setIsLoading(false), 800);
         }}
         onViewAllProjects={() => {
+          setIsLoading(true);
           setShowAllProjects(true);
           window.scrollTo({ top: 0, behavior: "instant" });
+          setTimeout(() => setIsLoading(false), 800);
         }}
         scrollToSection={scrollToSection}
       />
@@ -129,7 +132,7 @@ export default function App() {
       className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
     >
       <Preloader isLoading={isLoading} />
-      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <Suspense fallback={<Preloader isLoading={true} />}>
         {renderPage()}
       </Suspense>
     </div>
