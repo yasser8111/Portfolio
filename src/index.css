@@ -156,7 +156,13 @@
   align-items: center; /* Center on mobile */
   justify-content: center; /* Center on mobile */
   z-index: 9999;
-  transition: opacity 0.3s cubic-bezier(0.2, 0, 0.2, 1), visibility 0.4s;
+  /* Transition for FADING OUT (when preloader-hidden is added) */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+}
+
+/* When the preloader is ACTIVE (no preloader-hidden class), make it appear instantly */
+.preloader-container:not(.preloader-hidden) {
+  transition: none !important;
 }
 
 @media (min-width: 768px) {
