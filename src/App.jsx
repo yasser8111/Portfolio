@@ -31,7 +31,7 @@ export default function App() {
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: id === "projects" ? "start" : "center",
       });
     }
   };

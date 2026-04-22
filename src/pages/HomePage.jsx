@@ -66,7 +66,7 @@ const HomePage = ({
                 )}
               </h2>
 
-              <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10">
+              <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10">
                 {hero.subtitle}
               </p>
 
@@ -131,7 +131,7 @@ const HomePage = ({
                         {project.year}
                       </span>
                     </div>
-                    <p className="text-slate-500 font-semibold mb-4 text-lg leading-relaxed">
+                    <p className="text-slate-400 font-semibold mb-4 text-lg leading-relaxed">
                       {project.desc}
                     </p>
                     <p className="text-sm font-semibold text-blue-600 tracking-wide">
@@ -170,13 +170,13 @@ const HomePage = ({
               id="about"
               className="md:col-span-5 py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-12"
             >
-              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8">
                 {sections.about}
               </h3>
               {about.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-lg leading-relaxed text-slate-700 mb-6 last:mb-0"
+                  className="text-lg leading-relaxed text-slate-400 mb-6 last:mb-0"
                 >
                   {paragraph}
                 </p>
@@ -188,7 +188,7 @@ const HomePage = ({
               id="skills"
               className="md:col-span-7 py-16 ps-12 pe-6 md:pe-12 border-t md:border-t-0 border-slate-200"
             >
-              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8">
                 {sections.expertise}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
@@ -197,7 +197,7 @@ const HomePage = ({
                     <h4 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2 uppercase tracking-wide text-sm">
                       {item.category}
                     </h4>
-                    <ul className="space-y-3 text-slate-600 font-medium">
+                    <ul className="space-y-3 text-slate-400 font-medium">
                       {item.skills.map((skill, j) => (
                         <li key={j}>{skill}</li>
                       ))}

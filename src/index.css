@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
-
 
 @theme {
   --font-sans:
-    "Inter", "Cairo", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+    "Inter", "Cairo", "IBM Plex Sans Arabic", ui-sans-serif, system-ui,
+    sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   * {
     font-family: var(--font-sans);
   }
@@ -91,11 +91,28 @@
 }
 
 /* Specific Brand Colors using Utility Classes */
-.hover-github { --tech-bg: #000000; }
-.hover-linkedin { --tech-bg: #0077b5; }
-.hover-instagram { --tech-bg: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.hover-blue { --tech-bg: #2563eb; }
-.hover-dark { --tech-bg: #0f172a; }
+.hover-github {
+  --tech-bg: #000000;
+}
+.hover-linkedin {
+  --tech-bg: #0077b5;
+}
+.hover-instagram {
+  --tech-bg: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+.hover-blue {
+  --tech-bg: #2563eb;
+}
+.hover-dark {
+  --tech-bg: #0f172a;
+}
 
 /* Edge-to-edge utility for borders touching the container sides */
 .edge-to-edge {
