@@ -64,9 +64,9 @@ export default function Button({
 
   const content = (
     <>
-      {Icon && iconPosition === "start" && <Icon size={16} />}
-      {children}
       {Icon && iconPosition === "end" && <Icon size={16} />}
+      {children}
+      {Icon && iconPosition === "start" && <Icon size={16} />}
     </>
   );
 

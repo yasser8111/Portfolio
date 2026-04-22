@@ -13,7 +13,7 @@ const AllProjectsPage = ({
 }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
-      <nav className="py-6 md:py-8 border-b border-slate-200 flex justify-between items-center">
+      <nav className="py-6 md:py-8 border-b border-slate-200 flex justify-between items-center edge-to-edge">
         <h1 className="text-2xl font-bold tracking-tight">{nickname}</h1>
         <button
           onClick={onBack}
@@ -77,7 +77,7 @@ const AllProjectsPage = ({
         </div>
       </section>
 
-      <footer className="py-8 mt-12 border-t border-slate-200 flex justify-center items-center">
+      <footer className="py-8 mt-12 border-t border-slate-200 flex justify-center items-center edge-to-edge">
         <p className="text-slate-500 font-medium text-sm tracking-wide">
           &copy; {new Date().getFullYear()} {footerText}
         </p>

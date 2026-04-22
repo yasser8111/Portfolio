@@ -91,8 +91,25 @@
 }
 
 /* Specific Brand Colors using Utility Classes */
-.hover-github { --tech-bg: #24292f; }
+.hover-github { --tech-bg: #000000; }
 .hover-linkedin { --tech-bg: #0077b5; }
-.hover-instagram { --tech-bg: #e4405f; }
+.hover-instagram { --tech-bg: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 .hover-blue { --tech-bg: #2563eb; }
 .hover-dark { --tech-bg: #0f172a; }
+
+/* Edge-to-edge utility for borders touching the container sides */
+.edge-to-edge {
+  margin-left: -1.5rem; /* -px-6 */
+  margin-right: -1.5rem;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .edge-to-edge {
+    margin-left: -3rem; /* -px-12 */
+    margin-right: -3rem;
+    padding-left: 3rem; /* px-12 */
+    padding-right: 3rem;
+  }
+}

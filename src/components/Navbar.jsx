@@ -11,7 +11,7 @@ const Navbar = ({
   scrollToSection,
 }) => {
   return (
-    <nav className="py-6 md:py-8 border-b border-slate-200">
+    <nav className="py-6 md:py-8 border-b border-slate-200 px-6 md:px-12">
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">

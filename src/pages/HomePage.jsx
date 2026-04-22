@@ -37,7 +37,7 @@ const HomePage = ({
       )}
 
       {/* Container */}
-      <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
+      <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
         <Navbar
           personal={personal}
@@ -50,7 +50,7 @@ const HomePage = ({
         />
 
         {/* Hero */}
-        <section className="py-12 md:py-16 lg:py-20 border-b border-slate-200">
+        <section className="py-12 md:py-16 lg:py-20 border-b border-slate-200 px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-start">
             {/* Text Column */}
             <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start">
@@ -83,7 +83,7 @@ const HomePage = ({
                 <Button
                   href="#contact"
                   onClick={(e) => scrollToSection(e, "contact")}
-                  variant="outline"
+                  variant="secondary"
                   size="lg"
                   className="hover-blue"
                 >
@@ -110,7 +110,7 @@ const HomePage = ({
         {/* Projects */}
         <section id="projects" className="border-b border-slate-200">
           <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 md:pe-8">
+            <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8">
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400">
                 {sections.selectedWorks}
               </h3>
@@ -120,7 +120,7 @@ const HomePage = ({
                 <div
                   key={i}
                   onClick={() => onSelectProject(project)}
-                  className="group flex flex-col md:flex-row md:items-start justify-between py-12 px-0 md:px-8 border-t border-slate-200 first:border-t-0 hover:bg-slate-50 transition-colors cursor-pointer"
+                  className="group flex flex-col md:flex-row md:items-start justify-between py-12 ps-8 pe-6 md:pe-12 border-t border-slate-200 first:border-t-0 hover:bg-slate-50 transition-colors cursor-pointer"
                 >
                   <div className="max-w-2xl">
                     <div className="flex items-center gap-4 mb-3">
@@ -145,7 +145,7 @@ const HomePage = ({
                   </div>
                 </div>
               ))}
-              <div className="py-12 px-0 md:px-8 border-t border-slate-200 flex justify-center md:justify-start">
+              <div className="py-12 ps-8 pe-6 md:pe-12 border-t border-slate-200 flex justify-center md:justify-start">
                 <Button
                   onClick={onViewAllProjects}
                   variant="outline"
@@ -168,7 +168,7 @@ const HomePage = ({
             {/* About */}
             <div
               id="about"
-              className="md:col-span-5 py-16 md:border-e border-slate-200 md:pe-12"
+              className="md:col-span-5 py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-12"
             >
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">
                 {sections.about}
@@ -186,7 +186,7 @@ const HomePage = ({
             {/* Skills */}
             <div
               id="skills"
-              className="md:col-span-7 py-16 md:ps-12 border-t md:border-t-0 border-slate-200"
+              className="md:col-span-7 py-16 ps-12 pe-6 md:pe-12 border-t md:border-t-0 border-slate-200"
             >
               <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">
                 {sections.expertise}
@@ -210,7 +210,7 @@ const HomePage = ({
         </section>
 
         {/* Footer / Contact */}
-        <section id="contact" className="py-24 mt-auto">
+        <section id="contact" className="py-24 px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
             <div>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 whitespace-pre-line">

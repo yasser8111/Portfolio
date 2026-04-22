@@ -5,7 +5,7 @@ import ProjectButtons from "../components/ProjectButtons";
 const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
-      <nav className="py-6 md:py-8 border-b border-slate-200">
+      <nav className="py-6 md:py-8 border-b border-slate-200 edge-to-edge">
         <button
           onClick={onBack}
           className="flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-slate-600 hover:text-blue-600 transition-colors"
@@ -15,7 +15,7 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
         </button>
       </nav>
 
-      <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 flex-1">
+      <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 flex-1 edge-to-edge">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="flex flex-col">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-slate-900 leading-[1.1] mb-6">
@@ -48,7 +48,7 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
         </div>
       </section>
 
-      <footer className="py-8 mt-auto border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4">
+      <footer className="py-8 mt-auto border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4 edge-to-edge">
         <p className="text-slate-500 font-medium text-sm tracking-wide">
           &copy; {new Date().getFullYear()} {footerText}
         </p>
