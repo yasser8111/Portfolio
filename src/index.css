@@ -54,6 +54,29 @@
   }
 }
 
+/* Project Card Fill Effect */
+.project-card-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-card-fill::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(248, 250, 252, 0.8); /* slate-50/80 */
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.project-card-fill:hover::before {
+  height: 100%;
+}
+
 /* Tech Hover Effect */
 .btn-tech-hover {
   position: relative;

@@ -122,7 +122,7 @@ const HomePage = ({
                 <div
                   key={i}
                   onClick={() => onSelectProject(project)}
-                  className="group flex flex-col md:flex-row md:items-start justify-between py-12 ps-8 pe-6 md:pe-12 border-t border-slate-200 first:border-t-0 hover:bg-slate-50 transition-colors cursor-pointer"
+                  className="group project-card-fill flex flex-col md:flex-row md:items-start justify-between py-12 ps-8 pe-6 md:pe-12 border-t border-slate-200 first:border-t-0 cursor-pointer"
                 >
                   <div className="max-w-2xl">
                     <div className="flex items-center gap-4 mb-3">
