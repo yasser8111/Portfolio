@@ -9,6 +9,7 @@ const AllProjectsPage = ({
   lang,
   footerText,
   buttons,
+  nav,
 }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
