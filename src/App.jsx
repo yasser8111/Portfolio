@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import portfolioData from "./data.json";
 
-// Pages
-import HomePage from "./pages/HomePage";
-import AllProjectsPage from "./pages/AllProjectsPage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+// Lazy Load Pages for Performance
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AllProjectsPage = lazy(() => import("./pages/AllProjectsPage"));
+const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
 
 export default function App() {
   const [lang, setLang] = useState(portfolioData.lang || "en");
@@ -36,12 +36,9 @@ export default function App() {
     }
   };
 
-  if (selectedProject) {
-    return (
-      <div
-        dir={lang === "ar" ? "rtl" : "ltr"}
-        className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
-      >
+  const renderPage = () => {
+    if (selectedProject) {
+      return (
         <ProjectDetailsPage
           project={selectedProject}
           onBack={() => {
@@ -58,16 +55,11 @@ export default function App() {
           footerText={footer.text}
           buttons={buttons}
         />
-      </div>
-    );
-  }
+      );
+    }
 
-  if (showAllProjects) {
-    return (
-      <div
-        dir={lang === "ar" ? "rtl" : "ltr"}
-        className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
-      >
+    if (showAllProjects) {
+      return (
         <AllProjectsPage
           projects={projects}
           onBack={() => {
@@ -87,35 +79,46 @@ export default function App() {
           buttons={buttons}
           nickname={personal.nickname}
         />
-      </div>
+      );
+    }
+
+    return (
+      <HomePage
+        lang={lang}
+        setLang={setLang}
+        personal={personal}
+        hero={hero}
+        about={about}
+        projects={projects}
+        expertise={expertise}
+        footer={footer}
+        nav={nav}
+        buttons={buttons}
+        sections={sections}
+        isUnderConstruction={portfolioData.isUnderConstruction}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+        onSelectProject={(p) => {
+          setSelectedProject(p);
+          window.scrollTo({ top: 0, behavior: "instant" });
+        }}
+        onViewAllProjects={() => {
+          setShowAllProjects(true);
+          window.scrollTo({ top: 0, behavior: "instant" });
+        }}
+        scrollToSection={scrollToSection}
+      />
     );
-  }
+  };
 
   return (
-    <HomePage
-      lang={lang}
-      setLang={setLang}
-      personal={personal}
-      hero={hero}
-      about={about}
-      projects={projects}
-      expertise={expertise}
-      footer={footer}
-      nav={nav}
-      buttons={buttons}
-      sections={sections}
-      isUnderConstruction={portfolioData.isUnderConstruction}
-      isMenuOpen={isMenuOpen}
-      setIsMenuOpen={setIsMenuOpen}
-      onSelectProject={(p) => {
-        setSelectedProject(p);
-        window.scrollTo({ top: 0, behavior: "instant" });
-      }}
-      onViewAllProjects={() => {
-        setShowAllProjects(true);
-        window.scrollTo({ top: 0, behavior: "instant" });
-      }}
-      scrollToSection={scrollToSection}
-    />
+    <div
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
+    >
+      <Suspense fallback={<div className="min-h-screen bg-white" />}>
+        {renderPage()}
+      </Suspense>
+    </div>
   );
 }

@@ -64,9 +64,17 @@ export default function Button({
 
   const content = (
     <>
-      {Icon && iconPosition === "end" && <Icon size={16} />}
+      {Icon && iconPosition === "start" && (
+        <span className="inline-flex shrink-0">
+          <Icon size={16} />
+        </span>
+      )}
       {children}
-      {Icon && iconPosition === "start" && <Icon size={16} />}
+      {Icon && iconPosition === "end" && (
+        <span className="inline-flex shrink-0">
+          <Icon size={16} />
+        </span>
+      )}
     </>
   );
 

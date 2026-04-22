@@ -20,7 +20,8 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
         </Button>
       </nav>
 
-      <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 flex-1 edge-to-edge">
+      <main className="flex-1">
+        <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 edge-to-edge">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="flex flex-col">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-slate-900 leading-[1.1] mb-6">
@@ -46,12 +47,14 @@ const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
               <img
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
           )}
         </div>
       </section>
+      </main>
 
       <footer className="py-8 mt-auto border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4 edge-to-edge">
         <p className="text-slate-500 font-medium text-sm tracking-wide">

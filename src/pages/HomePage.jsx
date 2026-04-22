@@ -49,6 +49,8 @@ const HomePage = ({
           scrollToSection={scrollToSection}
         />
 
+        <main className="flex-1">
+
         {/* Hero */}
         <section className="py-12 md:py-16 lg:py-20 border-b border-slate-200 px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-start">
@@ -66,7 +68,7 @@ const HomePage = ({
                 )}
               </h2>
 
-              <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10">
+              <p className="text-lg sm:text-xl lg:text-2xl text-slate-500 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 mb-8 lg:mb-10">
                 {hero.subtitle}
               </p>
 
@@ -131,14 +133,14 @@ const HomePage = ({
                         {project.year}
                       </span>
                     </div>
-                    <p className="text-slate-400 font-semibold mb-4 text-lg leading-relaxed line-clamp-2">
+                    <p className="text-slate-500 font-semibold mb-4 text-lg leading-relaxed line-clamp-2">
                       {project.desc}
                     </p>
                     <p className="text-sm font-semibold text-blue-600 tracking-wide">
                       {project.tech}
                     </p>
                   </div>
-                  <div className="mt-6 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="mt-6 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                     <span className="material-symbols-sharp text-[80px] text-blue-600">
                       arrow_outward
                     </span>
@@ -176,7 +178,7 @@ const HomePage = ({
               {about.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-lg leading-relaxed text-slate-400 mb-6 last:mb-0"
+                  className="text-lg leading-relaxed text-slate-500 mb-6 last:mb-0"
                 >
                   {paragraph}
                 </p>
@@ -197,7 +199,7 @@ const HomePage = ({
                     <h4 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2 uppercase tracking-wide text-sm">
                       {item.category}
                     </h4>
-                    <ul className="space-y-3 text-slate-400 font-medium">
+                    <ul className="space-y-3 text-slate-500 font-medium">
                       {item.skills.map((skill, j) => (
                         <li key={j}>{skill}</li>
                       ))}
@@ -241,6 +243,7 @@ const HomePage = ({
                   variant="social"
                   shape="squareIcon"
                   className="border-e border-slate-200 hover-github"
+                  aria-label="GitHub Profile"
                 >
                   <GithubIcon className="w-5 h-5" />
                 </Button>
@@ -250,6 +253,7 @@ const HomePage = ({
                   variant="social"
                   shape="squareIcon"
                   className="border-e border-slate-200 hover-linkedin"
+                  aria-label="LinkedIn Profile"
                 >
                   <LinkedinIcon className="w-5 h-5" />
                 </Button>
@@ -259,6 +263,7 @@ const HomePage = ({
                   variant="social"
                   shape="squareIcon"
                   className="hover-instagram"
+                  aria-label="Instagram Profile"
                 >
                   <InstagramIcon className="w-5 h-5" />
                 </Button>
@@ -266,6 +271,8 @@ const HomePage = ({
             </div>
           </div>
         </section>
+
+        </main>
 
         <Footer text={footer.text} />
       </div>

@@ -20,7 +20,7 @@ const Navbar = ({
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden sm:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-400">
+        <div className="hidden sm:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-500">
           <a
             href="#about"
             onClick={(e) => scrollToSection(e, "about")}
