@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yaser-portfolio.vercel.app/sitemap.xml
+Sitemap: https://yasser8111.github.io/Portfolio/sitemap.xml
