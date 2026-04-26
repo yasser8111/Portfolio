@@ -120,7 +120,7 @@ const HomePage = ({
               </h3>
             </div>
             <div className="md:col-span-9">
-              {projects.map((project, i) => (
+              {projects.slice(0, 3).map((project, i) => (
                 <ProjectCard
                   key={i}
                   project={project}
