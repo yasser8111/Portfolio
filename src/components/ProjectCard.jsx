@@ -4,7 +4,7 @@ const ProjectCard = ({ project, onSelectProject, isFirst = false }) => {
   return (
     <div
       onClick={() => onSelectProject(project)}
-      className={`group project-card-fill flex flex-col md:flex-row md:items-start justify-between py-12 ps-8 pe-6 md:pe-12 border-t border-slate-200 ${
+      className={`flex flex-col md:flex-row md:items-start justify-between py-12 ps-8 pe-6 md:pe-12 border-t border-slate-200 ${
         isFirst ? "md:border-t-0" : ""
       } cursor-pointer relative`}
     >
@@ -25,15 +25,6 @@ const ProjectCard = ({ project, onSelectProject, isFirst = false }) => {
         </p>
       </div>
 
-      {/* Arrow Icon - Hidden on small screens, shown from md up */}
-      <div
-        className="hidden md:block mt-6 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150 relative z-10"
-        aria-hidden="true"
-      >
-        <span className="material-symbols-sharp text-[80px] text-blue-600">
-          arrow_outward
-        </span>
-      </div>
     </div>
   );
 };

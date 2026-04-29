@@ -1,11 +1,49 @@
 import React, { useState, Suspense, lazy, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
 import portfolioData from "./data.json";
 import Preloader from "./components/Preloader";
+import { createSlug } from "./lib/utils";
 
 // Lazy Load Pages for Performance
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AllProjectsPage = lazy(() => import("./pages/AllProjectsPage"));
 const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
+
+// Wrapper for Project Details to handle URL params
+const ProjectDetailsWrapper = ({ projects, lang, footerText, buttons }) => {
+  const { projectId } = useParams();
+  const navigate = useNavigate();
+  
+  const project = projects.find((p) => createSlug(p.title) === projectId);
+
+  useEffect(() => {
+    if (!project) {
+      navigate("/projects", { replace: true });
+    }
+  }, [project, navigate]);
+
+  if (!project) {
+    return null;
+  }
+
+  return (
+    <ProjectDetailsPage
+      project={project}
+      onBack={() => navigate("/projects")}
+      lang={lang}
+      footerText={footerText}
+      buttons={buttons}
+    />
+  );
+};
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 export default function App() {
   const [lang, setLang] = useState(portfolioData.lang || "en");
@@ -23,14 +61,12 @@ export default function App() {
   } = portfolioData[lang];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [showAllProjects, setShowAllProjects] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -46,95 +82,65 @@ export default function App() {
     }
   };
 
-  const renderPage = () => {
-    if (selectedProject) {
-      return (
-        <ProjectDetailsPage
-          project={selectedProject}
-          onBack={() => {
-            setSelectedProject(null);
-            if (!showAllProjects) {
-              setTimeout(() => {
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "auto", block: "start" });
-              }, 0);
-            }
-          }}
-          lang={lang}
-          footerText={footer.text}
-          buttons={buttons}
-        />
-      );
-    }
-
-    if (showAllProjects) {
-      return (
-        <AllProjectsPage
-          projects={projects}
-          onBack={() => {
-            setShowAllProjects(false);
-            setTimeout(() => {
-              document
-                .getElementById("projects")
-                ?.scrollIntoView({ behavior: "auto", block: "start" });
-            }, 0);
-          }}
-          onSelectProject={(p) => {
-            setSelectedProject(p);
-            window.scrollTo({ top: 0, behavior: "instant" });
-          }}
-          lang={lang}
-          footerText={footer.text}
-          buttons={buttons}
-          nav={nav}
-        />
-      );
-    }
-
-    return (
-      <HomePage
-        lang={lang}
-        setLang={setLang}
-        personal={personal}
-        hero={hero}
-        about={about}
-        projects={projects}
-        expertise={expertise}
-        services={services}
-        footer={footer}
-        nav={nav}
-        buttons={buttons}
-        sections={sections}
-        isUnderConstruction={portfolioData.isUnderConstruction}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-        onSelectProject={(p) => {
-          setIsLoading(true);
-          setSelectedProject(p);
-          window.scrollTo({ top: 0, behavior: "instant" });
-          setTimeout(() => setIsLoading(false), 800);
-        }}
-        onViewAllProjects={() => {
-          setIsLoading(true);
-          setShowAllProjects(true);
-          window.scrollTo({ top: 0, behavior: "instant" });
-          setTimeout(() => setIsLoading(false), 800);
-        }}
-        scrollToSection={scrollToSection}
-      />
-    );
-  };
-
   return (
-    <div
-      dir={lang === "ar" ? "rtl" : "ltr"}
-      className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
-    >
-      <Preloader isLoading={isLoading} />
-      <Suspense fallback={<Preloader isLoading={true} />}>
-        {renderPage()}
-      </Suspense>
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div
+        dir={lang === "ar" ? "rtl" : "ltr"}
+        className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
+      >
+        <Preloader isLoading={isLoading} />
+        <Suspense fallback={<Preloader isLoading={true} />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  lang={lang}
+                  setLang={setLang}
+                  personal={personal}
+                  hero={hero}
+                  about={about}
+                  projects={projects}
+                  expertise={expertise}
+                  services={services}
+                  footer={footer}
+                  nav={nav}
+                  buttons={buttons}
+                  sections={sections}
+                  isUnderConstruction={portfolioData.isUnderConstruction}
+                  isMenuOpen={isMenuOpen}
+                  setIsMenuOpen={setIsMenuOpen}
+                  scrollToSection={scrollToSection}
+                />
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <AllProjectsPage
+                  projects={projects}
+                  lang={lang}
+                  footerText={footer.text}
+                  buttons={buttons}
+                  nav={nav}
+                />
+              }
+            />
+            <Route
+              path="/projects/:projectId"
+              element={
+                <ProjectDetailsWrapper
+                  projects={projects}
+                  lang={lang}
+                  footerText={footer.text}
+                  buttons={buttons}
+                />
+              }
+            />
+          </Routes>
+        </Suspense>
+      </div>
+    </BrowserRouter>
   );
 }

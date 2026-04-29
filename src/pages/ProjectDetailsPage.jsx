@@ -1,24 +1,10 @@
-import React from "react";
-import { ArrowLeft } from "lucide-react";
-import Button from "../components/Button";
+import NavBack from "../components/NavBack";
 import ProjectButtons from "../components/ProjectButtons";
 
 const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
   return (
     <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 border-x border-slate-200 min-h-screen flex flex-col">
-      <nav className="py-6 md:py-8 border-b border-slate-200 edge-to-edge">
-        <Button
-          onClick={onBack}
-          variant="secondary"
-          icon={({ className }) => (
-            <ArrowLeft size={18} className={`rtl:rotate-180 ${className}`} />
-          )}
-          iconPosition="start"
-          className="uppercase"
-        >
-          {buttons.backToHome}
-        </Button>
-      </nav>
+      <NavBack onBack={onBack} backText={buttons.backToHome} lang={lang} />
 
       <main className="flex-1">
         <section className="py-12 md:py-16 lg:py-24 border-b border-slate-200 edge-to-edge">

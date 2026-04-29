@@ -227,6 +227,7 @@
 
 @keyframes loaderFillBlack {
   0%, 45% { height: 0; }
+  55%, 95% { height: 100%; }
   75%, 100% { height: 100%; }
 }
 
