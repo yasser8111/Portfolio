@@ -99,8 +99,8 @@ export default function App() {
   };
 
   return (
-    <SmoothScroll>
-      <BrowserRouter>
+    <BrowserRouter>
+      <SmoothScroll>
         <ScrollToTop />
         <div
           dir={lang === "ar" ? "rtl" : "ltr"}
@@ -150,6 +150,7 @@ export default function App() {
                     nav={nav}
                     footer={footer}
                     buttons={buttons}
+                    sections={sections}
                   />
                 }
               />
@@ -180,7 +181,7 @@ export default function App() {
             </Routes>
           </Suspense>
         </div>
-      </BrowserRouter>
-    </SmoothScroll>
+      </SmoothScroll>
+    </BrowserRouter>
   );
 }

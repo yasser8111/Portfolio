@@ -44,7 +44,7 @@
       "I am a first-year Computer Science student with a focus on frontend development and UI/UX design. I enjoy building clean and practical web interfaces that solve real problems.",
       "I have worked on several personal projects, including e-commerce websites and experimental tools, focusing on performance, simplicity, and user experience. Currently, I’m improving my skills in JavaScript, React, and system design."
     ],
-    "philosophy": "I believe that great software is born at the intersection of logical code and intuitive design. My goal is to bridge the gap between complex systems and human-centric interfaces, ensuring that technology serves the user, not the other way around.",
+    "philosophy": "Simplicity in Code, Clarity in design.\nI believe that complexity is the enemy of progress. In code, simplicity means maintainability and performance. In design, clarity means an intuitive experience where the user never has to guess. My approach is to strip away the noise until only what is essential remains.",
     "certificates": [
       {
         "title": "Responsive Web Design",
@@ -99,19 +99,23 @@
     "expertise": [
       {
         "category": "Frontend",
-        "skills": ["HTML, CSS, JS (ES6+)", "React (Basics)", "Tailwind CSS"]
+        "skills": ["HTML5 & Semantic Tags", "CSS3 & Modern Layouts (Grid/Flex)", "JavaScript (ES6+, Async, DOM)", "React.js (Hooks, Router)", "Vite", "Tailwind CSS", "Framer Motion", "GSAP Animations"]
       },
       {
-        "category": "Backend",
-        "skills": ["Firebase (Auth, Firestore)", "Basic Node.js"]
+        "category": "AI",
+        "skills": ["Prompt Engineering", "OpenAI API Integration", "Claude & Gemini APIs", "AI Content Automation", "AI-Powered UI/UX"]
       },
       {
-        "category": "Tools",
-        "skills": ["Git & GitHub", "Vercel", "Figma"]
+        "category": "Backend & Cloud",
+        "skills": ["Firebase (Auth, Firestore)", "Basic Node.js & Express", "RESTful APIs", "Supabase Basics"]
+      },
+      {
+        "category": "Tools & Workflow",
+        "skills": ["Git & GitHub", "NPM & Package Managers", "Vercel / Netlify", "Cursor AI", "ESLint & Prettier"]
       },
       {
         "category": "Design",
-        "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
+        "skills": ["Figma (Prototyping, Auto-layout)", "UI Design Systems", "Brutalist Aesthetics", "User Research Basics", "Responsive Design Architecture"]
       }
     ],
     "services": [
@@ -179,7 +183,7 @@
       "أنا طالب في السنة الأولى في علوم الحاسوب، أركز على تطوير الواجهات الأمامية وتصميم واجهة/تجربة المستخدم (UI/UX). أستمتع ببناء واجهات ويب نظيفة وعملية تحل مشاكل حقيقية.",
       "عملت على العديد من المشاريع الشخصية، بما في ذلك مواقع التجارة الإلكترونية وأدوات تجريبية، مع التركيز على الأداء، البساطة، وتجربة المستخدم. حاليًا، أقوم بتطوير مهاراتي في JavaScript و React وتصميم الأنظمة."
     ],
-    "philosophy": "أؤمن بأن البرمجيات العظيمة تولد عند تقاطع الكود المنطقي والتصميم البديهي. هدفي هو سد الفجوة بين الأنظمة المعقدة والواجهات التي تركز على الإنسان، لضمان أن التكنولوجيا تخدم المستخدم وليس العكس.",
+    "philosophy": "بساطة في الكود، وضوح في التصميم.\nأؤمن أن التعقيد هو عدو التقدم. في الكود، البساطة تعني سهولة الصيانة والأداء العالي. في التصميم، الوضوح يعني تجربة بديهية حيث لا يضطر المستخدم للتخمين أبداً. نهجي هو إزالة كل الضوضاء حتى يتبقى فقط ما هو ضروري ومفيد.",
     "certificates": [
       {
         "title": "تصميم الويب المتجاوب",
@@ -232,19 +236,23 @@
     "expertise": [
       {
         "category": "الواجهات الأمامية",
-        "skills": ["HTML, CSS, JS (ES6+)", "React (Basics)", "Tailwind CSS"]
+        "skills": ["HTML5 & Semantic Tags", "CSS3 & Modern Layouts", "JavaScript (ES6+, Async)", "React.js", "Vite", "Tailwind CSS", "Framer Motion", "GSAP Animations"]
       },
       {
-        "category": "الواجهات الخلفية",
-        "skills": ["Firebase (Auth, Firestore)", "Basic Node.js"]
+        "category": "الذكاء الاصطناعي",
+        "skills": ["Prompt Engineering", "دمج OpenAI API", "Claude & Gemini APIs", "أتمتة المحتوى بالذكاء الاصطناعي", "UI/UX معزز بالذكاء الاصطناعي"]
       },
       {
-        "category": "الأدوات",
-        "skills": ["Git & GitHub", "Vercel", "Figma"]
+        "category": "الواجهات الخلفية والسحابية",
+        "skills": ["Firebase (Auth, Firestore)", "أساسيات Node.js & Express", "RESTful APIs", "Supabase Basics"]
+      },
+      {
+        "category": "الأدوات وسير العمل",
+        "skills": ["Git & GitHub", "مدراء الحزم NPM", "Vercel / Netlify", "Cursor AI", "ESLint & Prettier"]
       },
       {
         "category": "التصميم",
-        "skills": ["UI Design Basics", "Wireframing", "UX Principles"]
+        "skills": ["Figma (Prototyping)", "أنظمة التصميم UI", "جماليات Brutalist", "أساسيات أبحاث المستخدم", "هندسة التصميم المتجاوب"]
       }
     ],
     "services": [

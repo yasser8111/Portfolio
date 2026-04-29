@@ -1,0 +1,69 @@
+import React from "react";
+import { TextBlock } from "./TextBlockEffect";
+import Button from "./Button";
+import { GithubIcon, WhatsappIcon, InstagramIcon } from "./BrandIcons";
+
+const ContactSection = ({ personal, sections, lang }) => {
+  return (
+    <section id="contact" className="py-24 px-6 md:px-12 border-t border-slate-100 bg-white">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+        <div>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 flex flex-col items-start">
+            {sections.letsBuild.split("\n").map((line, i) => (
+              <TextBlock key={i} blockColor="#2563eb" className="block">
+                {line}
+              </TextBlock>
+            ))}
+          </h2>
+          <a
+            href={`mailto:${personal.email}`}
+            className="inline-flex items-center gap-3 text-lg sm:text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors group"
+          >
+            <i className="ri-mail-line"></i>
+            {personal.email}
+            <span className="material-symbols-sharp text-[20px] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+              arrow_outward
+            </span>
+          </a>
+        </div>
+
+        <div className="flex flex-col items-start md:items-end gap-8">
+          <div className="flex gap-0 border border-slate-200 overflow-hidden">
+            <Button
+              href={personal.socials.github}
+              external
+              variant="social"
+              shape="squareIcon"
+              className="border-e border-slate-200 hover-github"
+              aria-label="GitHub Profile"
+            >
+              <GithubIcon className="w-5 h-5" />
+            </Button>
+            <Button
+              href={personal.socials.whatsapp}
+              external
+              variant="social"
+              shape="squareIcon"
+              className="border-e border-slate-200 hover-whatsapp"
+              aria-label="WhatsApp"
+            >
+              <WhatsappIcon className="w-5 h-5" />
+            </Button>
+            <Button
+              href={personal.socials.instagram}
+              external
+              variant="social"
+              shape="squareIcon"
+              className="hover-instagram"
+              aria-label="Instagram Profile"
+            >
+              <InstagramIcon className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;

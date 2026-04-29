@@ -1,12 +1,12 @@
-'use client';
-
 import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function SmoothScroll({ children }) {
   const lenisRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Initialize Lenis
@@ -39,6 +39,13 @@ export default function SmoothScroll({ children }) {
       });
     };
   }, []);
+
+  // Reset scroll to top on route change
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+  }, [location.pathname]);
 
   return <>{children}</>;
 }

@@ -6,11 +6,7 @@ import Button from "../components/Button";
 import ProjectHoverSection from "../components/ProjectHoverSection";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import {
-  GithubIcon,
-  WhatsappIcon,
-  InstagramIcon,
-} from "../components/BrandIcons";
+import ContactSection from "../components/ContactSection";
 import { TextBlock } from "../components/TextBlockEffect";
 
 const HomePage = ({
@@ -193,7 +189,7 @@ const HomePage = ({
                   </TextBlock>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
-                  {expertise.map((item, i) => (
+                  {expertise.slice(0, 3).map((item, i) => (
                     <div key={i}>
                       <h4 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2 uppercase tracking-wide text-sm">
                         <TextBlock blockColor="#2563eb">
@@ -201,7 +197,7 @@ const HomePage = ({
                         </TextBlock>
                       </h4>
                       <ul className="space-y-3 text-slate-500 font-medium">
-                        {item.skills.map((skill, j) => (
+                        {item.skills.slice(0, 3).map((skill, j) => (
                           <li key={j}>
                             <TextBlock blockColor="#cbd5e1">
                               {skill}
@@ -253,65 +249,11 @@ const HomePage = ({
             </div>
           </section>
 
-          {/* Footer / Contact */}
-          <section id="contact" className="py-24 px-6 md:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
-              <div>
-                <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 flex flex-col items-start">
-                  {sections.letsBuild.split("\n").map((line, i) => (
-                    <TextBlock key={i} blockColor="#2563eb" className="block">
-                      {line}
-                    </TextBlock>
-                  ))}
-                </h2>
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="inline-flex items-center gap-3 text-lg sm:text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors group"
-                >
-                  <i className="ri-mail-line"></i>
-                  {personal.email}
-                  <span className="material-symbols-sharp text-[20px] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
-                    arrow_outward
-                  </span>
-                </a>
-              </div>
-
-              <div className="flex flex-col items-start md:items-end gap-8">
-                <div className="flex gap-0 border border-slate-200 overflow-hidden">
-                  <Button
-                    href={personal.socials.github}
-                    external
-                    variant="social"
-                    shape="squareIcon"
-                    className="border-e border-slate-200 hover-github"
-                    aria-label="GitHub Profile"
-                  >
-                    <GithubIcon className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    href={personal.socials.whatsapp}
-                    external
-                    variant="social"
-                    shape="squareIcon"
-                    className="border-e border-slate-200 hover-whatsapp"
-                    aria-label="WhatsApp"
-                  >
-                    <WhatsappIcon className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    href={personal.socials.instagram}
-                    external
-                    variant="social"
-                    shape="squareIcon"
-                    className="hover-instagram"
-                    aria-label="Instagram Profile"
-                  >
-                    <InstagramIcon className="w-5 h-5" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
+          <ContactSection 
+            personal={personal} 
+            sections={sections} 
+            lang={lang} 
+          />
         </main>
 
         <Footer text={footer.text} />
