@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { createSlug } from "../lib/utils";
+import { TextBlock } from "./TextBlockEffect";
 
 // Simple utility to merge class names
 const cn = (...classes) => classes.filter(Boolean).join(" ");
@@ -88,7 +89,9 @@ const ProjectHoverSection = ({
               )}
             >
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-3 md:mb-0">
-                {project.title}
+                <TextBlock blockColor="#2563eb">
+                  {project.title}
+                </TextBlock>
               </h2>
               <div className="flex flex-col md:items-end text-start md:text-right max-w-lg">
                 <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed line-clamp-2">
@@ -144,7 +147,11 @@ const ProjectHoverSection = ({
           className="flex flex-col border-b border-slate-200 last:border-b-0"
         >
           <div className="w-full px-6 py-8 active:bg-slate-50 transition-colors">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">{project.title}</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-2">
+              <TextBlock blockColor="#2563eb">
+                {project.title}
+              </TextBlock>
+            </h2>
             <p className="text-slate-500 text-base font-medium line-clamp-2 mb-6">{project.desc}</p>
             <div className="w-full aspect-video overflow-hidden border border-slate-200 shadow-sm">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top" />

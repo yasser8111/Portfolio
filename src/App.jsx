@@ -66,9 +66,13 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
@@ -89,7 +93,11 @@ export default function App() {
         dir={lang === "ar" ? "rtl" : "ltr"}
         className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
       >
-        <Preloader isLoading={isLoading} />
+        <Preloader 
+          isLoading={isLoading} 
+          text={personal.name} 
+          onComplete={handleLoadingComplete} 
+        />
         <Suspense fallback={<Preloader isLoading={true} />}>
           <Routes>
             <Route

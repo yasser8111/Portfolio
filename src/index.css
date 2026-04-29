@@ -59,27 +59,25 @@
   }
 }
 
-/* Project Card Fill Effect */
-.project-card-fill {
+/* Project Card Fade Effect */
+.project-card-fade {
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-.project-card-fill::before {
+.project-card-fade::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: rgba(248, 250, 252, 0.8); /* slate-50/80 */
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  inset: 0;
+  background-color: rgba(37, 99, 235, 0.03); /* Very subtle blue tint */
+  opacity: 0;
+  transition: opacity 0.5s ease;
   z-index: -1;
 }
 
-.project-card-fill:hover::before {
-  height: 100%;
+.project-card-fade:hover::before {
+  opacity: 1;
 }
 
 /* Tech Hover Effect */
@@ -156,82 +154,90 @@
 .preloader-container {
   position: fixed;
   inset: 0;
-  background-color: #f8fafc;
+  background-color: #ffffff; /* Cleaner white */
   display: flex;
-  align-items: center; /* Center on mobile */
-  justify-content: center; /* Center on mobile */
+  align-items: center;
+  justify-content: center;
   z-index: 9999;
-  /* Transition for FADING OUT (when preloader-hidden is added) */
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
-}
-
-/* When the preloader is ACTIVE (no preloader-hidden class), make it appear instantly */
-.preloader-container:not(.preloader-hidden) {
-  transition: none !important;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
 }
 
 @media (min-width: 768px) {
   .preloader-container {
-    align-items: flex-end; /* Bottom-right on desktop */
+    align-items: flex-end;
     justify-content: flex-end;
-    padding: 3rem;
+    padding: 4rem;
   }
 }
 
 .square-loader {
-  width: 50px; /* Smaller for mobile */
+  width: 50px;
   height: 50px;
-  background-color: #0f172a; /* Solid Black */
+  background-color: oklch(92.9% 0.013 255.508); /* Subtle light background for the square */
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  animation: squarePulse 2s infinite ease-in-out;
 }
 
 @media (min-width: 768px) {
   .square-loader {
-    width: 70px; /* Larger for desktop */
-    height: 70px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 60px;
+    height: 60px;
   }
 }
 
-/* Layer 1: Blue Fill */
+/* Layer 1: Site Blue */
 .square-loader::before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 0;
+  height: 100%;
   background-color: #2563eb;
-  animation: loaderFillBlue 1.5s infinite cubic-bezier(0.19, 1, 0.22, 1);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: loaderFillStep1 2s infinite cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* Layer 2: Black Fill */
+/* Layer 2: Dark Slate */
 .square-loader::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 0;
+  height: 100%;
   background-color: #0f172a;
-  animation: loaderFillBlack 1.5s infinite cubic-bezier(0.19, 1, 0.22, 1);
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: loaderFillStep2 2s infinite cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-@keyframes loaderFillBlue {
-  0%, 10% { height: 0; }
-  35%, 65% { height: 100%; }
-  90%, 100% { height: 100%; }
+@keyframes squarePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-@keyframes loaderFillBlack {
-  0%, 45% { height: 0; }
-  55%, 95% { height: 100%; }
-  75%, 100% { height: 100%; }
+@keyframes loaderFillStep1 {
+  0% { transform: scaleY(0); transform-origin: bottom; }
+  25% { transform: scaleY(1); transform-origin: bottom; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  75% { transform: scaleY(0); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes loaderFillStep2 {
+  0% { transform: scaleY(0); transform-origin: top; }
+  25% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  75% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
 .preloader-hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }

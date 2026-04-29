@@ -6,12 +6,12 @@ import Button from "../components/Button";
 import ProjectHoverSection from "../components/ProjectHoverSection";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import HeroProjectsReel from "../components/HeroProjectsReel";
 import {
   GithubIcon,
   WhatsappIcon,
   InstagramIcon,
 } from "../components/BrandIcons";
+import { TextBlock } from "../components/TextBlockEffect";
 
 const HomePage = ({
   lang,
@@ -68,16 +68,20 @@ const HomePage = ({
             <div className="relative z-10 pointer-events-none w-full lg:max-w-[50%]">
               {/* Text Column */}
               <div className="flex flex-col items-start text-start">
-                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900 whitespace-pre-line">
-                  {hero.title.split(/(Code|الكود)/g).map((part, i) =>
-                    part === "Code" || part === "الكود" ? (
-                      <span key={i} className="text-blue-600">
-                        {part}
-                      </span>
-                    ) : (
-                      part
-                    ),
-                  )}
+                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
+                  {hero.title.split("\n").map((line, i) => (
+                    <TextBlock key={i} blockColor="#2563eb" className="block">
+                      {line.split(/(Code|الكود)/g).map((part, j) =>
+                        part === "Code" || part === "الكود" ? (
+                          <span key={j} className="text-blue-600">
+                            {part}
+                          </span>
+                        ) : (
+                          part
+                        ),
+                      )}
+                    </TextBlock>
+                  ))}
                 </h2>
 
                 <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
@@ -193,7 +197,7 @@ const HomePage = ({
                 {services.map((service, i) => (
                   <div
                     key={i}
-                    className="group project-card-fill p-8 md:p-12 border-b md:border-b-0 md:border-e border-slate-200 last:border-e-0 last:border-b-0 cursor-pointer"
+                    className="group project-card-fade p-8 md:p-12 border-b md:border-b-0 md:border-e border-slate-200 last:border-e-0 last:border-b-0 cursor-pointer"
                   >
                     <div className="mb-8">
                       <span className="text-5xl font-mono font-bold tracking-tighter text-slate-500 opacity-20 group-hover:opacity-100 group-hover:text-blue-600 transition-all duration-500">
@@ -216,12 +220,11 @@ const HomePage = ({
           <section id="contact" className="py-24 px-6 md:px-12">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
               <div>
-                <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 whitespace-pre-line">
+                <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 flex flex-col items-start">
                   {sections.letsBuild.split("\n").map((line, i) => (
-                    <React.Fragment key={i}>
+                    <TextBlock key={i} blockColor="#2563eb" className="block">
                       {line}
-                      {i === 0 && <br />}
-                    </React.Fragment>
+                    </TextBlock>
                   ))}
                 </h2>
                 <a
