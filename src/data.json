@@ -167,27 +167,35 @@
         "tech": "React / Vite / Tailwind CSS / JSON Architecture",
         "desc": "قالب معرض أعمال احترافي يدار بالكامل عبر البيانات، يتميز بسهولة تخصيص المحتوى عبر ملف JSON، دعم كامل للغتين (عربي/إنجليزي)، وتصميم عصري مع حركات تفاعلية سلسة.",
         "year": "2026",
-        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/image.png",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/protfolio.png",
         "demoUrl": "https://ysr811.vercel.app/",
         "repoUrl": "https://github.com/yasser8111/Customizable-Portfolio"
       },
       {
-        "title": "Portify",
-        "tech": "React / AI Integration",
-        "desc": "أداة تجريبية تنشئ مواقع محافظ شخصية تلقائيًا باستخدام تخطيطات مسبقة ومحتوى مُولد بالذكاء الاصطناعي.",
+        "title": "YasserGPT",
+        "tech": "React / OpenAI API",
+        "desc": "واجهة دردشة ذكية تعتمد على الذكاء الاصطناعي، مصممة لتقديم تفاعلات سريعة ونظيفة، مع التركيز على الإنتاجية وتجربة مستخدم بسيطة.",
         "year": "2026",
-        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/image.png",
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/yasserGPT.png",
+        "demoUrl": "https://ysrgpt.vercel.app",
+        "repoUrl": "https://github.com/yasser8111/yasserGPT"
       },
       {
-        "title": "FPS Game Prototype",
-        "tech": "Godot / GDScript",
-        "desc": "نموذج أولي للعبة تصويب من منظور الشخص الأول يركز على الحركة، آليات إطلاق النار، وتجربة لعب سلسة.",
-        "year": "2025",
-        "image": "https://images.unsplash.com/photo-1618477247222-ac60c9020460?q=80&w=2070&auto=format&fit=crop",
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "title": "GridX",
+        "tech": "HTML / CSS / JavaScript",
+        "desc": "نظام تخطيط شبكي حديث لبناء واجهات ويب متجاوبة ومتوازنة بصرياً مع نهج تصميم بسيط.",
+        "year": "2026",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/gridX.png",
+        "demoUrl": "https://gridx811.vercel.app",
+        "repoUrl": "https://github.com/yasser8111/GridX"
+      },
+      {
+        "title": "ControlTap",
+        "tech": "JavaScript / Chrome Extension",
+        "desc": "إضافة للمتصفح تعزز تحكم المستخدم وإنتاجيته من خلال تبسيط إدارة التبويبات وتوفير إجراءات وصول سريع.",
+        "year": "2026",
+        "image": "https://bfpjacqkzxjirhoqpsmy.supabase.co/storage/v1/object/public/imges/controlTap.png",
+        "repoUrl": "https://github.com/yasser8111/ControlTap-Beta"
       }
     ],
     "expertise": [

@@ -1,6 +1,8 @@
 import React, { useState, Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
 import portfolioData from "./data.json";
+import Footer from "./components/Footer";
+import SmoothScroll from "./components/SmoothScroll";
 import Preloader from "./components/Preloader";
 import { createSlug } from "./lib/utils";
 
@@ -46,7 +48,13 @@ const ScrollToTop = () => {
 };
 
 export default function App() {
-  const [lang, setLang] = useState(portfolioData.lang || "en");
+  const [lang, setLang] = useState(() => {
+    return localStorage.getItem("portfolio_lang") || portfolioData.lang || "en";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("portfolio_lang", lang);
+  }, [lang]);
   const {
     personal,
     hero,
@@ -87,68 +95,70 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div
-        dir={lang === "ar" ? "rtl" : "ltr"}
-        className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
-      >
-        <Preloader 
-          isLoading={isLoading} 
-          text={personal.name} 
-          onComplete={handleLoadingComplete} 
-        />
-        <Suspense fallback={<Preloader isLoading={true} />}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <HomePage
-                  lang={lang}
-                  setLang={setLang}
-                  personal={personal}
-                  hero={hero}
-                  about={about}
-                  projects={projects}
-                  expertise={expertise}
-                  services={services}
-                  footer={footer}
-                  nav={nav}
-                  buttons={buttons}
-                  sections={sections}
-                  isUnderConstruction={portfolioData.isUnderConstruction}
-                  isMenuOpen={isMenuOpen}
-                  setIsMenuOpen={setIsMenuOpen}
-                  scrollToSection={scrollToSection}
-                />
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <AllProjectsPage
-                  projects={projects}
-                  lang={lang}
-                  footerText={footer.text}
-                  buttons={buttons}
-                  nav={nav}
-                />
-              }
-            />
-            <Route
-              path="/projects/:projectId"
-              element={
-                <ProjectDetailsWrapper
-                  projects={projects}
-                  lang={lang}
-                  footerText={footer.text}
-                  buttons={buttons}
-                />
-              }
-            />
-          </Routes>
-        </Suspense>
-      </div>
-    </BrowserRouter>
+    <SmoothScroll>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div
+          dir={lang === "ar" ? "rtl" : "ltr"}
+          className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
+        >
+          <Preloader 
+            isLoading={isLoading} 
+            text={personal.name} 
+            onComplete={handleLoadingComplete} 
+          />
+          <Suspense fallback={<Preloader isLoading={true} />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <HomePage
+                    lang={lang}
+                    setLang={setLang}
+                    personal={personal}
+                    hero={hero}
+                    about={about}
+                    projects={projects}
+                    expertise={expertise}
+                    services={services}
+                    footer={footer}
+                    nav={nav}
+                    buttons={buttons}
+                    sections={sections}
+                    isUnderConstruction={portfolioData.isUnderConstruction}
+                    isMenuOpen={isMenuOpen}
+                    setIsMenuOpen={setIsMenuOpen}
+                    scrollToSection={scrollToSection}
+                  />
+                }
+              />
+              <Route
+                path="/projects"
+                element={
+                  <AllProjectsPage
+                    projects={projects}
+                    lang={lang}
+                    footerText={footer.text}
+                    buttons={buttons}
+                    nav={nav}
+                  />
+                }
+              />
+              <Route
+                path="/projects/:projectId"
+                element={
+                  <ProjectDetailsWrapper
+                    projects={projects}
+                    lang={lang}
+                    footerText={footer.text}
+                    buttons={buttons}
+                  />
+                }
+              />
+            </Routes>
+          </Suspense>
+        </div>
+      </BrowserRouter>
+    </SmoothScroll>
   );
 }

@@ -147,7 +147,9 @@ const HomePage = ({
                 className="md:col-span-5 py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-12"
               >
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8">
-                  {sections.about}
+                  <TextBlock blockColor="#2563eb">
+                    {sections.about}
+                  </TextBlock>
                 </h3>
                 {about.map((paragraph, i) => (
                   <p
@@ -165,7 +167,9 @@ const HomePage = ({
                 className="md:col-span-7 py-16 ps-12 pe-6 md:pe-12 border-t md:border-t-0 border-slate-200"
               >
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8">
-                  {sections.expertise}
+                  <TextBlock blockColor="#2563eb">
+                    {sections.expertise}
+                  </TextBlock>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
                   {expertise.map((item, i) => (
@@ -190,7 +194,9 @@ const HomePage = ({
             <div className="grid grid-cols-1 md:grid-cols-12">
               <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8">
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
-                  {sections.services}
+                  <TextBlock blockColor="#2563eb">
+                    {sections.services}
+                  </TextBlock>
                 </h3>
               </div>
               <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-3">

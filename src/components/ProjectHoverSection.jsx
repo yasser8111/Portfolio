@@ -93,11 +93,7 @@ const ProjectHoverSection = ({
                   {project.title}
                 </TextBlock>
               </h2>
-              <div className="flex flex-col md:items-end text-start md:text-right max-w-lg">
-                <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed line-clamp-2">
-                  {project.desc}
-                </p>
-              </div>
+
             </Link>
           ))}
           <div className="w-full h-px bg-slate-200" />
