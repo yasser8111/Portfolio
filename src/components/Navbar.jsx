@@ -16,7 +16,8 @@ const Navbar = ({
       <div className="flex justify-between items-center">
         <div>
           <Link to="/">
-            <h1 className="text-2xl font-bold tracking-tight cursor-pointer">
+            <h1 className="text-2xl font-bold tracking-tight cursor-pointer flex items-center gap-2">
+              <div className="w-5 h-5 bg-blue-600 shadow-sm"></div>
               {personal.nickname}
             </h1>
           </Link>
