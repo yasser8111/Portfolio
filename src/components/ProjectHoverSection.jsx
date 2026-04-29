@@ -119,7 +119,7 @@ const ProjectHoverSection = ({
             }}
           >
             {projects.map((project, index) => (
-              <div key={index} className="w-full h-full flex-shrink-0">
+              <div key={index} className="w-full h-full shrink-0">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -148,7 +148,11 @@ const ProjectHoverSection = ({
                 {project.title}
               </TextBlock>
             </h2>
-            <p className="text-slate-500 text-base font-medium line-clamp-2 mb-6">{project.desc}</p>
+            <p className="text-slate-500 text-base font-medium line-clamp-2 mb-6">
+              <TextBlock blockColor="#cbd5e1" className="block">
+                {project.desc}
+              </TextBlock>
+            </p>
             <div className="w-full aspect-video overflow-hidden border border-slate-200 shadow-sm">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top" />
             </div>

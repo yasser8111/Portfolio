@@ -14,7 +14,8 @@
       "contactMe": "Contact Me",
       "liveDemo": "Live Demo",
       "sourceCode": "Source Code",
-      "viewAll": "View All Projects",
+      "viewAll": "Explore Projects",
+      "aboutMe": "More About Me",
       "backToHome": "Back"
     },
     "sections": {
@@ -42,6 +43,19 @@
     "about": [
       "I am a first-year Computer Science student with a focus on frontend development and UI/UX design. I enjoy building clean and practical web interfaces that solve real problems.",
       "I have worked on several personal projects, including e-commerce websites and experimental tools, focusing on performance, simplicity, and user experience. Currently, I’m improving my skills in JavaScript, React, and system design."
+    ],
+    "philosophy": "I believe that great software is born at the intersection of logical code and intuitive design. My goal is to bridge the gap between complex systems and human-centric interfaces, ensuring that technology serves the user, not the other way around.",
+    "certificates": [
+      {
+        "title": "Responsive Web Design",
+        "issuer": "freeCodeCamp",
+        "year": "2025"
+      },
+      {
+        "title": "JavaScript Algorithms & Data Structures",
+        "issuer": "freeCodeCamp",
+        "year": "2025"
+      }
     ],
 
     "projects": [
@@ -116,6 +130,9 @@
     ],
     "footer": {
       "text": ",Designed and developed by YASER :D."
+    },
+    "gallery": {
+      "hint": "Drag to explore projects board"
     }
   },
   "ar": {
@@ -131,7 +148,8 @@
       "contactMe": "تواصل معي",
       "liveDemo": "معاينة مباشرة",
       "sourceCode": "الكود المصدري",
-      "viewAll": "عرض جميع المشاريع",
+      "viewAll": "استكشف مشاريع",
+      "aboutMe": "المزيد عني",
       "backToHome": "رجوع"
     },
     "sections": {
@@ -160,6 +178,19 @@
     "about": [
       "أنا طالب في السنة الأولى في علوم الحاسوب، أركز على تطوير الواجهات الأمامية وتصميم واجهة/تجربة المستخدم (UI/UX). أستمتع ببناء واجهات ويب نظيفة وعملية تحل مشاكل حقيقية.",
       "عملت على العديد من المشاريع الشخصية، بما في ذلك مواقع التجارة الإلكترونية وأدوات تجريبية، مع التركيز على الأداء، البساطة، وتجربة المستخدم. حاليًا، أقوم بتطوير مهاراتي في JavaScript و React وتصميم الأنظمة."
+    ],
+    "philosophy": "أؤمن بأن البرمجيات العظيمة تولد عند تقاطع الكود المنطقي والتصميم البديهي. هدفي هو سد الفجوة بين الأنظمة المعقدة والواجهات التي تركز على الإنسان، لضمان أن التكنولوجيا تخدم المستخدم وليس العكس.",
+    "certificates": [
+      {
+        "title": "تصميم الويب المتجاوب",
+        "issuer": "freeCodeCamp",
+        "year": "2025"
+      },
+      {
+        "title": "خوارزميات وهياكل بيانات JavaScript",
+        "issuer": "freeCodeCamp",
+        "year": "2025"
+      }
     ],
     "projects": [
       {
@@ -232,6 +263,9 @@
     ],
     "footer": {
       "text": ",تم التصميم والتطوير بواسطة ياسر."
+    },
+    "gallery": {
+      "hint": "اسحب للتحرك في لوحة المشاريع"
     }
   }
 }

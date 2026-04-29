@@ -7,7 +7,7 @@ const GAP = 32;
 const TOTAL_WIDTH = CELL_WIDTH + GAP;
 const TOTAL_HEIGHT = CELL_HEIGHT + GAP;
 
-const ProjectsGallery = ({ projects, onSelectProject, lang = "en" }) => {
+const ProjectsGallery = ({ projects, onSelectProject, lang = "en", gallery }) => {
   const wrapperRef = useRef(null);
   const containerRef = useRef(null);
   const isDragging = useRef(false);
@@ -178,11 +178,15 @@ const ProjectsGallery = ({ projects, onSelectProject, lang = "en" }) => {
     return el;
   };
 
-  const [showHint, setShowHint] = useState(true);
+  const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowHint(false), 5000);
-    return () => clearTimeout(timer);
+    const showTimer = setTimeout(() => setShowHint(true), 500);
+    const hideTimer = setTimeout(() => setShowHint(false), 6500);
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   useEffect(() => {
@@ -268,7 +272,7 @@ const ProjectsGallery = ({ projects, onSelectProject, lang = "en" }) => {
       className="relative w-full h-full min-h-[600px] bg-white overflow-hidden"
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <div className="absolute inset-0 pointer-events-none opacity-[0.5] bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      <div className="absolute inset-0 pointer-events-none opacity-[0.5] bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[60px_60px]"></div>
 
       <div
         ref={containerRef}
@@ -279,20 +283,22 @@ const ProjectsGallery = ({ projects, onSelectProject, lang = "en" }) => {
         onPointerLeave={handlePointerUp}
       />
 
-      {showHint && (
-        <div className="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <div className="bg-white border border-slate-200 text-slate-900 px-6 py-2.5 shadow-xl flex items-center gap-5 transition-opacity duration-1000">
-            <div className="w-10 h-10 flex items-center justify-center shrink-0 text-blue-600">
-              <Move size={20} />
-            </div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] whitespace-nowrap">
-              {lang === "ar"
-                ? "اسحب للتحرك في لوحة المشاريع"
-                : "Drag to explore projects board"}
-            </p>
+      <div 
+        className={`pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 z-50 transition-all duration-1000 ease-in-out ${
+          showHint 
+            ? "opacity-100 translate-y-0" 
+            : "opacity-0 translate-y-12"
+        }`}
+      >
+        <div className="bg-white/80 backdrop-blur-md border border-slate-200 text-slate-900 px-6 py-3 shadow-2xl flex items-center gap-4">
+          <div className="flex items-center justify-center shrink-0 text-blue-600">
+            <Move size={18} />
           </div>
+          <p className="text-[11px] font-bold uppercase tracking-widest whitespace-nowrap">
+            {gallery?.hint}
+          </p>
         </div>
-      )}
+      </div>
     </div>
   );
 };

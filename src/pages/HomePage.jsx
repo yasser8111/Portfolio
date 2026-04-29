@@ -85,7 +85,9 @@ const HomePage = ({
                 </h2>
 
                 <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
-                  {hero.subtitle}
+                  <TextBlock blockColor="#cbd5e1" className="block">
+                    {hero.subtitle}
+                  </TextBlock>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-start pointer-events-auto">
@@ -156,9 +158,28 @@ const HomePage = ({
                     key={i}
                     className="text-lg leading-relaxed text-slate-500 mb-6 last:mb-0"
                   >
-                    {paragraph}
+                    <TextBlock blockColor="#cbd5e1" className="block">
+                      {paragraph}
+                    </TextBlock>
                   </p>
                 ))}
+                <div className="mt-10">
+                  <Link to="/about">
+                    <Button
+                      variant="outline"
+                      icon={({ className }) => (
+                        <ArrowLeft
+                          size={16}
+                          className={`rtl:rotate-180 ${className}`}
+                        />
+                      )}
+                      iconPosition="start"
+                      className="uppercase"
+                    >
+                      {buttons.aboutMe}
+                    </Button>
+                  </Link>
+                </div>
               </div>
 
               {/* Skills */}
@@ -175,11 +196,17 @@ const HomePage = ({
                   {expertise.map((item, i) => (
                     <div key={i}>
                       <h4 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2 uppercase tracking-wide text-sm">
-                        {item.category}
+                        <TextBlock blockColor="#2563eb">
+                          {item.category}
+                        </TextBlock>
                       </h4>
                       <ul className="space-y-3 text-slate-500 font-medium">
                         {item.skills.map((skill, j) => (
-                          <li key={j}>{skill}</li>
+                          <li key={j}>
+                            <TextBlock blockColor="#cbd5e1">
+                              {skill}
+                            </TextBlock>
+                          </li>
                         ))}
                       </ul>
                     </div>
@@ -211,10 +238,14 @@ const HomePage = ({
                       </span>
                     </div>
                     <h4 className="text-xl font-bold text-slate-900 mb-4">
-                      {service.title}
+                      <TextBlock blockColor="#2563eb">
+                        {service.title}
+                      </TextBlock>
                     </h4>
                     <p className="text-slate-500 font-medium leading-relaxed">
-                      {service.desc}
+                      <TextBlock blockColor="#cbd5e1" className="block">
+                        {service.desc}
+                      </TextBlock>
                     </p>
                   </div>
                 ))}

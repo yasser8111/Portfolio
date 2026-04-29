@@ -9,6 +9,7 @@ import { createSlug } from "./lib/utils";
 // Lazy Load Pages for Performance
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AllProjectsPage = lazy(() => import("./pages/AllProjectsPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
 
 // Wrapper for Project Details to handle URL params
@@ -66,6 +67,9 @@ export default function App() {
     nav,
     buttons,
     sections,
+    gallery,
+    philosophy,
+    certificates,
   } = portfolioData[lang];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,6 +137,23 @@ export default function App() {
                 }
               />
               <Route
+                path="/about"
+                element={
+                  <AboutPage
+                    lang={lang}
+                    setLang={setLang}
+                    personal={personal}
+                    about={about}
+                    philosophy={philosophy}
+                    certificates={certificates}
+                    expertise={expertise}
+                    nav={nav}
+                    footer={footer}
+                    buttons={buttons}
+                  />
+                }
+              />
+              <Route
                 path="/projects"
                 element={
                   <AllProjectsPage
@@ -141,6 +162,7 @@ export default function App() {
                     footerText={footer.text}
                     buttons={buttons}
                     nav={nav}
+                    gallery={gallery}
                   />
                 }
               />

@@ -88,7 +88,7 @@ html.lenis body {
 }
 
 .project-card-fade::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-color: rgba(37, 99, 235, 0.03); /* Very subtle blue tint */
@@ -164,9 +164,9 @@ html.lenis body {
 
 @media (min-width: 768px) {
   .edge-to-edge {
-    margin-left: -3rem; /* -px-12 */
+    margin-left: -3rem;
     margin-right: -3rem;
-    padding-left: 3rem; /* px-12 */
+    padding-left: 3rem;
     padding-right: 3rem;
   }
 }
@@ -175,12 +175,14 @@ html.lenis body {
 .preloader-container {
   position: fixed;
   inset: 0;
-  background-color: #ffffff; /* Cleaner white */
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+  transition:
+    opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 1s;
 }
 
 @media (min-width: 768px) {
@@ -194,7 +196,9 @@ html.lenis body {
 .square-loader {
   width: 50px;
   height: 50px;
-  background-color: oklch(92.9% 0.013 255.508); /* Subtle light background for the square */
+  background-color: oklch(
+    92.9% 0.013 255.508
+  ); /* Subtle light background for the square */
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
@@ -237,24 +241,59 @@ html.lenis body {
 }
 
 @keyframes squarePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes loaderFillStep1 {
-  0% { transform: scaleY(0); transform-origin: bottom; }
-  25% { transform: scaleY(1); transform-origin: bottom; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  75% { transform: scaleY(0); transform-origin: top; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  25% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  75% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 @keyframes loaderFillStep2 {
-  0% { transform: scaleY(0); transform-origin: top; }
-  25% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  75% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  25% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  75% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 .preloader-hidden {
