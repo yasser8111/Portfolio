@@ -1,21 +1,19 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { ArrowLeft, Award, Cpu, Lightbulb, Code, Target } from "lucide-react";
-import Button from "../components/Button";
-import NavBack from "../components/NavBack";
-import Footer from "../components/Footer";
-import ContactSection from "../components/ContactSection";
-import { TextBlock } from "../components/TextBlockEffect";
+import { useNavigate } from "react-router-dom";
+import { Award, Cpu, Lightbulb, Code, Target } from "lucide-react";
+import NavBack from "../components/layout/NavBack";
+import Footer from "../components/layout/Footer";
+import ContactSection from "../components/sections/ContactSection";
+import PageBanner from "../components/ui/PageBanner";
+import { TextBlock } from "../components/ui/TextBlockEffect";
 
 const AboutPage = ({
   lang,
-  setLang,
   personal,
   about,
   philosophy,
   certificates,
   expertise,
-  nav,
   footer,
   buttons,
   sections,
@@ -27,7 +25,6 @@ const AboutPage = ({
       dir={lang === "ar" ? "rtl" : "ltr"}
       className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
     >
-      {/* Container */}
       <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
         <NavBack 
           onBack={() => navigate("/")} 
@@ -36,31 +33,11 @@ const AboutPage = ({
         />
 
         <main className="flex-1">
-          {/* Hero Section - Philosophy */}
-          <section className="py-32 px-6 md:px-12 border-b border-slate-200 bg-slate-50/30">
-             <div className="max-w-xl">
-                <div className="flex items-center gap-3 mb-10 text-blue-600">
-                    <Target size={20} />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.4em]">{lang === "ar" ? "فلسفتي" : "Philosophy"}</span>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none text-slate-900 mb-10">
-                  <TextBlock blockColor="#2563eb" className="block">
-                    {philosophy.split("\n")[0]}
-                  </TextBlock>
-                </h1>
-
-                <div className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium">
-                   {philosophy.split("\n").slice(1).map((part, i) => (
-                      <p key={i} className="mb-4 last:mb-0">
-                        <TextBlock blockColor="#94a3b8" className="block">
-                          {part}
-                        </TextBlock>
-                      </p>
-                   ))}
-                </div>
-             </div>
-          </section>
+          {/* ── Page Banner ────────────────────────────────────────────────── */}
+          <PageBanner 
+            title={sections.about} 
+            subtitle={philosophy.split("\n")[0]} 
+          />
 
           {/* Detailed About & Skills */}
           <section className="border-b border-slate-200">
@@ -69,7 +46,7 @@ const AboutPage = ({
               <div className="lg:col-span-7 py-16 px-6 md:px-12 lg:border-e border-slate-200">
                 <div className="flex items-center gap-3 mb-10 text-slate-400">
                     <Lightbulb size={20} />
-                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{lang === "ar" ? "قصتي" : "My Story"}</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.myStory}</span>
                 </div>
                 <div className="space-y-8">
                   {about.map((paragraph, i) => (
@@ -85,7 +62,7 @@ const AboutPage = ({
                 <div className="mt-24">
                   <div className="flex items-center gap-3 mb-12 text-slate-400">
                     <Award size={20} />
-                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{lang === "ar" ? "الشهادات والإنجازات" : "Certifications & Achievements"}</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.certifications}</span>
                   </div>
                   <div className="space-y-12">
                     {certificates.map((cert, i) => (
@@ -125,7 +102,7 @@ const AboutPage = ({
               <div className="lg:col-span-5 py-16 px-6 md:px-12 bg-white">
                 <div className="flex items-center gap-3 mb-10 text-slate-400">
                     <Code size={20} />
-                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{lang === "ar" ? "المهارات التقنية" : "Technical Stack"}</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.technicalStack}</span>
                 </div>
                 <div className="space-y-12">
                   {expertise.map((item, i) => (
@@ -152,7 +129,6 @@ const AboutPage = ({
             </div>
           </section>
 
-          {/* CTA Section - Replaced with ContactSection */}
           <ContactSection 
             personal={personal} 
             sections={sections} 

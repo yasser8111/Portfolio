@@ -1,7 +1,7 @@
 import React from "react";
-import { TextBlock } from "./TextBlockEffect";
-import Button from "./Button";
-import { GithubIcon, WhatsappIcon, InstagramIcon } from "./BrandIcons";
+import { TextBlock } from "../ui/TextBlockEffect";
+import Button from "../ui/Button";
+import { GithubIcon, WhatsappIcon, InstagramIcon } from "../ui/BrandIcons";
 
 const ContactSection = ({ personal, sections, lang }) => {
   return (

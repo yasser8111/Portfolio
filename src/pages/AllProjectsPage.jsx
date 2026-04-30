@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import Button from "../components/Button";
-import ProjectsGallery from "../components/ProjectsGallery";
+import Button from "../components/ui/Button";
+import ProjectsGallery from "../components/projects/ProjectsGallery";
 import { createSlug } from "../lib/utils";
 
 const AllProjectsPage = ({

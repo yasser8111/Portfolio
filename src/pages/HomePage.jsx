@@ -2,12 +2,12 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { createSlug } from "../lib/utils";
-import Button from "../components/Button";
-import ProjectHoverSection from "../components/ProjectHoverSection";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ContactSection from "../components/ContactSection";
-import { TextBlock } from "../components/TextBlockEffect";
+import Button from "../components/ui/Button";
+import ProjectHoverSection from "../components/projects/ProjectHoverSection";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import ContactSection from "../components/sections/ContactSection";
+import { TextBlock } from "../components/ui/TextBlockEffect";
 
 const HomePage = ({
   lang,

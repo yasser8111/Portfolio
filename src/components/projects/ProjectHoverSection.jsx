@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { createSlug } from "../lib/utils";
-import { TextBlock } from "./TextBlockEffect";
+import { createSlug } from "../../lib/utils";
+import { TextBlock } from "../ui/TextBlockEffect";
 
 // Simple utility to merge class names
 const cn = (...classes) => classes.filter(Boolean).join(" ");
@@ -84,8 +84,7 @@ const ProjectHoverSection = ({
                 setModal({ active: true, index });
               }}
               className={cn(
-                "w-full flex flex-col md:flex-row md:items-center justify-between px-6 md:px-12 py-12 border-t border-slate-200 cursor-pointer transition-all duration-300 hover:bg-slate-50",
-                modal.active && modal.index !== index && "opacity-30"
+                "w-full flex flex-col md:flex-row md:items-center justify-between px-6 md:px-12 py-12 border-t border-slate-200 cursor-pointer transition-all duration-300 hover:bg-slate-50"
               )}
             >
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-3 md:mb-0">

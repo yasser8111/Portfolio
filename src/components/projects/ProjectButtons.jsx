@@ -1,6 +1,6 @@
 import React from "react";
 import { ExternalLink, Code2 } from "lucide-react";
-import Button from "./Button";
+import Button from "../ui/Button";
 
 const ProjectButtons = ({ project, buttons }) => (
   <div className="flex flex-wrap gap-3 mt-6">

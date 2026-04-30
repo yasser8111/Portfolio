@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Layout,
   Database,
   Smartphone,
   Globe,
@@ -11,10 +10,11 @@ import {
   Puzzle,
   Code,
 } from "lucide-react";
-import NavBack from "../components/NavBack";
-import Footer from "../components/Footer";
-import ContactSection from "../components/ContactSection";
-import { TextBlock } from "../components/TextBlockEffect";
+import NavBack from "../components/layout/NavBack";
+import Footer from "../components/layout/Footer";
+import ContactSection from "../components/sections/ContactSection";
+import PageBanner from "../components/ui/PageBanner";
+import { TextBlock } from "../components/ui/TextBlockEffect";
 
 /* ─── colour palettes (same 3-colour cycle as HomePage) ─────────────────── */
 const PALETTES = [
@@ -50,28 +50,7 @@ const PALETTES = [
   },
 ];
 
-const ICONS = [Code, Paintbrush, Puzzle, Globe, Shield, Settings];
-
-/* ─── feature lists per service index (3 items each) ────────────────────── */
-const getFeatures = (lang, i) => {
-  const ar = [
-    ["واجهات تفاعلية", "تحسين الأداء", "تصميم متجاوب"],
-    ["بنية بيانات قوية", "واجهات برمجية آمنة", "قواعد بيانات سريعة"],
-    ["تصميم أصيل للموبايل", "تجربة مستخدم سلسة", "نشر على المتجرين"],
-    ["حضور رقمي احترافي", "تحسين محركات البحث", "سرعة تحميل عالية"],
-    ["حماية متقدمة", "مصادقة آمنة", "تشفير البيانات"],
-    ["أتمتة المهام", "دمج الأنظمة", "صيانة مستمرة"],
-  ];
-  const en = [
-    ["Interactive UIs", "Performance Tuning", "Responsive Design"],
-    ["Robust Data Models", "Secure APIs", "Fast Databases"],
-    ["Mobile-First Design", "Smooth UX", "App Store Deployment"],
-    ["Professional Web Presence", "SEO Optimised", "Fast Load Times"],
-    ["Advanced Protection", "Secure Auth", "Data Encryption"],
-    ["Task Automation", "System Integration", "Ongoing Maintenance"],
-  ];
-  return (lang === "ar" ? ar : en)[i % 6];
-};
+const ICONS = [Code, Paintbrush, Puzzle, Globe, Shield, Database, Smartphone, Settings];
 
 /* ─── component ──────────────────────────────────────────────────────────── */
 const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections }) => {
@@ -87,29 +66,17 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
 
         <main className="flex-1">
 
-          {/* ── Hero ─────────────────────────────────────────────────────── */}
-          <section className="py-24 px-6 md:px-12 border-b border-slate-200 bg-slate-50/30">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none text-slate-900 mb-8">
-                <TextBlock blockColor="#2563eb" className="block">
-                  {sections.services}
-                </TextBlock>
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl">
-                <TextBlock blockColor="#94a3b8" className="block">
-                  {lang === "ar"
-                    ? "أقدم حلولاً رقمية متكاملة تركز على الأداء العالي، واجهة المستخدم العصرية، وتجربة المستخدم السلسة."
-                    : "I provide end-to-end digital solutions focused on high performance, modern UI, and seamless user experience."}
-                </TextBlock>
-              </p>
-            </div>
-          </section>
+          {/* ── Page Banner ────────────────────────────────────────────────── */}
+          <PageBanner 
+            title={sections.services} 
+            subtitle={sections.servicesSubtitle} 
+          />
 
           {/* ── One section per service ───────────────────────────────────── */}
           {services.map((service, i) => {
             const p = PALETTES[i % 3];
             const Icon = ICONS[i % ICONS.length];
-            const features = getFeatures(lang, i);
+            const features = service.features || [];
             const isEven = i % 2 === 0;
 
             return (
@@ -121,7 +88,7 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                 <div
                   className={`grid grid-cols-1 lg:grid-cols-2 min-h-[420px]`}
                 >
-                  {/* ── Left / Right: numbered identity ──────────────────── */}
+                  {/* ── Left / Right: Content ────────────────────────────── */}
                   <div
                     className={`flex flex-col justify-between p-10 md:p-16 border-b lg:border-b-0 ${
                       isEven
@@ -168,7 +135,7 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                       className="text-xs font-bold uppercase tracking-widest mb-8"
                       style={{ color: p.desc }}
                     >
-                      {lang === "ar" ? "ما تحصل عليه" : "What You Get"}
+                      {sections.whatYouGet}
                     </h3>
 
                     <ul className="space-y-5">

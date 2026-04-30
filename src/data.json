@@ -1,5 +1,5 @@
 {
-  "isUnderConstruction": true,
+  "isUnderConstruction": false,
   "lang": "en",
   "en": {
     "nav": {
@@ -24,7 +24,13 @@
       "about": "About",
       "expertise": "Skills",
       "letsBuild": "Let's build\nsomething useful :D",
-      "services": "Services"
+      "services": "Services",
+      "servicesSubtitle": "I provide end-to-end digital solutions focused on high performance, modern UI, and seamless user experience.",
+      "whatYouGet": "What You Get",
+      "philosophy": "Philosophy",
+      "myStory": "My Story",
+      "technicalStack": "Technical Stack",
+      "certifications": "Certifications & Achievements"
     },
     "personal": {
       "nickname": "YSR",
@@ -68,7 +74,6 @@
         "year": "8h workshop: AI Agents, Prompting"
       }
     ],
-
     "projects": [
       {
         "title": "Customizable Portfolio",
@@ -106,7 +111,6 @@
         "repoUrl": "https://github.com/yasser8111/ControlTap-Beta"
       }
     ],
-
     "expertise": [
       {
         "category": "Frontend",
@@ -132,15 +136,18 @@
     "services": [
       {
         "title": "Frontend Development",
-        "desc": "Building fast, responsive, and accessible web interfaces with React and Tailwind CSS."
+        "desc": "Building fast, responsive, and accessible web interfaces with React and Tailwind CSS.",
+        "features": ["Interactive UIs", "Performance Tuning", "Responsive Design"]
       },
       {
         "title": "UI/UX to Code",
-        "desc": "Converting Figma designs into pixel-perfect, high-performance web components."
+        "desc": "Converting Figma designs into pixel-perfect, high-performance web components.",
+        "features": ["Pixel Perfect", "Reusable Components", "Smooth Animations"]
       },
       {
         "title": "Chrome Extensions",
-        "desc": "Developing custom browser tools to automate tasks and improve user productivity."
+        "desc": "Developing custom browser tools to automate tasks and improve user productivity.",
+        "features": ["Task Automation", "System Integration", "Ongoing Maintenance"]
       }
     ],
     "footer": {
@@ -173,7 +180,13 @@
       "about": "نبذة عني",
       "expertise": "الخبرات",
       "letsBuild": "لنقم ببناء\nشيء مفيد",
-      "services": "الخدمات"
+      "services": "الخدمات",
+      "servicesSubtitle": "أقدم حلولاً رقمية متكاملة تركز على الأداء العالي، واجهة المستخدم العصرية، وتجربة المستخدم السلسة.",
+      "whatYouGet": "ما تحصل عليه",
+      "philosophy": "فلسفتي",
+      "myStory": "قصتي",
+      "technicalStack": "المهارات التقنية",
+      "certifications": "الشهادات والإنجازات"
     },
     "personal": {
       "nickname": "YSR",
@@ -280,15 +293,18 @@
     "services": [
       {
         "title": "تطوير واجهات المستخدم",
-        "desc": "بناء واجهات ويب سريعة ومتجاوبة باستخدام React و Tailwind CSS."
+        "desc": "بناء واجهات ويب سريعة ومتجاوبة باستخدام React و Tailwind CSS.",
+        "features": ["واجهات تفاعلية", "تحسين الأداء", "تصميم متجاوب"]
       },
       {
         "title": "تحويل التصميم إلى كود",
-        "desc": "تحويل تصاميم Figma بدقة بيكسل بيكسل إلى مكونات ويب عالية الأداء."
+        "desc": "تحويل تصاميم Figma بدقة بيكسل بيكسل إلى مكونات ويب عالية الأداء.",
+        "features": ["دقة بكسل", "مكونات قابلة لإعادة الاستخدام", "حركات سلسة"]
       },
       {
         "title": "إضافات المتصفح",
-        "desc": "تطوير أدوات مخصصة للمتصفح لأتمتة المهام وزيادة الإنتاجية."
+        "desc": "تطوير أدوات مخصصة للمتصفح لأتمتة المهام وزيادة الإنتاجية.",
+        "features": ["أتمتة المهام", "دمج الأنظمة", "صيانة مستمرة"]
       }
     ],
     "footer": {

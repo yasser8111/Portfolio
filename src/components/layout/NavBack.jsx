@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-import Button from "./Button";
+import Button from "../ui/Button";
 
 const NavBack = ({ onBack, backText, lang }) => {
   return (

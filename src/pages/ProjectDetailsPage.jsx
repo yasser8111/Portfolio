@@ -1,5 +1,5 @@
-import NavBack from "../components/NavBack";
-import ProjectButtons from "../components/ProjectButtons";
+import NavBack from "../components/layout/NavBack";
+import ProjectButtons from "../components/projects/ProjectButtons";
 
 const ProjectDetailsPage = ({ project, onBack, lang, footerText, buttons }) => {
   return (
