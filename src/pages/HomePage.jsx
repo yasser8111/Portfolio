@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactSection from "../components/ContactSection";
 import { TextBlock } from "../components/TextBlockEffect";
-import CardSwap, { Card } from "../components/CardSwap";
+
 
 const HomePage = ({
   lang,
@@ -56,23 +56,25 @@ const HomePage = ({
 
         <main className="flex-1">
           <section className="relative overflow-hidden min-h-[calc(100vh-76px)] border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0 flex items-center">
-             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 items-center gap-12">
                {/* Left: Text Content */}
-               <div className="relative z-10 w-full order-2 lg:order-1">
+               <div className="relative z-10 w-full order-1">
                  <div className="flex flex-col items-start text-start">
                    <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
                      {hero.title.split("\n").map((line, i) => (
-                       <TextBlock key={i} blockColor="#2563eb" className="block">
-                         {line.split(/(Code|الكود)/g).map((part, j) =>
-                           part === "Code" || part === "الكود" ? (
-                             <span key={j} className="text-blue-600">
-                               {part}
-                             </span>
-                           ) : (
-                             part
-                           ),
-                         )}
-                       </TextBlock>
+                       <div key={i} className="w-full">
+                         <TextBlock blockColor="#2563eb" className="block">
+                           {line.split(/(Code|الكود)/g).map((part, j) =>
+                             part === "Code" || part === "الكود" ? (
+                               <span key={j} className="text-blue-600">
+                                 {part}
+                               </span>
+                             ) : (
+                               part
+                             ),
+                           )}
+                         </TextBlock>
+                       </div>
                      ))}
                    </h2>
 
@@ -105,30 +107,7 @@ const HomePage = ({
                  </div>
                </div>
 
-               {/* Right: CardSwap Content */}
-               <div className="hidden lg:flex absolute right-[-18%] top-[25%] w-[1000px] h-[700px] pointer-events-none">
-                 <div className="pointer-events-auto w-full h-full">
-                    <CardSwap 
-                      width={800} 
-                      height={450} 
-                      delay={5000}
-                      cardDistance={50}
-                      verticalDistance={60}
-                    >
-                      {projects.slice(0, 4).map((project, i) => (
-                        <Card key={i} className="overflow-hidden border-white/5 rounded-none shadow-none">
-                           <div className="relative w-full h-full">
-                             <img 
-                               src={project.image} 
-                               alt={project.title} 
-                               className="w-full h-full object-cover"
-                             />
-                           </div>
-                        </Card>
-                      ))}
-                    </CardSwap>
-                 </div>
-               </div>
+
              </div>
           </section>
 
@@ -141,7 +120,7 @@ const HomePage = ({
               <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-center md:justify-start">
                 <Link to="/projects">
                   <Button
-                    variant="outline"
+                    variant="primary"
                     icon={({ className }) => (
                       <ArrowLeft
                         size={16}
@@ -184,7 +163,7 @@ const HomePage = ({
                 <div className="mt-10">
                   <Link to="/about">
                     <Button
-                      variant="outline"
+                      variant="primary"
                       icon={({ className }) => (
                         <ArrowLeft
                           size={16}
