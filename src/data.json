@@ -47,14 +47,24 @@
     "philosophy": "Simplicity in Code, Clarity in design.\nI believe that complexity is the enemy of progress. In code, simplicity means maintainability and performance. In design, clarity means an intuitive experience where the user never has to guess. My approach is to strip away the noise until only what is essential remains.",
     "certificates": [
       {
-        "title": "Responsive Web Design",
-        "issuer": "freeCodeCamp",
-        "year": "2025"
+        "title": "Front-End Development (HTML, CSS, JavaScript)",
+        "issuer": "Abaad Institute",
+        "year": "36h – Grade: Excellent"
       },
       {
-        "title": "JavaScript Algorithms & Data Structures",
-        "issuer": "freeCodeCamp",
-        "year": "2025"
+        "title": "UI/UX Design Fundamentals using Figma",
+        "issuer": "Hadhramout University",
+        "year": "30h: Figma, UI Foundations"
+      },
+      {
+        "title": "Intermediate Diploma in English Language",
+        "issuer": "Hadhramout Research Center",
+        "year": "300h: Grade 82% (Very Good)"
+      },
+      {
+        "title": "From Zero to Your First AI Agent",
+        "issuer": "Hadhramout Foundation - Human Development",
+        "year": "8h workshop: AI Agents, Prompting"
       }
     ],
 
@@ -99,23 +109,23 @@
     "expertise": [
       {
         "category": "Frontend",
-        "skills": ["HTML5 & Semantic Tags", "CSS3 & Modern Layouts (Grid/Flex)", "JavaScript (ES6+, Async, DOM)", "React.js (Hooks, Router)", "Vite", "Tailwind CSS", "Framer Motion", "GSAP Animations"]
+        "skills": ["JavaScript (ES6+)", "React", "CSS3", "Tailwind"]
+      },
+      {
+        "category": "Backend",
+        "skills": ["Express.js", "Firebase (Auth, Firestore)", "RESTful APIs"]
+      },
+      {
+        "category": "UI/UX",
+        "skills": ["Figma", "Wireframing", "User Experience Design"]
       },
       {
         "category": "AI",
-        "skills": ["Prompt Engineering", "OpenAI API Integration", "Claude & Gemini APIs", "AI Content Automation", "AI-Powered UI/UX"]
+        "skills": ["Prompt Engineering", "LLM Integration", "AI Agents"]
       },
       {
-        "category": "Backend & Cloud",
-        "skills": ["Firebase (Auth, Firestore)", "Basic Node.js & Express", "RESTful APIs", "Supabase Basics"]
-      },
-      {
-        "category": "Tools & Workflow",
-        "skills": ["Git & GitHub", "NPM & Package Managers", "Vercel / Netlify", "Cursor AI", "ESLint & Prettier"]
-      },
-      {
-        "category": "Design",
-        "skills": ["Figma (Prototyping, Auto-layout)", "UI Design Systems", "Brutalist Aesthetics", "User Research Basics", "Responsive Design Architecture"]
+        "category": "Tools",
+        "skills": ["Git & GitHub", "Vercel", "Chrome Extension API"]
       }
     ],
     "services": [
@@ -186,14 +196,24 @@
     "philosophy": "بساطة في الكود، وضوح في التصميم.\nأؤمن أن التعقيد هو عدو التقدم. في الكود، البساطة تعني سهولة الصيانة والأداء العالي. في التصميم، الوضوح يعني تجربة بديهية حيث لا يضطر المستخدم للتخمين أبداً. نهجي هو إزالة كل الضوضاء حتى يتبقى فقط ما هو ضروري ومفيد.",
     "certificates": [
       {
-        "title": "تصميم الويب المتجاوب",
-        "issuer": "freeCodeCamp",
-        "year": "2025"
+        "title": "تطوير الواجهات الأمامية (HTML, CSS, JavaScript)",
+        "issuer": "معهد أبعاد (Abaad Institute)",
+        "year": "36 ساعة – التقدير: ممتاز"
       },
       {
-        "title": "خوارزميات وهياكل بيانات JavaScript",
-        "issuer": "freeCodeCamp",
-        "year": "2025"
+        "title": "أساسيات تصميم UI/UX باستخدام Figma",
+        "issuer": "جامعة حضرموت",
+        "year": "30 ساعة: Figma، أساسيات واجهة المستخدم"
+      },
+      {
+        "title": "دبلوم متوسط في اللغة الإنجليزية",
+        "issuer": "مركز حضرموت للدراسات والبحوث",
+        "year": "300 ساعة: درجة 82% (جيد جداً)"
+      },
+      {
+        "title": "من الصفر إلى أول وكيل ذكاء اصطناعي لك",
+        "issuer": "مؤسسة حضرموت - تنمية بشرية",
+        "year": "ورشة عمل 8 ساعات: وكلاء الذكاء الاصطناعي"
       }
     ],
     "projects": [
@@ -236,23 +256,23 @@
     "expertise": [
       {
         "category": "الواجهات الأمامية",
-        "skills": ["HTML5 & Semantic Tags", "CSS3 & Modern Layouts", "JavaScript (ES6+, Async)", "React.js", "Vite", "Tailwind CSS", "Framer Motion", "GSAP Animations"]
+        "skills": ["JavaScript (ES6+)", "React", "CSS3", "Tailwind"]
+      },
+      {
+        "category": "الواجهات الخلفية",
+        "skills": ["Express.js", "Firebase (Auth, Firestore)", "RESTful APIs"]
+      },
+      {
+        "category": "التصميم (UI/UX)",
+        "skills": ["Figma", "Wireframing", "User Experience Design"]
       },
       {
         "category": "الذكاء الاصطناعي",
-        "skills": ["Prompt Engineering", "دمج OpenAI API", "Claude & Gemini APIs", "أتمتة المحتوى بالذكاء الاصطناعي", "UI/UX معزز بالذكاء الاصطناعي"]
+        "skills": ["Prompt Engineering", "دمج نماذج LLM", "وكلاء الذكاء الاصطناعي"]
       },
       {
-        "category": "الواجهات الخلفية والسحابية",
-        "skills": ["Firebase (Auth, Firestore)", "أساسيات Node.js & Express", "RESTful APIs", "Supabase Basics"]
-      },
-      {
-        "category": "الأدوات وسير العمل",
-        "skills": ["Git & GitHub", "مدراء الحزم NPM", "Vercel / Netlify", "Cursor AI", "ESLint & Prettier"]
-      },
-      {
-        "category": "التصميم",
-        "skills": ["Figma (Prototyping)", "أنظمة التصميم UI", "جماليات Brutalist", "أساسيات أبحاث المستخدم", "هندسة التصميم المتجاوب"]
+        "category": "الأدوات",
+        "skills": ["Git & GitHub", "Vercel", "Chrome Extension API"]
       }
     ],
     "services": [

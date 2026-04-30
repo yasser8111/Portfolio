@@ -23,32 +23,38 @@ export const TextBlock = ({
   const textRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
-        toggleActions: 'play none none none',
-      }
-    });
+    // Small delay to ensure page layout and scroll-reset have settled
+    const timer = setTimeout(() => {
+      if (!containerRef.current) return;
+      
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 92%',
+          toggleActions: 'play none none none',
+          invalidateOnRefresh: true,
+        }
+      });
 
-    // Reset states
-    gsap.set(blockRef.current, { scaleX: 0, transformOrigin: 'left' });
-    gsap.set(textRef.current, { opacity: 0 });
+      // Reset states
+      gsap.set(blockRef.current, { scaleX: 0, transformOrigin: 'left' });
+      gsap.set(textRef.current, { opacity: 0 });
 
-    tl.to(blockRef.current, {
-      scaleX: 1,
-      duration: 0.6,
-      ease: 'expo.inOut',
-    })
-    .set(textRef.current, { opacity: 1 })
-    .to(blockRef.current, {
-      scaleX: 0,
-      transformOrigin: 'right',
-      duration: 0.6,
-      ease: 'expo.inOut',
-    });
+      tl.to(blockRef.current, {
+        scaleX: 1,
+        duration: 0.6,
+        ease: 'expo.inOut',
+      })
+      .set(textRef.current, { opacity: 1 })
+      .to(blockRef.current, {
+        scaleX: 0,
+        transformOrigin: 'right',
+        duration: 0.6,
+        ease: 'expo.inOut',
+      });
+    }, 200);
 
+    return () => clearTimeout(timer);
   }, { scope: containerRef });
 
   return (

@@ -101,7 +101,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <SmoothScroll>
-        <ScrollToTop />
         <div
           dir={lang === "ar" ? "rtl" : "ltr"}
           className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"

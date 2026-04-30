@@ -44,7 +44,7 @@ const AboutPage = ({
                     <span className="text-[10px] font-bold uppercase tracking-[0.4em]">{lang === "ar" ? "فلسفتي" : "Philosophy"}</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none text-slate-900 mb-10">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none text-slate-900 mb-10">
                   <TextBlock blockColor="#2563eb" className="block">
                     {philosophy.split("\n")[0]}
                   </TextBlock>
@@ -80,6 +80,45 @@ const AboutPage = ({
                     </p>
                   ))}
                 </div>
+
+                {/* Textual Certificates Section */}
+                <div className="mt-24">
+                  <div className="flex items-center gap-3 mb-12 text-slate-400">
+                    <Award size={20} />
+                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{lang === "ar" ? "الشهادات والإنجازات" : "Certifications & Achievements"}</span>
+                  </div>
+                  <div className="space-y-12">
+                    {certificates.map((cert, i) => (
+                      <div key={i} className="group relative ps-8 border-s-2 border-slate-100 hover:border-blue-600 transition-colors duration-500">
+                        {/* Dot */}
+                        <div className="absolute -start-[9px] top-0 w-4 h-4 bg-white border-2 border-slate-200 group-hover:border-blue-600 transition-colors duration-500" />
+                        
+                        <div className="flex flex-col gap-3">
+                          <div className="flex flex-wrap items-center gap-3">
+                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 bg-blue-50 px-2 py-1">
+                              <TextBlock blockColor="#2563eb">
+                                {cert.year}
+                              </TextBlock>
+                            </span>
+                          </div>
+                          
+                          <h4 className="text-xl md:text-2xl font-black text-slate-900 leading-tight">
+                            <TextBlock blockColor="#1e293b">
+                              {cert.title}
+                            </TextBlock>
+                          </h4>
+                          
+                          <div className="flex items-center gap-2 text-slate-500 font-bold text-sm uppercase tracking-wider">
+                            <div className="w-4 h-[1px] bg-slate-300" />
+                            <TextBlock blockColor="#94a3b8">
+                              {cert.issuer}
+                            </TextBlock>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Right Column: Skills */}
@@ -111,26 +150,6 @@ const AboutPage = ({
                 </div>
               </div>
             </div>
-          </section>
-
-          {/* Certificates Section */}
-          <section className="py-24 px-6 md:px-12 border-b border-slate-200">
-             <div className="flex items-center gap-3 mb-16 text-slate-400">
-                <Award size={20} />
-                <span className="text-xs font-bold uppercase tracking-[0.3em]">{lang === "ar" ? "الشهادات والإنجازات" : "Certifications & Achievements"}</span>
-             </div>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {certificates.map((cert, i) => (
-                  <div key={i} className="group p-8 border border-slate-200 hover:border-blue-600 transition-all duration-500 bg-slate-50/30">
-                    <div className="mb-6 text-slate-300 group-hover:text-blue-600 transition-colors">
-                        <Award size={40} strokeWidth={1} />
-                    </div>
-                    <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-2 block">{cert.year}</span>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{cert.title}</h3>
-                    <p className="text-sm text-slate-500 font-medium">{cert.issuer}</p>
-                  </div>
-                ))}
-             </div>
           </section>
 
           {/* CTA Section - Replaced with ContactSection */}

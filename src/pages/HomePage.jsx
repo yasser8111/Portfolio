@@ -189,7 +189,7 @@ const HomePage = ({
                   </TextBlock>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
-                  {expertise.slice(0, 3).map((item, i) => (
+                  {expertise.slice(0, 4).map((item, i) => (
                     <div key={i}>
                       <h4 className="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2 uppercase tracking-wide text-sm">
                         <TextBlock blockColor="#2563eb">
