@@ -10,10 +10,10 @@ import { TextBlock } from "../components/ui/TextBlockEffect";
 import MaterialIcon from "../components/ui/MaterialIcon";
 
 const ArrowIcon = ({ size = 16, className = "" }) => (
-  <MaterialIcon 
-    icon="arrow_back" 
-    size={size} 
-    className={`rtl:rotate-180 ${className}`} 
+  <MaterialIcon
+    icon="arrow_back"
+    size={size}
+    className={`rtl:rotate-180 ${className}`}
   />
 );
 
@@ -49,7 +49,7 @@ const HomePage = ({
       )}
 
       {/* Container */}
-      <div className="max-w-[1400px] mx-auto w-full border-l border-slate-200 min-h-screen flex flex-col">
+      <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
         <Navbar
           personal={personal}
@@ -134,10 +134,7 @@ const HomePage = ({
                   <Button
                     variant="primary"
                     icon={({ className }) => (
-                      <ArrowIcon
-                        size={16}
-                        className={className}
-                      />
+                      <ArrowIcon size={16} className={className} />
                     )}
                     iconPosition="start"
                     className="uppercase"
@@ -175,10 +172,7 @@ const HomePage = ({
                     <Button
                       variant="outline"
                       icon={({ className }) => (
-                        <ArrowIcon
-                          size={16}
-                          className={className}
-                        />
+                        <ArrowIcon size={16} className={className} />
                       )}
                       iconPosition="start"
                       className="uppercase"
@@ -234,10 +228,7 @@ const HomePage = ({
                   <Button
                     variant="primary"
                     icon={({ className }) => (
-                      <ArrowIcon
-                        size={16}
-                        className={className}
-                      />
+                      <ArrowIcon size={16} className={className} />
                     )}
                     iconPosition="start"
                     className="uppercase"

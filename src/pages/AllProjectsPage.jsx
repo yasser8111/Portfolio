@@ -23,7 +23,7 @@ const AllProjectsPage = ({
   return (
     <div className="w-full h-screen relative bg-white overflow-hidden">
       {/* Floating Back Button */}
-      <div className="fixed top-6 left-6 md:top-10 md:left-12 z-[100] pointer-events-auto rtl:left-auto rtl:right-6 rtl:md:right-12">
+      <div className="fixed top-6 left-6 md:top-10 md:left-12 z-100 pointer-events-auto rtl:left-auto rtl:right-6 rtl:md:right-12">
         <Button
           onClick={() => navigate("/")}
           variant="secondary"

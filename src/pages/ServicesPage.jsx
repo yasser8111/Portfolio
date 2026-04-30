@@ -41,10 +41,27 @@ const PALETTES = [
   },
 ];
 
-const ICONS = ["code", "design_services", "extension", "public", "shield", "database", "smartphone", "settings"];
+const ICONS = [
+  "code",
+  "design_services",
+  "extension",
+  "public",
+  "shield",
+  "database",
+  "smartphone",
+  "settings",
+];
 
 /* ─── component ──────────────────────────────────────────────────────────── */
-const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections }) => {
+const ServicesPage = ({
+  lang,
+  personal,
+  services,
+  nav,
+  footer,
+  buttons,
+  sections,
+}) => {
   const navigate = useNavigate();
 
   return (
@@ -52,15 +69,18 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
       dir={lang === "ar" ? "rtl" : "ltr"}
       className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
     >
-      <div className="max-w-[1400px] mx-auto w-full border-l border-slate-200 min-h-screen flex flex-col">
-        <NavBack onBack={() => navigate("/")} backText={buttons.backToHome} lang={lang} />
+      <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
+        <NavBack
+          onBack={() => navigate("/")}
+          backText={buttons.backToHome}
+          lang={lang}
+        />
 
         <main className="flex-1">
-
           {/* ── Page Banner ────────────────────────────────────────────────── */}
-          <PageBanner 
-            title={sections.services} 
-            subtitle={sections.servicesSubtitle} 
+          <PageBanner
+            title={sections.services}
+            subtitle={sections.servicesSubtitle}
           />
 
           {/* ── One section per service ───────────────────────────────────── */}
@@ -101,7 +121,9 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                         className="text-3xl md:text-4xl font-black tracking-tight mb-6"
                         style={{ color: p.title }}
                       >
-                        <TextBlock blockColor={p.base}>{service.title}</TextBlock>
+                        <TextBlock blockColor={p.base}>
+                          {service.title}
+                        </TextBlock>
                       </h2>
 
                       <p
@@ -134,7 +156,7 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                         <li key={j} className="flex items-start gap-4">
                           {/* Accent dot */}
                           <span
-                            className="mt-1.5 w-2 h-2 rounded-none flex-shrink-0"
+                            className="mt-1.5 w-2 h-2 rounded-none shrink-0"
                             style={{ backgroundColor: p.base }}
                           />
                           <span

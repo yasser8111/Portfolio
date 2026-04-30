@@ -25,18 +25,18 @@ const AboutPage = ({
       dir={lang === "ar" ? "rtl" : "ltr"}
       className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
     >
-      <div className="max-w-[1400px] mx-auto w-full border-l border-slate-200 min-h-screen flex flex-col">
-        <NavBack 
-          onBack={() => navigate("/")} 
-          backText={buttons.backToHome} 
-          lang={lang} 
+      <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
+        <NavBack
+          onBack={() => navigate("/")}
+          backText={buttons.backToHome}
+          lang={lang}
         />
 
         <main className="flex-1">
           {/* ── Page Banner ────────────────────────────────────────────────── */}
-          <PageBanner 
-            title={sections.about} 
-            subtitle={philosophy.split("\n")[0]} 
+          <PageBanner
+            title={sections.about}
+            subtitle={philosophy.split("\n")[0]}
           />
 
           {/* Detailed About & Skills */}
@@ -45,12 +45,17 @@ const AboutPage = ({
               {/* Left Column: Story */}
               <div className="lg:col-span-7 py-16 px-6 md:px-12 lg:border-e border-slate-200">
                 <div className="flex items-center gap-3 mb-10 text-slate-400">
-                    <MaterialIcon icon="lightbulb" size={20} />
-                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.myStory}</span>
+                  <MaterialIcon icon="lightbulb" size={20} />
+                  <span className="text-xs font-bold uppercase tracking-[0.3em]">
+                    {sections.myStory}
+                  </span>
                 </div>
                 <div className="space-y-8">
                   {about.map((paragraph, i) => (
-                    <p key={i} className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
+                    <p
+                      key={i}
+                      className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium"
+                    >
                       <TextBlock blockColor="#475569" className="block">
                         {paragraph}
                       </TextBlock>
@@ -62,27 +67,32 @@ const AboutPage = ({
                 <div className="mt-24">
                   <div className="flex items-center gap-3 mb-12 text-slate-400">
                     <MaterialIcon icon="workspace_premium" size={20} />
-                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.certifications}</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.3em]">
+                      {sections.certifications}
+                    </span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {certificates.map((cert, i) => (
-                      <div key={i} className="group p-8 border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 relative overflow-hidden">
+                      <div
+                        key={i}
+                        className="group p-8 border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 relative overflow-hidden"
+                      >
                         {/* Decorative Year Background */}
                         <span className="absolute -right-4 -bottom-4 text-7xl font-black text-slate-100/50 group-hover:text-blue-100/50 transition-colors pointer-events-none">
                           {cert.year.match(/\d{4}/)?.[0] || ""}
                         </span>
-                        
+
                         <div className="relative z-10 h-full flex flex-col">
                           <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center mb-8 rounded-none">
                             <MaterialIcon icon="workspace_premium" size={20} />
                           </div>
-                          
-                          <h4 className="text-xl font-black text-slate-900 mb-3 leading-tight flex-grow">
+
+                          <h4 className="text-xl font-black text-slate-900 mb-3 leading-tight grow">
                             <TextBlock blockColor="#2563eb">
                               {cert.title}
                             </TextBlock>
                           </h4>
-                          
+
                           <div className="mt-auto">
                             <p className="text-xs font-black text-blue-600 uppercase tracking-widest mb-1">
                               {cert.issuer}
@@ -101,8 +111,10 @@ const AboutPage = ({
               {/* Right Column: Skills */}
               <div className="lg:col-span-5 py-16 px-6 md:px-12 bg-white">
                 <div className="flex items-center gap-3 mb-10 text-slate-400">
-                    <MaterialIcon icon="code" size={20} />
-                    <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.technicalStack}</span>
+                  <MaterialIcon icon="code" size={20} />
+                  <span className="text-xs font-bold uppercase tracking-[0.3em]">
+                    {sections.technicalStack}
+                  </span>
                 </div>
                 <div className="space-y-12">
                   {expertise.map((item, i) => (
@@ -114,11 +126,12 @@ const AboutPage = ({
                       </h4>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {item.skills.map((skill, j) => (
-                          <li key={j} className="flex items-center gap-3 text-slate-600 font-bold text-sm">
+                          <li
+                            key={j}
+                            className="flex items-center gap-3 text-slate-600 font-bold text-sm"
+                          >
                             <div className="w-1.5 h-1.5 bg-slate-300 rounded-none shrink-0" />
-                            <TextBlock blockColor="#cbd5e1">
-                              {skill}
-                            </TextBlock>
+                            <TextBlock blockColor="#cbd5e1">{skill}</TextBlock>
                           </li>
                         ))}
                       </ul>
@@ -129,11 +142,7 @@ const AboutPage = ({
             </div>
           </section>
 
-          <ContactSection 
-            personal={personal} 
-            sections={sections} 
-            lang={lang} 
-          />
+          <ContactSection personal={personal} sections={sections} lang={lang} />
         </main>
 
         <Footer text={footer.text} />
