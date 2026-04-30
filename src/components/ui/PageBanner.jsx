@@ -5,7 +5,7 @@ const PageBanner = ({ title, subtitle, titleColor = "#2563eb", subtitleColor = "
   return (
     <section className="py-24 px-6 md:px-12 border-b border-slate-200 bg-slate-50/30">
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none text-slate-900 mb-8">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-slate-900 mb-8">
           <TextBlock blockColor={titleColor} className="block">
             {title}
           </TextBlock>

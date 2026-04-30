@@ -60,7 +60,7 @@ export const TextBlock = ({
   return (
     <div 
       ref={containerRef} 
-      className={cn("relative inline-block overflow-hidden py-1", className)}
+      className={cn("relative inline-block overflow-hidden py-2 px-1", className)}
       style={{ fontFamily }}
     >
       <div 
