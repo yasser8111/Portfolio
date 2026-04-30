@@ -21,6 +21,7 @@
     },
     "sections": {
       "selectedWorks": "Selected Works",
+      "selectedWorksSubtitle": "A glimpse into my recent work.",
       "about": "About",
       "expertise": "Skills",
       "letsBuild": "Let's build\nsomething useful :D",
@@ -177,6 +178,7 @@
     },
     "sections": {
       "selectedWorks": "أعمال مختارة",
+      "selectedWorksSubtitle": "نظرة على بعض أعمالي الأخيرة.",
       "about": "نبذة عني",
       "expertise": "الخبرات",
       "letsBuild": "لنقم ببناء\nشيء مفيد",
