@@ -64,32 +64,32 @@ const AboutPage = ({
                     <Award size={20} />
                     <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.certifications}</span>
                   </div>
-                  <div className="space-y-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {certificates.map((cert, i) => (
-                      <div key={i} className="group relative ps-8 border-s-2 border-slate-100 hover:border-blue-600 transition-colors duration-500">
-                        {/* Dot */}
-                        <div className="absolute -start-[9px] top-0 w-4 h-4 bg-white border-2 border-slate-200 group-hover:border-blue-600 transition-colors duration-500" />
+                      <div key={i} className="group p-8 border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 relative overflow-hidden">
+                        {/* Decorative Year Background */}
+                        <span className="absolute -right-4 -bottom-4 text-7xl font-black text-slate-100/50 group-hover:text-blue-100/50 transition-colors pointer-events-none">
+                          {cert.year.match(/\d{4}/)?.[0] || ""}
+                        </span>
                         
-                        <div className="flex flex-col gap-3">
-                          <div className="flex flex-wrap items-center gap-3">
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600 bg-blue-50 px-2 py-1">
-                              <TextBlock blockColor="#2563eb">
-                                {cert.year}
-                              </TextBlock>
-                            </span>
+                        <div className="relative z-10 h-full flex flex-col">
+                          <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center mb-8 rounded-none">
+                            <Award size={20} />
                           </div>
                           
-                          <h4 className="text-xl md:text-2xl font-black text-slate-900 leading-tight">
-                            <TextBlock blockColor="#1e293b">
+                          <h4 className="text-xl font-black text-slate-900 mb-3 leading-tight flex-grow">
+                            <TextBlock blockColor="#2563eb">
                               {cert.title}
                             </TextBlock>
                           </h4>
                           
-                          <div className="flex items-center gap-2 text-slate-500 font-bold text-sm uppercase tracking-wider">
-                            <div className="w-4 h-[1px] bg-slate-300" />
-                            <TextBlock blockColor="#94a3b8">
+                          <div className="mt-auto">
+                            <p className="text-xs font-black text-blue-600 uppercase tracking-widest mb-1">
                               {cert.issuer}
-                            </TextBlock>
+                            </p>
+                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                              {cert.year}
+                            </div>
                           </div>
                         </div>
                       </div>
