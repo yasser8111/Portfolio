@@ -41,7 +41,7 @@ const PALETTES = [
   },
 ];
 
-const ICONS = ["code", "brush", "extension", "public", "shield", "database", "smartphone", "settings"];
+const ICONS = ["code", "design_services", "extension", "public", "shield", "database", "smartphone", "settings"];
 
 /* ─── component ──────────────────────────────────────────────────────────── */
 const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections }) => {
