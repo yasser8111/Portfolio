@@ -112,19 +112,12 @@ const HomePage = ({
           <section id="projects" className="border-b border-slate-200">
             <div className="w-full">
               {/* Section Header */}
-              <div className="px-6 md:px-12 pt-24 pb-12">
-                <div className="flex items-center gap-3 mb-6 text-blue-600">
-                  <div className="w-8 h-[1px] bg-blue-600"></div>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em]">
+              <div className="px-6 md:px-12 pt-32 pb-8">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
+                  <TextBlock blockColor="#2563eb">
                     {sections.selectedWorks}
-                  </span>
-                </div>
-                
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-900 leading-none">
-                  <TextBlock blockColor="#2563eb" className="block">
-                    {sections.selectedWorksSubtitle}
                   </TextBlock>
-                </h2>
+                </h3>
               </div>
 
               <ProjectHoverSection projects={projects.slice(0, 3)} />
