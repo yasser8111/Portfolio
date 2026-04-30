@@ -60,7 +60,7 @@ export const TextBlock = ({
   return (
     <div 
       ref={containerRef} 
-      className={cn("relative inline-block overflow-hidden py-2 px-1", className)}
+      className={cn("relative inline-block overflow-visible py-1 px-1", className)}
       style={{ fontFamily }}
     >
       <div 
@@ -72,7 +72,7 @@ export const TextBlock = ({
       </div>
       <div 
         ref={blockRef}
-        className="absolute inset-0 z-20"
+        className="absolute -inset-y-2 inset-x-0 z-20"
         style={{ backgroundColor: blockColor }}
       />
     </div>
