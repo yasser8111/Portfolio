@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Award, Cpu, Lightbulb, Code, Target } from "lucide-react";
+import MaterialIcon from "../components/ui/MaterialIcon";
 import NavBack from "../components/layout/NavBack";
 import Footer from "../components/layout/Footer";
 import ContactSection from "../components/sections/ContactSection";
@@ -45,7 +45,7 @@ const AboutPage = ({
               {/* Left Column: Story */}
               <div className="lg:col-span-7 py-16 px-6 md:px-12 lg:border-e border-slate-200">
                 <div className="flex items-center gap-3 mb-10 text-slate-400">
-                    <Lightbulb size={20} />
+                    <MaterialIcon icon="lightbulb" size={20} />
                     <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.myStory}</span>
                 </div>
                 <div className="space-y-8">
@@ -61,7 +61,7 @@ const AboutPage = ({
                 {/* Textual Certificates Section */}
                 <div className="mt-24">
                   <div className="flex items-center gap-3 mb-12 text-slate-400">
-                    <Award size={20} />
+                    <MaterialIcon icon="workspace_premium" size={20} />
                     <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.certifications}</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -74,7 +74,7 @@ const AboutPage = ({
                         
                         <div className="relative z-10 h-full flex flex-col">
                           <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center mb-8 rounded-none">
-                            <Award size={20} />
+                            <MaterialIcon icon="workspace_premium" size={20} />
                           </div>
                           
                           <h4 className="text-xl font-black text-slate-900 mb-3 leading-tight flex-grow">
@@ -101,7 +101,7 @@ const AboutPage = ({
               {/* Right Column: Skills */}
               <div className="lg:col-span-5 py-16 px-6 md:px-12 bg-white">
                 <div className="flex items-center gap-3 mb-10 text-slate-400">
-                    <Code size={20} />
+                    <MaterialIcon icon="code" size={20} />
                     <span className="text-xs font-bold uppercase tracking-[0.3em]">{sections.technicalStack}</span>
                 </div>
                 <div className="space-y-12">

@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Code2 } from "lucide-react";
+import MaterialIcon from "../ui/MaterialIcon";
 import Button from "../ui/Button";
 
 const ProjectButtons = ({ project, buttons }) => (
@@ -10,7 +10,8 @@ const ProjectButtons = ({ project, buttons }) => (
         external
         variant="primary"
         className="hover-dark"
-        icon={ExternalLink}
+        icon={({ size, className }) => <MaterialIcon icon="open_in_new" size={size} className={className} />}
+        iconPosition="start"
       >
         {buttons.liveDemo}
       </Button>
@@ -21,7 +22,8 @@ const ProjectButtons = ({ project, buttons }) => (
         external
         variant="outline"
         className="hover-dark"
-        icon={Code2}
+        icon={({ size, className }) => <MaterialIcon icon="code" size={size} className={className} />}
+        iconPosition="start"
       >
         {buttons.sourceCode}
       </Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, X } from "lucide-react";
+import MaterialIcon from "../ui/MaterialIcon";
 import { Link } from "react-router-dom";
 
 const Navbar = ({
@@ -12,7 +12,7 @@ const Navbar = ({
   scrollToSection,
 }) => {
   return (
-    <nav className="sticky top-0 z-50 bg-white py-4 md:py-5 border-b border-slate-200 px-6 md:px-12">
+    <nav className="sticky top-0 z-50 bg-white py-6 border-b border-slate-200 px-6 md:px-12">
       <div className="flex justify-between items-center">
         <div>
           <Link to="/">
@@ -72,7 +72,7 @@ const Navbar = ({
             className="text-slate-900 p-2 cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <MaterialIcon icon="close" size={24} /> : <MaterialIcon icon="menu" size={24} />}
           </button>
         </div>
       </div>

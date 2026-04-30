@@ -1,7 +1,6 @@
 import React, { useState, Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
 import portfolioData from "./data.json";
-import Footer from "./components/layout/Footer";
 import SmoothScroll from "./components/layout/SmoothScroll";
 import Preloader from "./components/layout/Preloader";
 import { createSlug } from "./lib/utils";

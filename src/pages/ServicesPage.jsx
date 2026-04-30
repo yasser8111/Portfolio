@@ -1,15 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Database,
-  Smartphone,
-  Globe,
-  Shield,
-  Settings,
-  Paintbrush,
-  Puzzle,
-  Code,
-} from "lucide-react";
+import MaterialIcon from "../components/ui/MaterialIcon";
 import NavBack from "../components/layout/NavBack";
 import Footer from "../components/layout/Footer";
 import ContactSection from "../components/sections/ContactSection";
@@ -50,7 +41,7 @@ const PALETTES = [
   },
 ];
 
-const ICONS = [Code, Paintbrush, Puzzle, Globe, Shield, Database, Smartphone, Settings];
+const ICONS = ["code", "brush", "extension", "public", "shield", "database", "smartphone", "settings"];
 
 /* ─── component ──────────────────────────────────────────────────────────── */
 const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections }) => {
@@ -75,7 +66,7 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
           {/* ── One section per service ───────────────────────────────────── */}
           {services.map((service, i) => {
             const p = PALETTES[i % 3];
-            const Icon = ICONS[i % ICONS.length];
+            const iconName = ICONS[i % ICONS.length];
             const features = service.features || [];
             const isEven = i % 2 === 0;
 
@@ -100,10 +91,10 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                     {/* Icon + title */}
                     <div>
                       <div
-                        className="w-14 h-14 flex items-center justify-center mb-10 rounded-sm"
+                        className="w-14 h-14 flex items-center justify-center mb-10 rounded-none"
                         style={{ backgroundColor: p.bgLight, color: p.base }}
                       >
-                        <Icon size={26} />
+                        <MaterialIcon icon={iconName} size={26} />
                       </div>
 
                       <h2

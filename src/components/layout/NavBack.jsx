@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft } from "lucide-react";
+import MaterialIcon from "../ui/MaterialIcon";
 import Button from "../ui/Button";
 
 const NavBack = ({ onBack, backText, lang }) => {
@@ -9,8 +9,12 @@ const NavBack = ({ onBack, backText, lang }) => {
         <Button
           onClick={onBack}
           variant="secondary"
-          icon={({ className }) => (
-            <ArrowLeft size={18} className={`rtl:rotate-180 ${className}`} />
+          icon={({ size, className }) => (
+            <MaterialIcon 
+              icon="arrow_back" 
+              size={size} 
+              className={`rtl:rotate-180 ${className}`} 
+            />
           )}
           iconPosition="start"
           className="uppercase"

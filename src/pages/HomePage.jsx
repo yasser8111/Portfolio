@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowLeft } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { createSlug } from "../lib/utils";
 import Button from "../components/ui/Button";
@@ -8,6 +7,15 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import ContactSection from "../components/sections/ContactSection";
 import { TextBlock } from "../components/ui/TextBlockEffect";
+import MaterialIcon from "../components/ui/MaterialIcon";
+
+const ArrowIcon = ({ size = 16, className = "" }) => (
+  <MaterialIcon 
+    icon="arrow_back" 
+    size={size} 
+    className={`rtl:rotate-180 ${className}`} 
+  />
+);
 
 const HomePage = ({
   lang,
@@ -83,7 +91,7 @@ const HomePage = ({
                     </TextBlock>
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-start">
+                  <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto justify-start">
                     <Button
                       href="#projects"
                       onClick={(e) => scrollToSection(e, "projects")}
@@ -126,9 +134,9 @@ const HomePage = ({
                   <Button
                     variant="primary"
                     icon={({ className }) => (
-                      <ArrowLeft
+                      <ArrowIcon
                         size={16}
-                        className={`rtl:rotate-180 ${className}`}
+                        className={className}
                       />
                     )}
                     iconPosition="start"
@@ -167,9 +175,9 @@ const HomePage = ({
                     <Button
                       variant="outline"
                       icon={({ className }) => (
-                        <ArrowLeft
+                        <ArrowIcon
                           size={16}
-                          className={`rtl:rotate-180 ${className}`}
+                          className={className}
                         />
                       )}
                       iconPosition="start"
@@ -226,9 +234,9 @@ const HomePage = ({
                   <Button
                     variant="primary"
                     icon={({ className }) => (
-                      <ArrowLeft
+                      <ArrowIcon
                         size={16}
-                        className={`rtl:rotate-180 ${className}`}
+                        className={className}
                       />
                     )}
                     iconPosition="start"

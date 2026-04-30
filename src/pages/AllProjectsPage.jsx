@@ -1,8 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import MaterialIcon from "../components/ui/MaterialIcon";
 import Button from "../components/ui/Button";
 import ProjectsGallery from "../components/projects/ProjectsGallery";
 import { createSlug } from "../lib/utils";
+
+const ArrowIcon = ({ size = 16, className = "" }) => (
+  <MaterialIcon 
+    icon="arrow_back" 
+    size={size} 
+    className={`rtl:rotate-180 ${className}`} 
+  />
+);
 
 const AllProjectsPage = ({
   projects,
@@ -20,7 +28,7 @@ const AllProjectsPage = ({
           onClick={() => navigate("/")}
           variant="secondary"
           icon={({ className }) => (
-            <ArrowLeft size={18} className={`rtl:rotate-180 ${className}`} />
+            <ArrowIcon size={18} className={className} />
           )}
           iconPosition="start"
           className="uppercase shadow-2xl bg-white/80 backdrop-blur-md border border-slate-200"

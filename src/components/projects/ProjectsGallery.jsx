@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Move } from "lucide-react";
+import MaterialIcon from "../ui/MaterialIcon";
 
 const CELL_WIDTH = 480;
 const CELL_HEIGHT = 270;
@@ -292,7 +292,7 @@ const ProjectsGallery = ({ projects, onSelectProject, lang = "en", gallery }) =>
       >
         <div className="bg-white/80 backdrop-blur-md border border-slate-200 text-slate-900 px-6 py-3 shadow-2xl flex items-center gap-4">
           <div className="flex items-center justify-center shrink-0 text-blue-600">
-            <Move size={18} />
+            <MaterialIcon icon="open_with" size={18} />
           </div>
           <p className="text-[11px] font-bold uppercase tracking-widest whitespace-nowrap">
             {gallery?.hint}
