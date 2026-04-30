@@ -55,81 +55,81 @@ const HomePage = ({
         />
 
         <main className="flex-1">
-          {/* Hero */}
-          <section className="relative overflow-hidden min-h-[calc(100vh-76px)] flex items-center border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0">
-            <div className="hidden lg:block absolute right-[-5%] bottom-[-5%] w-[600px] h-[500px]">
-               <CardSwap 
-                width={400} 
-                height={500} 
-                delay={4000}
-                cardDistance={40}
-                verticalDistance={50}
-               >
-                 {projects.slice(0, 4).map((project, i) => (
-                   <Card key={i} className="overflow-hidden group cursor-pointer">
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
-                           <span className="text-blue-500 font-black text-[10px] uppercase tracking-[0.3em] mb-2">{project.year}</span>
-                           <h3 className="text-white text-2xl font-black tracking-tighter uppercase">{project.title}</h3>
-                        </div>
-                      </div>
-                   </Card>
-                 ))}
-               </CardSwap>
-            </div>
+          <section className="relative overflow-hidden min-h-[calc(100vh-76px)] border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0 flex items-center">
+             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+               {/* Left: Text Content */}
+               <div className="relative z-10 w-full order-2 lg:order-1">
+                 <div className="flex flex-col items-start text-start">
+                   <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
+                     {hero.title.split("\n").map((line, i) => (
+                       <TextBlock key={i} blockColor="#2563eb" className="block">
+                         {line.split(/(Code|الكود)/g).map((part, j) =>
+                           part === "Code" || part === "الكود" ? (
+                             <span key={j} className="text-blue-600">
+                               {part}
+                             </span>
+                           ) : (
+                             part
+                           ),
+                         )}
+                       </TextBlock>
+                     ))}
+                   </h2>
 
-            <div className="relative z-10 pointer-events-none w-full lg:max-w-[50%]">
-              {/* Text Column */}
-              <div className="flex flex-col items-start text-start">
-                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
-                  {hero.title.split("\n").map((line, i) => (
-                    <TextBlock key={i} blockColor="#2563eb" className="block">
-                      {line.split(/(Code|الكود)/g).map((part, j) =>
-                        part === "Code" || part === "الكود" ? (
-                          <span key={j} className="text-blue-600">
-                            {part}
-                          </span>
-                        ) : (
-                          part
-                        ),
-                      )}
-                    </TextBlock>
-                  ))}
-                </h2>
+                   <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
+                     <TextBlock blockColor="#cbd5e1" className="block">
+                       {hero.subtitle}
+                     </TextBlock>
+                   </p>
 
-                <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
-                  <TextBlock blockColor="#cbd5e1" className="block">
-                    {hero.subtitle}
-                  </TextBlock>
-                </p>
+                   <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-start">
+                     <Button
+                       href="#projects"
+                       onClick={(e) => scrollToSection(e, "projects")}
+                       variant="primary"
+                       size="lg"
+                       className="px-10 py-4 text-lg"
+                     >
+                       {buttons.viewProjects}
+                     </Button>
+                     <Button
+                       href="#contact"
+                       onClick={(e) => scrollToSection(e, "contact")}
+                       variant="secondary"
+                       size="lg"
+                       className="px-10 py-4 text-lg"
+                     >
+                       {buttons.contactMe}
+                     </Button>
+                   </div>
+                 </div>
+               </div>
 
-                <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-start pointer-events-auto">
-                  <Button
-                    href="#projects"
-                    onClick={(e) => scrollToSection(e, "projects")}
-                    variant="primary"
-                    size="lg"
-                    className="px-10 py-4 text-lg"
-                  >
-                    {buttons.viewProjects}
-                  </Button>
-                  <Button
-                    href="#contact"
-                    onClick={(e) => scrollToSection(e, "contact")}
-                    variant="secondary"
-                    size="lg"
-                    className="px-10 py-4 text-lg"
-                  >
-                    {buttons.contactMe}
-                  </Button>
-                </div>
-              </div>
-            </div>
+               {/* Right: CardSwap Content */}
+               <div className="hidden lg:flex absolute right-[-18%] top-[25%] w-[1000px] h-[700px] pointer-events-none">
+                 <div className="pointer-events-auto w-full h-full">
+                    <CardSwap 
+                      width={800} 
+                      height={450} 
+                      delay={5000}
+                      cardDistance={50}
+                      verticalDistance={60}
+                    >
+                      {projects.slice(0, 4).map((project, i) => (
+                        <Card key={i} className="overflow-hidden border-white/5 rounded-none shadow-none">
+                           <div className="relative w-full h-full">
+                             <img 
+                               src={project.image} 
+                               alt={project.title} 
+                               className="w-full h-full object-cover"
+                             />
+                           </div>
+                        </Card>
+                      ))}
+                    </CardSwap>
+                 </div>
+               </div>
+             </div>
           </section>
 
           {/* Projects */}
