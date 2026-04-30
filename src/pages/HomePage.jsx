@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactSection from "../components/ContactSection";
 import { TextBlock } from "../components/TextBlockEffect";
+import CardSwap, { Card } from "../components/CardSwap";
 
 const HomePage = ({
   lang,
@@ -56,9 +57,30 @@ const HomePage = ({
         <main className="flex-1">
           {/* Hero */}
           <section className="relative overflow-hidden min-h-[calc(100vh-76px)] flex items-center border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0">
-            {/* 3D Projects Reel — fills right half of hero */}
-            <div className="hidden lg:block">
-              {/* <HeroProjectsReel projects={projects} /> */}
+            <div className="hidden lg:block absolute right-[-5%] bottom-[-5%] w-[600px] h-[500px]">
+               <CardSwap 
+                width={400} 
+                height={500} 
+                delay={4000}
+                cardDistance={40}
+                verticalDistance={50}
+               >
+                 {projects.slice(0, 4).map((project, i) => (
+                   <Card key={i} className="overflow-hidden group cursor-pointer">
+                      <div className="relative w-full h-full">
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                           <span className="text-blue-500 font-black text-[10px] uppercase tracking-[0.3em] mb-2">{project.year}</span>
+                           <h3 className="text-white text-2xl font-black tracking-tighter uppercase">{project.title}</h3>
+                        </div>
+                      </div>
+                   </Card>
+                 ))}
+               </CardSwap>
             </div>
 
             <div className="relative z-10 pointer-events-none w-full lg:max-w-[50%]">
