@@ -49,7 +49,7 @@ const HomePage = ({
       )}
 
       {/* Container */}
-      <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
+      <div className="max-w-[1400px] mx-auto w-full border-l border-slate-200 min-h-screen flex flex-col">
         {/* Navigation */}
         <Navbar
           personal={personal}

@@ -52,7 +52,7 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
       dir={lang === "ar" ? "rtl" : "ltr"}
       className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white"
     >
-      <div className="max-w-[1400px] mx-auto w-full border-x border-slate-200 min-h-screen flex flex-col">
+      <div className="max-w-[1400px] mx-auto w-full border-l border-slate-200 min-h-screen flex flex-col">
         <NavBack onBack={() => navigate("/")} backText={buttons.backToHome} lang={lang} />
 
         <main className="flex-1">
