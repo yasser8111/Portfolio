@@ -11,6 +11,7 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const AllProjectsPage = lazy(() => import("./pages/AllProjectsPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 
 // Wrapper for Project Details to handle URL params
 const ProjectDetailsWrapper = ({ projects, lang, footerText, buttons }) => {
@@ -163,6 +164,20 @@ export default function App() {
                     buttons={buttons}
                     nav={nav}
                     gallery={gallery}
+                  />
+                }
+              />
+              <Route
+                path="/services"
+                element={
+                  <ServicesPage
+                    lang={lang}
+                    personal={personal}
+                    services={services}
+                    nav={nav}
+                    footer={footer}
+                    buttons={buttons}
+                    sections={sections}
                   />
                 }
               />

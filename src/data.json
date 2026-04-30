@@ -15,7 +15,8 @@
       "liveDemo": "Live Demo",
       "sourceCode": "Source Code",
       "viewAll": "Explore Projects",
-      "aboutMe": "More About Me",
+      "aboutMe": "More",
+      "moreServices": "More",
       "backToHome": "Back"
     },
     "sections": {
@@ -163,7 +164,8 @@
       "liveDemo": "معاينة مباشرة",
       "sourceCode": "الكود المصدري",
       "viewAll": "استكشف مشاريع",
-      "aboutMe": "المزيد عني",
+      "aboutMe": "المزيد",
+      "moreServices": "المزيد",
       "backToHome": "رجوع"
     },
     "sections": {

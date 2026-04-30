@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import ContactSection from "../components/ContactSection";
 import { TextBlock } from "../components/TextBlockEffect";
 
-
 const HomePage = ({
   lang,
   setLang,
@@ -56,67 +55,63 @@ const HomePage = ({
 
         <main className="flex-1">
           <section className="relative overflow-hidden min-h-[calc(100vh-76px)] border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0 flex items-center">
-             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 items-center gap-12">
-               {/* Left: Text Content */}
-               <div className="relative z-10 w-full order-1">
-                 <div className="flex flex-col items-start text-start">
-                   <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
-                     {hero.title.split("\n").map((line, i) => (
-                       <div key={i} className="w-full">
-                         <TextBlock blockColor="#2563eb" className="block">
-                           {line.split(/(Code|الكود)/g).map((part, j) =>
-                             part === "Code" || part === "الكود" ? (
-                               <span key={j} className="text-blue-600">
-                                 {part}
-                               </span>
-                             ) : (
-                               part
-                             ),
-                           )}
-                         </TextBlock>
-                       </div>
-                     ))}
-                   </h2>
+            <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 items-center gap-12">
+              {/* Left: Text Content */}
+              <div className="relative z-10 w-full order-1">
+                <div className="flex flex-col items-start text-start">
+                  <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
+                    {hero.title.split("\n").map((line, i) => (
+                      <div key={i} className="w-full">
+                        <TextBlock blockColor="#2563eb" className="block">
+                          {line.split(/(Code|الكود)/g).map((part, j) =>
+                            part === "Code" || part === "الكود" ? (
+                              <span key={j} className="text-blue-600">
+                                {part}
+                              </span>
+                            ) : (
+                              part
+                            ),
+                          )}
+                        </TextBlock>
+                      </div>
+                    ))}
+                  </h2>
 
-                   <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
-                     <TextBlock blockColor="#cbd5e1" className="block">
-                       {hero.subtitle}
-                     </TextBlock>
-                   </p>
+                  <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
+                    <TextBlock blockColor="#cbd5e1" className="block">
+                      {hero.subtitle}
+                    </TextBlock>
+                  </p>
 
-                   <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-start">
-                     <Button
-                       href="#projects"
-                       onClick={(e) => scrollToSection(e, "projects")}
-                       variant="primary"
-                       size="lg"
-                       className="px-10 py-4 text-lg"
-                     >
-                       {buttons.viewProjects}
-                     </Button>
-                     <Button
-                       href="#contact"
-                       onClick={(e) => scrollToSection(e, "contact")}
-                       variant="secondary"
-                       size="lg"
-                       className="px-10 py-4 text-lg"
-                     >
-                       {buttons.contactMe}
-                     </Button>
-                   </div>
-                 </div>
-               </div>
-
-
-             </div>
+                  <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto justify-start">
+                    <Button
+                      href="#projects"
+                      onClick={(e) => scrollToSection(e, "projects")}
+                      variant="primary"
+                      size="lg"
+                      className="px-10 py-4 text-lg"
+                    >
+                      {buttons.viewProjects}
+                    </Button>
+                    <Button
+                      href="#contact"
+                      onClick={(e) => scrollToSection(e, "contact")}
+                      variant="secondary"
+                      size="lg"
+                      className="px-10 py-4 text-lg"
+                    >
+                      {buttons.contactMe}
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Projects */}
           <section id="projects" className="border-b border-slate-200">
             <div className="w-full">
-              <ProjectHoverSection
-                projects={projects.slice(0, 3)}
-              />
+              <ProjectHoverSection projects={projects.slice(0, 3)} />
               <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-center md:justify-start">
                 <Link to="/projects">
                   <Button
@@ -146,9 +141,7 @@ const HomePage = ({
                 className="md:col-span-5 py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-12"
               >
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-8">
-                  <TextBlock blockColor="#2563eb">
-                    {sections.about}
-                  </TextBlock>
+                  <TextBlock blockColor="#2563eb">{sections.about}</TextBlock>
                 </h3>
                 {about.map((paragraph, i) => (
                   <p
@@ -163,7 +156,7 @@ const HomePage = ({
                 <div className="mt-10">
                   <Link to="/about">
                     <Button
-                      variant="primary"
+                      variant="outline"
                       icon={({ className }) => (
                         <ArrowLeft
                           size={16}
@@ -200,9 +193,7 @@ const HomePage = ({
                       <ul className="space-y-3 text-slate-500 font-medium">
                         {item.skills.slice(0, 3).map((skill, j) => (
                           <li key={j}>
-                            <TextBlock blockColor="#cbd5e1">
-                              {skill}
-                            </TextBlock>
+                            <TextBlock blockColor="#cbd5e1">{skill}</TextBlock>
                           </li>
                         ))}
                       </ul>
@@ -216,45 +207,89 @@ const HomePage = ({
           {/* Services */}
           <section id="services" className="border-b border-slate-200 bg-white">
             <div className="grid grid-cols-1 md:grid-cols-12">
-              <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8">
+              <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8 flex flex-col justify-between">
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
                   <TextBlock blockColor="#2563eb">
                     {sections.services}
                   </TextBlock>
                 </h3>
+                <Link to="/services">
+                  <Button
+                    variant="primary"
+                    icon={({ className }) => (
+                      <ArrowLeft
+                        size={16}
+                        className={`rtl:rotate-180 ${className}`}
+                      />
+                    )}
+                    iconPosition="start"
+                    className="uppercase"
+                  >
+                    {buttons.moreServices}
+                  </Button>
+                </Link>
               </div>
               <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-3">
-                {services.map((service, i) => (
-                  <div
-                    key={i}
-                    className="group project-card-fade p-8 md:p-12 border-b md:border-b-0 md:border-e border-slate-200 last:border-e-0 last:border-b-0 cursor-pointer"
-                  >
-                    <div className="mb-8">
-                      <span className="text-5xl font-mono font-bold tracking-tighter text-slate-500 opacity-20 group-hover:opacity-100 group-hover:text-blue-600 transition-all duration-500">
-                        0{i + 1}
-                      </span>
+                {services.map((service, i) => {
+                  const palette = [
+                    {
+                      base: "#0284c7",
+                      bg: "#f0f9ff",
+                      title: "#0c4a6e",
+                      desc: "#0369a1",
+                    },
+                    {
+                      base: "#db2777",
+                      bg: "#fdf2f8",
+                      title: "#831843",
+                      desc: "#be185d",
+                    },
+                    {
+                      base: "#059669",
+                      bg: "#ecfdf5",
+                      title: "#064e3b",
+                      desc: "#047857",
+                    },
+                  ][i % 3];
+
+                  return (
+                    <div
+                      key={i}
+                      className="p-8 md:p-12 border-b md:border-b-0 md:border-e border-slate-200 last:border-e-0 last:border-b-0 cursor-pointer transition-all duration-500"
+                      style={{ backgroundColor: palette.bg }}
+                    >
+                      <div className="mb-8">
+                        <span
+                          className="text-5xl font-mono font-bold tracking-tighter text-slate-500 opacity-30 transition-all duration-500"
+                          style={{ color: palette.base }}
+                        >
+                          0{i + 1}
+                        </span>
+                      </div>
+                      <h4
+                        className="text-xl font-bold mb-4"
+                        style={{ color: palette.title }}
+                      >
+                        <TextBlock blockColor={palette.base}>
+                          {service.title}
+                        </TextBlock>
+                      </h4>
+                      <p
+                        className="font-medium leading-relaxed"
+                        style={{ color: palette.desc }}
+                      >
+                        <TextBlock blockColor={palette.base} className="block">
+                          {service.desc}
+                        </TextBlock>
+                      </p>
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-4">
-                      <TextBlock blockColor="#2563eb">
-                        {service.title}
-                      </TextBlock>
-                    </h4>
-                    <p className="text-slate-500 font-medium leading-relaxed">
-                      <TextBlock blockColor="#cbd5e1" className="block">
-                        {service.desc}
-                      </TextBlock>
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>
 
-          <ContactSection 
-            personal={personal} 
-            sections={sections} 
-            lang={lang} 
-          />
+          <ContactSection personal={personal} sections={sections} lang={lang} />
         </main>
 
         <Footer text={footer.text} />

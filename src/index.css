@@ -91,7 +91,7 @@ html.lenis body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(37, 99, 235, 0.03); /* Very subtle blue tint */
+  background-color: var(--service-color, rgba(37, 99, 235, 0.03));
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -1;
