@@ -100,14 +100,14 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                     {/* Icon + title */}
                     <div>
                       <div
-                        className="w-14 h-14 flex items-center justify-center mb-6 rounded-sm"
+                        className="w-14 h-14 flex items-center justify-center mb-10 rounded-sm"
                         style={{ backgroundColor: p.bgLight, color: p.base }}
                       >
                         <Icon size={26} />
                       </div>
 
                       <h2
-                        className="text-3xl md:text-4xl font-black tracking-tight mb-4"
+                        className="text-3xl md:text-4xl font-black tracking-tight mb-6"
                         style={{ color: p.title }}
                       >
                         <TextBlock blockColor={p.base}>{service.title}</TextBlock>
@@ -138,12 +138,12 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                       {sections.whatYouGet}
                     </h3>
 
-                    <ul className="space-y-5">
+                    <ul className="space-y-6">
                       {features.map((feat, j) => (
                         <li key={j} className="flex items-start gap-4">
                           {/* Accent dot */}
                           <span
-                            className="mt-1.5 w-2 h-2 rounded-sm flex-shrink-0"
+                            className="mt-1.5 w-2 h-2 rounded-none flex-shrink-0"
                             style={{ backgroundColor: p.base }}
                           />
                           <span
@@ -161,7 +161,7 @@ const ServicesPage = ({ lang, personal, services, nav, footer, buttons, sections
                       {features.map((feat, j) => (
                         <span
                           key={j}
-                          className="px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-sm"
+                          className="px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-none"
                           style={{
                             backgroundColor: p.tag,
                             color: p.tagText,
