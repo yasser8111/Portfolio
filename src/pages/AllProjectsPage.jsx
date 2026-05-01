@@ -48,7 +48,7 @@ const AllProjectsPage = ({
     return (
       <div className="w-full min-h-screen bg-slate-50 flex flex-col" dir={lang === "ar" ? "rtl" : "ltr"}>
         <NavBack 
-          onBack={() => navigate("/")} 
+          onBack={() => navigate(-1)} 
           backText={buttons.backToHome} 
           lang={lang} 
         />
@@ -69,7 +69,7 @@ const AllProjectsPage = ({
           </p>
 
           <Button 
-            onClick={() => navigate("/")} 
+            onClick={() => navigate(-1)} 
             variant="primary"
             className="px-8"
           >
@@ -85,7 +85,7 @@ const AllProjectsPage = ({
       {/* Floating Back Button (Desktop) */}
       <div className="fixed top-6 left-6 md:top-10 md:left-12 z-[100] pointer-events-auto rtl:left-auto rtl:right-6 rtl:md:right-12">
         <Button
-          onClick={() => navigate("/")}
+          onClick={() => navigate(-1)}
           variant="secondary"
           icon={({ size, className }) => (
             <MaterialIcon 

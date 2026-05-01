@@ -63,6 +63,16 @@ const HomePage = ({
 
         <main className="flex-1">
           <section className="relative overflow-hidden min-h-[calc(100vh-76px)] border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0 flex items-center">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 z-0 pointer-events-none hidden md:block"
+              style={{
+                backgroundImage: `url(/hero-img.svg)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transform: lang === 'ar' ? 'scaleX(-1)' : 'none'
+              }}
+            />
             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 items-center gap-12">
               {/* Left: Text Content */}
               <div className="relative z-10 w-full order-1">
@@ -120,7 +130,7 @@ const HomePage = ({
           <section id="projects" className="border-b border-slate-200">
             <div className="w-full">
               {/* Section Header */}
-              <div className="px-6 md:px-12 pt-32 pb-8">
+              <div className=" md:p-12 p-8">
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
                   <TextBlock blockColor="#2563eb">
                     {sections.selectedWorks}
@@ -129,7 +139,7 @@ const HomePage = ({
               </div>
 
               <ProjectHoverSection projects={projects.slice(0, 3)} />
-              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-center">
+              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-end rtl:justify-start md:justify-center md:rtl:justify-center">
                 <Link to="/projects">
                   <Button
                     variant="primary"
@@ -224,7 +234,7 @@ const HomePage = ({
                     {sections.services}
                   </TextBlock>
                 </h3>
-                <div className="flex justify-end" dir="ltr">
+                <div className="hidden md:flex justify-end" dir="ltr">
                   <Link to="/services">
                     <Button
                       variant="primary"
@@ -295,6 +305,22 @@ const HomePage = ({
                     </div>
                   );
                 })}
+              </div>
+
+              {/* Mobile Only: More Services Button */}
+              <div className="md:hidden py-12 px-6 border-t border-slate-200 flex justify-end rtl:justify-start md:justify-center md:rtl:justify-center">
+                <Link to="/services">
+                  <Button
+                    variant="primary"
+                    icon={({ className }) => (
+                      <ArrowIcon size={16} className={className} />
+                    )}
+                    iconPosition="start"
+                    className="uppercase"
+                  >
+                    {buttons.moreServices}
+                  </Button>
+                </Link>
               </div>
             </div>
           </section>

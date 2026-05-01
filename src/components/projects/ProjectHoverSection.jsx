@@ -84,7 +84,7 @@ const ProjectHoverSection = ({
       <div
         ref={containerRef}
         onMouseLeave={() => setModal({ active: false, index: 0 })}
-        className={cn("relative flex flex-col w-full mt-12", className)}
+        className={cn("relative flex flex-col w-full", className)}
       >
         <div className="flex flex-col w-full">
           {projects.map((project, index) => (
@@ -146,7 +146,7 @@ const ProjectHoverSection = ({
 
   // Mobile version
   return (
-    <div className={cn("flex flex-col w-full py-4", className)}>
+    <div className={cn("flex flex-col w-full", className)}>
       {projects.map((project, index) => (
         <Link
           key={index}

@@ -33,7 +33,7 @@ const ProjectDetailsWrapper = ({ projects, lang, footerText, buttons }) => {
   return (
     <ProjectDetailsPage
       project={project}
-      onBack={() => navigate("/projects")}
+      onBack={() => navigate(-1)}
       lang={lang}
       footerText={footerText}
       buttons={buttons}
@@ -101,6 +101,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <SmoothScroll>
         <div
           dir={lang === "ar" ? "rtl" : "ltr"}
