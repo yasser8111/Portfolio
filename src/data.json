@@ -1,5 +1,5 @@
 {
-  "isUnderConstruction": true,
+  "isUnderConstruction": false,
   "lang": "en",
   "en": {
     "nav": {
@@ -46,7 +46,7 @@
     },
     "hero": {
       "title": "Simplicity in Code,\nClarity in design.",
-      "subtitle": "I build digital products that are easy to use, fast to load, and built to scale."
+      "subtitle": "I build digital products that are easy to use,\nfast to load, and built to scale."
     },
     "about": [
       "I am a first-year Computer Science student with a focus on frontend development and UI/UX design. I enjoy building clean and practical web interfaces that solve real problems.",
@@ -210,13 +210,13 @@
     },
     "hero": {
       "title": "بساطة في الكود،\nوضوح في التصميم.",
-      "subtitle": "أقوم ببناء منتجات رقمية سهلة الاستخدام، سريعة التحميل، وقابلة للتوسع."
+      "subtitle": "أقوم ببناء منتجات رقمية سهلة الاستخدام،\nسريعة التحميل، وقابلة للتوسع."
     },
     "about": [
       "أنا طالب في السنة الأولى في علوم الحاسوب، أركز على تطوير الواجهات الأمامية وتصميم واجهة/تجربة المستخدم (UI/UX). أستمتع ببناء واجهات ويب نظيفة وعملية تحل مشاكل حقيقية.",
       "عملت على العديد من المشاريع الشخصية، بما في ذلك مواقع التجارة الإلكترونية وأدوات تجريبية، مع التركيز على الأداء، البساطة، وتجربة المستخدم. حاليًا، أقوم بتطوير مهاراتي في JavaScript و React وتصميم الأنظمة."
     ],
-    "philosophy": "بساطة في الكود، وضوح في التصميم.\nأؤمن أن التعقيد هو عدو التقدم. في الكود، البساطة تعني سهولة الصيانة والأداء العالي. في التصميم، الوضوح يعني تجربة بديهية حيث لا يضطر المستخدم للتخمين أبداً. نهجي هو إزالة كل الضوضاء حتى يتبقى فقط ما هو ضروري ومفيد.",
+    "philosophy": "بساطة في الكود، وضوح في التصميم. أؤمن أن التعقيد هو عدو التقدم. في الكود، البساطة تعني سهولة الصيانة والأداء العالي. في التصميم، الوضوح يعني تجربة بديهية حيث لا يضطر المستخدم للتخمين أبداً. نهجي هو إزالة كل الضوضاء حتى يتبقى فقط ما هو ضروري ومفيد.",
     "certificates": [
       {
         "title": "تطوير الواجهات الأمامية (HTML, CSS, JavaScript)",

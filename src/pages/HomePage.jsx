@@ -62,21 +62,11 @@ const HomePage = ({
         />
 
         <main className="flex-1">
-          <section className="relative overflow-hidden min-h-[calc(100vh-76px)] border-b border-slate-200 px-6 md:px-12 bg-white py-20 lg:py-0 flex items-center">
-            {/* Background Image */}
-            <div 
-              className="absolute inset-0 z-0 pointer-events-none hidden md:block"
-              style={{
-                backgroundImage: `url(/hero-img.svg)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                transform: lang === 'ar' ? 'scaleX(-1)' : 'none'
-              }}
-            />
-            <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 items-center gap-12">
+          <section className="relative overflow-hidden min-h-[calc(100dvh-76px)] border-b border-slate-200 bg-white flex items-center">
+            <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-[6fr_4fr] items-stretch min-h-[calc(100dvh-65px)]">
               {/* Left: Text Content */}
-              <div className="relative z-10 w-full order-1">
-                <div className="flex flex-col items-start text-start">
+              <div className="relative z-10 w-full flex items-center px-6 md:px-12 py-20 lg:py-0 md:border-e border-slate-200">
+                <div className="flex flex-col items-start text-start w-full max-w-4xl">
                   <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
                     {hero.title.split("\n").map((line, i) => (
                       <span key={i} className="block w-full">
@@ -95,10 +85,14 @@ const HomePage = ({
                     ))}
                   </h2>
 
-                  <div className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
-                    <TextBlock blockColor="#cbd5e1" className="block">
-                      {hero.subtitle}
-                    </TextBlock>
+                  <div className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-tight font-medium mb-10 flex flex-col items-start gap-1">
+                    {hero.subtitle.split("\n").map((line, i) => (
+                      <div key={i} className="block w-full">
+                        <TextBlock blockColor="#cbd5e1" className="inline-block py-0">
+                          {line}
+                        </TextBlock>
+                      </div>
+                    ))}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto justify-start">
@@ -122,6 +116,17 @@ const HomePage = ({
                     </Button>
                   </div>
                 </div>
+              </div>
+
+              {/* Right: Image Content */}
+              <div className="relative overflow-hidden bg-slate-50 hidden md:flex items-center justify-center min-h-[400px] md:min-h-0">
+                <img 
+                  src="/hero-img2.png" 
+                  alt="Hero" 
+                  className="w-full h-full object-cover"
+                />
+                {/* Decorative overlay for premium feel */}
+                <div className="absolute inset-0 bg-blue-600/5 mix-blend-multiply pointer-events-none" />
               </div>
             </div>
           </section>

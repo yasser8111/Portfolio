@@ -26,6 +26,10 @@ export const TextBlock = ({
     // Small delay to ensure page layout and scroll-reset have settled
     const timer = setTimeout(() => {
       if (!containerRef.current) return;
+
+      const isRTL = getComputedStyle(containerRef.current).direction === 'rtl';
+      const startOrigin = isRTL ? 'right' : 'left';
+      const endOrigin = isRTL ? 'left' : 'right';
       
       const tl = gsap.timeline({
           scrollTrigger: {
@@ -38,7 +42,7 @@ export const TextBlock = ({
         });
 
         // Reset states
-        gsap.set(blockRef.current, { scaleX: 0, transformOrigin: 'left' });
+        gsap.set(blockRef.current, { scaleX: 0, transformOrigin: startOrigin });
         gsap.set(textRef.current, { opacity: 0 });
 
         tl.to(blockRef.current, {
@@ -49,7 +53,7 @@ export const TextBlock = ({
         .set(textRef.current, { opacity: 1 })
         .to(blockRef.current, {
           scaleX: 0,
-          transformOrigin: 'right',
+          transformOrigin: endOrigin,
           duration: 0.6,
           ease: 'expo.inOut',
         });
@@ -61,7 +65,7 @@ export const TextBlock = ({
     return (
       <span 
         ref={containerRef} 
-        className={cn("relative inline-block overflow-visible py-1 px-1", className)}
+        className={cn("relative inline-block overflow-visible py-0.5 px-1", className)}
         style={{ fontFamily }}
       >
         <span 
@@ -73,7 +77,7 @@ export const TextBlock = ({
         </span>
         <span 
           ref={blockRef}
-          className="absolute -inset-y-2 inset-x-0 z-20 block"
+          className="absolute -inset-y-1 inset-x-0 z-20 block"
           style={{ backgroundColor: blockColor, willChange: 'transform' }}
         />
       </span>
