@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { createSlug } from "../../lib/utils";
 import { TextBlock } from "../ui/TextBlockEffect";
 
@@ -13,10 +15,18 @@ const ProjectHoverSection = ({
   thumbnailHeight = 270,
 }) => {
   const containerRef = useRef(null);
-  const mouseViewport = useRef({ x: 0, y: 0 }); // تتبع الماوس بالنسبة للشاشة
+  const modalRef = useRef(null);
+  const mousePos = useRef({ x: 0, y: 0 });
+  const xTo = useRef();
+  const yTo = useRef();
+  
   const [isDesktop, setIsDesktop] = useState(true);
   const [modal, setModal] = useState({ active: false, index: 0 });
-  const [smoothMousePos, setSmoothMousePos] = useState({ x: 0, y: 0 });
+  const activeRef = useRef(false);
+
+  useEffect(() => {
+    activeRef.current = modal.active;
+  }, [modal.active]);
 
   // Detect desktop vs mobile
   useEffect(() => {
@@ -26,41 +36,48 @@ const ProjectHoverSection = ({
     return () => window.removeEventListener("resize", checkDesktop);
   }, []);
 
-  // تتبع الماوس عالمياً لتحديث الإحداثيات حتى أثناء السكرول
   useEffect(() => {
     const handleGlobalMouseMove = (e) => {
-      mouseViewport.current = { x: e.clientX, y: e.clientY };
+      mousePos.current = { x: e.clientX, y: e.clientY };
     };
     window.addEventListener("mousemove", handleGlobalMouseMove);
     return () => window.removeEventListener("mousemove", handleGlobalMouseMove);
   }, []);
 
-  // Smooth mouse follow logic (Scroll-aware)
-  useEffect(() => {
-    if (!isDesktop || !modal.active) return;
+  useGSAP(() => {
+    if (!isDesktop || !modalRef.current) return;
+    
+    gsap.set(modalRef.current, { 
+      xPercent: -50, 
+      yPercent: -50,
+      x: mousePos.current.x,
+      y: mousePos.current.y
+    });
 
-    let frameId;
-    const lerp = (start, end, factor) => start + (end - start) * factor;
+    xTo.current = gsap.quickTo(modalRef.current, "x", { duration: 0.6, ease: "power3.out" });
+    yTo.current = gsap.quickTo(modalRef.current, "y", { duration: 0.6, ease: "power3.out" });
 
-    const updateSmoothPos = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        // نحسب المكان بالنسبة للحاوية في كل إطار (Frame)
-        // هذا يضمن أنه إذا تحركت الحاوية (بسبب السكرول) سيتغير الموقع تلقائياً
-        const targetX = mouseViewport.current.x - rect.left;
-        const targetY = mouseViewport.current.y - rect.top;
-
-        setSmoothMousePos((prev) => ({
-          x: lerp(prev.x, targetX, 0.15),
-          y: lerp(prev.y, targetY, 0.15),
-        }));
+    const updateTick = () => {
+      if (activeRef.current) {
+        xTo.current(mousePos.current.x);
+        yTo.current(mousePos.current.y);
       }
-      frameId = requestAnimationFrame(updateSmoothPos);
     };
 
-    frameId = requestAnimationFrame(updateSmoothPos);
-    return () => cancelAnimationFrame(frameId);
-  }, [isDesktop, modal.active]);
+    gsap.ticker.add(updateTick);
+    return () => gsap.ticker.remove(updateTick);
+  }, [isDesktop]);
+
+  useGSAP(() => {
+    if (!isDesktop || !modalRef.current) return;
+
+    gsap.to(modalRef.current, {
+      scale: modal.active ? 1 : 0,
+      opacity: modal.active ? 1 : 0,
+      duration: 0.5,
+      ease: "expo.out"
+    });
+  }, [modal.active, isDesktop]);
 
   if (isDesktop) {
     return (
@@ -75,12 +92,10 @@ const ProjectHoverSection = ({
               key={index}
               to={`/projects/${createSlug(project.title)}`}
               onMouseEnter={(e) => {
-                // ضبط الموقع فوراً عند الدخول لمنع القفزة المفاجئة
-                const rect = containerRef.current.getBoundingClientRect();
-                setSmoothMousePos({
-                  x: e.clientX - rect.left,
-                  y: e.clientY - rect.top,
-                });
+                if (xTo.current && yTo.current) {
+                  xTo.current(e.clientX);
+                  yTo.current(e.clientY);
+                }
                 setModal({ active: true, index });
               }}
               className={cn(
@@ -95,17 +110,15 @@ const ProjectHoverSection = ({
           <div className="w-full h-px bg-slate-200" />
         </div>
 
-        {/* Thumbnail Modal */}
+        {/* Thumbnail Modal - Viewport relative */}
         <div
-          className="pointer-events-none absolute z-50 overflow-hidden shadow-2xl border border-white/20"
+          ref={modalRef}
+          className="pointer-events-none fixed left-0 top-0 z-[100] overflow-hidden shadow-2xl border border-white/20"
           style={{
             width: thumbnailWidth,
             height: thumbnailHeight,
-            left: smoothMousePos.x,
-            top: smoothMousePos.y,
-            transform: `translate(-50%, -50%) scale(${modal.active ? 1 : 0})`,
-            opacity: modal.active ? 1 : 0,
-            transition: "transform 0.4s ease, opacity 0.3s ease",
+            opacity: 0,
+            willChange: "transform, opacity",
           }}
         >
           <div
@@ -119,6 +132,8 @@ const ProjectHoverSection = ({
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -129,7 +144,7 @@ const ProjectHoverSection = ({
     );
   }
 
-  // Mobile version (كما هو بدون تغيير)
+  // Mobile version
   return (
     <div className={cn("flex flex-col w-full py-4", className)}>
       {projects.map((project, index) => (
@@ -151,6 +166,8 @@ const ProjectHoverSection = ({
               <img
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top"
               />
             </div>
