@@ -40,7 +40,7 @@ const Navbar = ({
   return (
     <>
       <nav className="sticky top-0 z-[60] bg-white py-2 md:py-4 border-b border-slate-200 px-4 md:px-12">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center rtl:flex-row-reverse">
           <div>
             <Link to="/" onClick={() => setIsMenuOpen(false)}>
               <h1 className="text-xl md:text-2xl font-bold tracking-tight cursor-pointer flex items-center gap-2">

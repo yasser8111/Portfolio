@@ -129,7 +129,7 @@ const HomePage = ({
               </div>
 
               <ProjectHoverSection projects={projects.slice(0, 3)} />
-              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-center md:justify-start">
+              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-end rtl:justify-start">
                 <Link to="/projects">
                   <Button
                     variant="primary"
@@ -167,7 +167,7 @@ const HomePage = ({
                     </TextBlock>
                   </p>
                 ))}
-                <div className="mt-10">
+                <div className="mt-10 flex justify-end rtl:justify-start">
                   <Link to="/about">
                     <Button
                       variant="outline"
@@ -224,18 +224,20 @@ const HomePage = ({
                     {sections.services}
                   </TextBlock>
                 </h3>
-                <Link to="/services">
-                  <Button
-                    variant="primary"
-                    icon={({ className }) => (
-                      <ArrowIcon size={16} className={className} />
-                    )}
-                    iconPosition="start"
-                    className="uppercase"
-                  >
-                    {buttons.moreServices}
-                  </Button>
-                </Link>
+                <div className="flex justify-end rtl:justify-start">
+                  <Link to="/services">
+                    <Button
+                      variant="primary"
+                      icon={({ className }) => (
+                        <ArrowIcon size={16} className={className} />
+                      )}
+                      iconPosition="start"
+                      className="uppercase"
+                    >
+                      {buttons.moreServices}
+                    </Button>
+                  </Link>
+                </div>
               </div>
               <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-3">
                 {services.map((service, i) => {
