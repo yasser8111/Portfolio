@@ -12,12 +12,12 @@ const Navbar = ({
   scrollToSection,
 }) => {
   return (
-    <nav className="sticky top-0 z-50 bg-white py-6 border-b border-slate-200 px-6 md:px-12">
+    <nav className="sticky top-0 z-50 bg-white py-4 md:py-6 border-b border-slate-200 px-4 md:px-12">
       <div className="flex justify-between items-center">
         <div>
           <Link to="/">
-            <h1 className="text-2xl font-bold tracking-tight cursor-pointer flex items-center gap-2">
-              <div className="w-5 h-5 bg-blue-600 shadow-sm"></div>
+            <h1 className="text-xl md:text-2xl font-bold tracking-tight cursor-pointer flex items-center gap-2">
+              <div className="w-4 h-4 md:w-5 md:h-5 bg-blue-600 shadow-sm"></div>
               {personal.nickname}
             </h1>
           </Link>
