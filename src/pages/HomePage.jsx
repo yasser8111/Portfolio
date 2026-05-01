@@ -129,7 +129,7 @@ const HomePage = ({
               </div>
 
               <ProjectHoverSection projects={projects.slice(0, 3)} />
-              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-end" dir="ltr">
+              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-center">
                 <Link to="/projects">
                   <Button
                     variant="primary"
