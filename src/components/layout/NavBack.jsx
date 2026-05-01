@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 const NavBack = ({ onBack, backText, lang }) => {
   return (
     <nav className="sticky top-0 z-[60] bg-white py-2 md:py-4 border-b border-slate-200 px-4 md:px-12 w-full">
-      <div className="flex justify-end rtl:justify-start items-center">
+      <div className="flex justify-end items-center" dir="ltr">
         <Button
           onClick={onBack}
           variant="secondary"

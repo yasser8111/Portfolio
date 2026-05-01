@@ -129,7 +129,7 @@ const HomePage = ({
               </div>
 
               <ProjectHoverSection projects={projects.slice(0, 3)} />
-              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-end rtl:justify-start">
+              <div className="py-12 px-6 md:px-12 border-t border-slate-200 flex justify-end" dir="ltr">
                 <Link to="/projects">
                   <Button
                     variant="primary"
@@ -167,7 +167,7 @@ const HomePage = ({
                     </TextBlock>
                   </p>
                 ))}
-                <div className="mt-10 flex justify-end rtl:justify-start">
+                <div className="mt-10 flex justify-end" dir="ltr">
                   <Link to="/about">
                     <Button
                       variant="outline"
@@ -224,7 +224,7 @@ const HomePage = ({
                     {sections.services}
                   </TextBlock>
                 </h3>
-                <div className="flex justify-end rtl:justify-start">
+                <div className="flex justify-end" dir="ltr">
                   <Link to="/services">
                     <Button
                       variant="primary"
