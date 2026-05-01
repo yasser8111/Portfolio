@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 
 const NavBack = ({ onBack, backText, lang }) => {
   return (
-    <nav className="sticky top-0 z-50 bg-white py-4 md:py-5 border-b border-slate-200 px-6 md:px-12 w-full">
+    <nav className="sticky top-0 z-[60] bg-white py-2 md:py-4 border-b border-slate-200 px-4 md:px-12 w-full">
       <div className="flex justify-between items-center">
         <Button
           onClick={onBack}

@@ -8,7 +8,7 @@ const ProjectCard = ({ project, onSelectProject, isFirst = false }) => {
         isFirst ? "md:border-t-0" : ""
       } cursor-pointer relative`}
     >
-      <div className="max-w-2xl relative z-10">
+      <div className="max-w-2xl relative z-10 flex-1">
         <div className="flex items-center gap-4 mb-3">
           <h4 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
             {project.title}
@@ -25,6 +25,15 @@ const ProjectCard = ({ project, onSelectProject, isFirst = false }) => {
         </p>
       </div>
 
+      {project.image && (
+        <div className="mt-8 md:mt-0 md:ms-12 w-full md:w-48 h-48 md:h-32 shrink-0 overflow-hidden bg-slate-100 border border-slate-100">
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-full object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-500" 
+          />
+        </div>
+      )}
     </div>
   );
 };

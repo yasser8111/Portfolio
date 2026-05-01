@@ -58,24 +58,24 @@ export const TextBlock = ({
   }, { scope: containerRef });
 
   return (
-    <div 
+    <span 
       ref={containerRef} 
       className={cn("relative inline-block overflow-visible py-1 px-1", className)}
       style={{ fontFamily }}
     >
-      <div 
+      <span 
         ref={textRef} 
-        className="relative z-10"
+        className="relative z-10 block"
         style={{ color: textColor }}
       >
         {children}
-      </div>
-      <div 
+      </span>
+      <span 
         ref={blockRef}
-        className="absolute -inset-y-2 inset-x-0 z-20"
+        className="absolute -inset-y-2 inset-x-0 z-20 block"
         style={{ backgroundColor: blockColor }}
       />
-    </div>
+    </span>
   );
 };
 

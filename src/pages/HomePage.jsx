@@ -69,7 +69,7 @@ const HomePage = ({
                 <div className="flex flex-col items-start text-start">
                   <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
                     {hero.title.split("\n").map((line, i) => (
-                      <div key={i} className="w-full">
+                      <span key={i} className="block w-full">
                         <TextBlock blockColor="#2563eb" className="block">
                           {line.split(/(Code|الكود)/g).map((part, j) =>
                             part === "Code" || part === "الكود" ? (
@@ -81,15 +81,15 @@ const HomePage = ({
                             ),
                           )}
                         </TextBlock>
-                      </div>
+                      </span>
                     ))}
                   </h2>
 
-                  <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
+                  <div className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-2xl mb-10">
                     <TextBlock blockColor="#cbd5e1" className="block">
                       {hero.subtitle}
                     </TextBlock>
-                  </p>
+                  </div>
 
                   <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto justify-start">
                     <Button
@@ -219,7 +219,7 @@ const HomePage = ({
           <section id="services" className="border-b border-slate-200 bg-white">
             <div className="grid grid-cols-1 md:grid-cols-12">
               <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8 flex flex-col justify-between">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-4">
                   <TextBlock blockColor="#2563eb">
                     {sections.services}
                   </TextBlock>
