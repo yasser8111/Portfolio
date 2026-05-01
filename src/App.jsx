@@ -11,6 +11,7 @@ const AllProjectsPage = lazy(() => import("./pages/AllProjectsPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ProjectDetailsPage = lazy(() => import("./pages/ProjectDetailsPage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 // Wrapper for Project Details to handle URL params
 const ProjectDetailsWrapper = ({ projects, lang, footerText, buttons }) => {
@@ -187,6 +188,19 @@ export default function App() {
                     projects={projects}
                     lang={lang}
                     footerText={footer.text}
+                    buttons={buttons}
+                  />
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <NotFoundPage
+                    lang={lang}
+                    setLang={setLang}
+                    personal={personal}
+                    nav={nav}
+                    footer={footer}
                     buttons={buttons}
                   />
                 }

@@ -156,6 +156,12 @@
     },
     "gallery": {
       "hint": "Drag to explore projects board"
+    },
+    "notFound": {
+      "title": "404",
+      "subtitle": "Page Not Found",
+      "message": "The page you are looking for doesn't exist or has been moved.",
+      "button": "Go Back Home"
     }
   },
   "ar": {
@@ -314,6 +320,12 @@
     },
     "gallery": {
       "hint": "اسحب للتحرك في لوحة المشاريع"
+    },
+    "notFound": {
+      "title": "404",
+      "subtitle": "الصفحة غير موجودة",
+      "message": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+      "button": "العودة للرئيسية"
     }
   }
 }
