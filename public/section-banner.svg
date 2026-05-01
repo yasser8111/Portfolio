@@ -1,0 +1,31 @@
+<svg width="1920" height="500" viewBox="0 0 1920 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_29_2)">
+<rect width="1920" height="500" fill="white"/>
+<path d="M800 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M900 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M3.27826e-05 400L1000 400" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M3.27826e-05 300L1000 300" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M3.27826e-05 200L1000 200" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M3.27826e-05 100L1000 100" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M600 508V8" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M700 508V8" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M400 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M500 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M200 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M300 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<path d="M100 500V0" stroke="#E8ECF3" stroke-width="2"/>
+<g filter="url(#filter0_f_29_2)">
+<path d="M456.914 217.088L340 0H1023V500L908.084 300.785L786.673 327.376L679.751 181.343L456.914 217.088Z" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_29_2" x="281.2" y="-58.8" width="800.6" height="617.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="29.4" result="effect1_foregroundBlur_29_2"/>
+</filter>
+<clipPath id="clip0_29_2">
+<rect width="1920" height="500" fill="white"/>
+</clipPath>
+</defs>
+</svg>

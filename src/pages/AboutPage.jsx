@@ -38,6 +38,8 @@ const AboutPage = ({
           <PageBanner
             title={sections.about}
             subtitle={philosophy.split("\n")[0]}
+            backgroundImage="/section-banner.svg"
+            lang={lang}
           />
 
           {/* Detailed About & Skills */}
@@ -75,23 +77,24 @@ const AboutPage = ({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {certificates.map((cert, i) => (
                       <CardReveal key={i} delay={i * 0.1}>
-                        <div
-                          className="group p-8 bg-slate-50/50 transition-all duration-500 relative overflow-hidden h-full"
-                        >
+                        <div className="group p-8 bg-slate-50/50 transition-all duration-500 relative overflow-hidden h-full">
                           {/* Decorative Year Background */}
                           <span className="absolute -right-4 -bottom-4 text-7xl font-black text-slate-100/50 pointer-events-none">
                             {cert.year.match(/\d{4}/)?.[0] || ""}
                           </span>
-                          
+
                           <div className="relative z-10 h-full flex flex-col">
                             <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center mb-8 rounded-none">
-                              <MaterialIcon icon="workspace_premium" size={20} />
+                              <MaterialIcon
+                                icon="workspace_premium"
+                                size={20}
+                              />
                             </div>
-                            
+
                             <h4 className="text-xl font-black text-slate-900 mb-3 leading-tight grow">
                               {cert.title}
                             </h4>
-                            
+
                             <div className="mt-auto">
                               <p className="text-xs font-black text-blue-600 uppercase tracking-widest mb-1">
                                 {cert.issuer}

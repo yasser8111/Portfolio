@@ -1,10 +1,29 @@
 import React from "react";
 import { TextBlock } from "./TextBlockEffect";
 
-const PageBanner = ({ title, subtitle, titleColor = "#2563eb", subtitleColor = "#94a3b8" }) => {
+const PageBanner = ({
+  title,
+  subtitle,
+  titleColor = "#2563eb",
+  subtitleColor = "#94a3b8",
+  backgroundImage,
+  lang = "ar",
+}) => {
   return (
-    <section className="py-24 px-6 md:px-12 border-b border-slate-200 bg-slate-50/30">
-      <div className="max-w-3xl">
+    <section className="relative py-24 px-6 md:px-12 border-b border-slate-200 overflow-hidden">
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            transform: lang === "en" ? "scaleX(-1)" : "none",
+          }}
+        />
+      )}
+
+      <div className="relative z-10 max-w-3xl">
         <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-slate-900 mb-8">
           <TextBlock blockColor={titleColor} className="block">
             {title}
