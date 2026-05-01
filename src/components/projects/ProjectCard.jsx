@@ -30,6 +30,8 @@ const ProjectCard = ({ project, onSelectProject, isFirst = false }) => {
           <img 
             src={project.image} 
             alt={project.title} 
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-500" 
           />
         </div>

@@ -28,56 +28,57 @@ export const TextBlock = ({
       if (!containerRef.current) return;
       
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 92%',
-          toggleActions: 'play none none none',
-          invalidateOnRefresh: true,
-        }
-      });
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 92%',
+            toggleActions: 'play none none none',
+            invalidateOnRefresh: true,
+            once: true,
+          }
+        });
 
-      // Reset states
-      gsap.set(blockRef.current, { scaleX: 0, transformOrigin: 'left' });
-      gsap.set(textRef.current, { opacity: 0 });
+        // Reset states
+        gsap.set(blockRef.current, { scaleX: 0, transformOrigin: 'left' });
+        gsap.set(textRef.current, { opacity: 0 });
 
-      tl.to(blockRef.current, {
-        scaleX: 1,
-        duration: 0.6,
-        ease: 'expo.inOut',
-      })
-      .set(textRef.current, { opacity: 1 })
-      .to(blockRef.current, {
-        scaleX: 0,
-        transformOrigin: 'right',
-        duration: 0.6,
-        ease: 'expo.inOut',
-      });
-    }, 200);
+        tl.to(blockRef.current, {
+          scaleX: 1,
+          duration: 0.6,
+          ease: 'expo.inOut',
+        })
+        .set(textRef.current, { opacity: 1 })
+        .to(blockRef.current, {
+          scaleX: 0,
+          transformOrigin: 'right',
+          duration: 0.6,
+          ease: 'expo.inOut',
+        });
+      }, 200);
 
-    return () => clearTimeout(timer);
-  }, { scope: containerRef });
+      return () => clearTimeout(timer);
+    }, { scope: containerRef });
 
-  return (
-    <span 
-      ref={containerRef} 
-      className={cn("relative inline-block overflow-visible py-1 px-1", className)}
-      style={{ fontFamily }}
-    >
+    return (
       <span 
-        ref={textRef} 
-        className="relative z-10 block"
-        style={{ color: textColor }}
+        ref={containerRef} 
+        className={cn("relative inline-block overflow-visible py-1 px-1", className)}
+        style={{ fontFamily }}
       >
-        {children}
+        <span 
+          ref={textRef} 
+          className="relative z-10 block"
+          style={{ color: textColor }}
+        >
+          {children}
+        </span>
+        <span 
+          ref={blockRef}
+          className="absolute -inset-y-2 inset-x-0 z-20 block"
+          style={{ backgroundColor: blockColor, willChange: 'transform' }}
+        />
       </span>
-      <span 
-        ref={blockRef}
-        className="absolute -inset-y-2 inset-x-0 z-20 block"
-        style={{ backgroundColor: blockColor }}
-      />
-    </span>
-  );
-};
+    );
+  };
 
 const TextBlockEffect = ({ children }) => {
   return (
