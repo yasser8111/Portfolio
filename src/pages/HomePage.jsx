@@ -218,8 +218,8 @@ const HomePage = ({
           {/* Services */}
           <section id="services" className="border-b border-slate-200 bg-white">
             <div className="grid grid-cols-1 md:grid-cols-12">
-              <div className="md:col-span-3 py-12 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8 flex flex-col justify-between">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-4">
+              <div className="md:col-span-3 py-8 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8 flex flex-row md:flex-col justify-between items-center md:items-start gap-4" dir="ltr">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 md:mb-8">
                   <TextBlock blockColor="#2563eb">
                     {sections.services}
                   </TextBlock>
