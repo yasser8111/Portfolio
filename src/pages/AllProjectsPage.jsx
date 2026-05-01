@@ -46,23 +46,35 @@ const AllProjectsPage = ({
 
   if (isMobile) {
     return (
-      <div className="w-full min-h-screen bg-white pb-20" dir={lang === "ar" ? "rtl" : "ltr"}>
+      <div className="w-full min-h-screen bg-slate-50 flex flex-col" dir={lang === "ar" ? "rtl" : "ltr"}>
         <NavBack 
           onBack={() => navigate("/")} 
           backText={buttons.backToHome} 
           lang={lang} 
         />
 
-        <div className="px-2">
-          {projects.map((project, index) => (
-            <div key={index} className="mobile-project-card opacity-0">
-              <ProjectCard 
-                project={project} 
-                isFirst={index === 0}
-                onSelectProject={(p) => navigate(`/projects/${createSlug(p.title)}`)}
-              />
-            </div>
-          ))}
+        <div className="flex-1 flex flex-col items-center justify-center px-8 text-center">
+          <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-8 animate-bounce">
+            <MaterialIcon icon="desktop_windows" size={40} />
+          </div>
+          
+          <h1 className="text-3xl font-black text-slate-900 mb-6 leading-tight">
+            {lang === "ar" ? "نأسف، هذه الصفحة غير متوفرة" : "Sorry, Page Not Available"}
+          </h1>
+          
+          <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-sm mb-10">
+            {lang === "ar" 
+              ? "عذراً، معرض المشاريع التفاعلي مصمم خصيصاً للشاشات الكبيرة. يرجى زيارة الصفحة من جهاز كمبيوتر للاستمتاع بالتجربة الكاملة."
+              : "Sorry, the interactive projects gallery is specially designed for large screens. Please visit from a desktop device to enjoy the full experience."}
+          </p>
+
+          <Button 
+            onClick={() => navigate("/")} 
+            variant="primary"
+            className="px-8"
+          >
+            {buttons.backToHome}
+          </Button>
         </div>
       </div>
     );

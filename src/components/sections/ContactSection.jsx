@@ -5,7 +5,7 @@ import { GithubIcon, WhatsappIcon, InstagramIcon } from "../ui/BrandIcons";
 
 const ContactSection = ({ personal, sections, lang }) => {
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 border-t border-slate-100 bg-white">
+    <section id="contact" className="pt-24 pb-12 md:py-24 px-6 md:px-12 border-t border-slate-100 bg-white">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
         <div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] text-slate-900 flex flex-col items-start">
