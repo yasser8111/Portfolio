@@ -113,7 +113,7 @@ const ProjectHoverSection = ({
         {/* Thumbnail Modal - Viewport relative */}
         <div
           ref={modalRef}
-          className="pointer-events-none fixed left-0 top-0 z-[100] overflow-hidden shadow-2xl border border-white/20"
+          className="pointer-events-none fixed left-0 top-0 z-100 overflow-hidden shadow-2xl border border-white/20"
           style={{
             width: thumbnailWidth,
             height: thumbnailHeight,
