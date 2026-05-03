@@ -67,7 +67,7 @@ const HomePage = ({
               {/* Left: Text Content */}
               <div className="relative z-10 w-full flex items-center px-6 md:px-12 py-20 lg:py-0 md:border-e border-slate-200">
                 <div className="flex flex-col items-start text-start w-full max-w-4xl">
-                  <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900">
+                  <h2 className="text-[clamp(2.5rem,8vw,5rem)] font-black tracking-tighter leading-[1.1] mb-8 text-slate-900 text-balance">
                     {hero.title.split("\n").map((line, i) => (
                       <span key={i} className="block w-full">
                         <TextBlock blockColor="#2563eb" className="block">
@@ -85,14 +85,13 @@ const HomePage = ({
                     ))}
                   </h2>
 
-                  <div className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-tight font-medium mb-10 flex flex-col items-start gap-1">
-                    {hero.subtitle.split("\n").map((line, i) => (
-                      <div key={i} className="block w-full">
-                        <TextBlock blockColor="#cbd5e1" className="inline-block py-0">
-                          {line}
-                        </TextBlock>
-                      </div>
-                    ))}
+                  <div className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-tight font-medium mb-10 flex flex-col items-start gap-1 text-balance">
+                    <TextBlock
+                      blockColor="#cbd5e1"
+                      className="inline-block py-0"
+                    >
+                      {hero.subtitle}
+                    </TextBlock>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto justify-start">
@@ -120,9 +119,9 @@ const HomePage = ({
 
               {/* Right: Image Content */}
               <div className="relative overflow-hidden bg-slate-50 hidden md:flex items-center justify-center min-h-[400px] md:min-h-0">
-                <img 
-                  src="/hero-img2.png" 
-                  alt="Hero" 
+                <img
+                  src="/hero-img2.png"
+                  alt="Hero"
                   className="w-full h-full object-cover"
                 />
                 {/* Decorative overlay for premium feel */}
@@ -233,7 +232,10 @@ const HomePage = ({
           {/* Services */}
           <section id="services" className="border-b border-slate-200 bg-white">
             <div className="grid grid-cols-1 md:grid-cols-12">
-              <div className="md:col-span-3 py-8 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8 flex flex-row md:flex-col justify-between items-center md:items-start gap-4" dir="ltr">
+              <div
+                className="md:col-span-3 py-8 md:py-16 md:border-e border-slate-200 ps-6 md:ps-12 pe-8 flex flex-row md:flex-col justify-between items-center md:items-start gap-4"
+                dir="ltr"
+              >
                 <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 md:mb-8">
                   <TextBlock blockColor="#2563eb">
                     {sections.services}
